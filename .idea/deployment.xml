@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="SensiplusConfigurationServer" uploadOnCheckin="f357ddca-8620-4e0c-ab4e-afc62e575022">
+  <component name="PublishConfigData" serverName="SensiplusConfigurationServer">
     <serverData>
       <paths name="SensiplusConfigurationServer">
         <serverdata>
@@ -10,6 +10,5 @@
         </serverdata>
       </paths>
     </serverData>
-    <option name="myUploadOnCheckinName" value="https://alexandro1992@bitbucket.org/gruppo7ids/semsiplus-configuration-manager.git" />
   </component>
 </project>
