@@ -170,7 +170,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             throw new DAOException("In select: any field can be null");
         }
 
-        String query = "UPDATE spfamily s SET s.getidSPFamily = '" + a.getidSPFamily() + "', s.HwVersion = '" + a.getHwVersion() + "',  s.Id = '" + a.getId() + "'," +
+        String query = "UPDATE spfamily s SET s.idSPFamily = '" + a.getidSPFamily() + "', s.HwVersion = '" + a.getHwVersion() + "',  s.Id = '" + a.getId() + "'," +
                 " s.Name = '"+ a.getName() + "', s.Osctrim = '" + a.getOsctrim()+"', s.Sysclock='"+a.getSysclock()+ ";";
         logger.info("SQL: " + query);
 

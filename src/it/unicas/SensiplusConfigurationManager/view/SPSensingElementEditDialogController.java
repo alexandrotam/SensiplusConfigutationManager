@@ -210,6 +210,9 @@ import javafx.stage.Stage;
             if (outGainField.getText() != null && !outGainField.getText().matches("0||1||2||3||4||5||6||7")){
                 errorMessage+= "No valid Out Gain!\n";
             }
+            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
+
+            }
 
             if (contactsField.getText() == null && verifyLen) {
                 errorMessage += "No valid Contacts!\n";
