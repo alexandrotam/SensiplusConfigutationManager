@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOverviewController">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="spSensingElementTableView" layoutX="10.0" layoutY="103.0" prefHeight="393.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="idSPSensingElementColumn" prefWidth="141.0" text="IdSPSensingElement" />
+                      <TableColumn fx:id="nameColumn" minWidth="9.0" prefWidth="77.0" text="Name" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="417.0" prefWidth="521.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="14.0" prefHeight="45.0" prefWidth="143.0" text="Dettagli:">
+                     <font>
+                        <Font name="Colonna MT" size="36.0" />
+                     </font></Label>
+                  <GridPane layoutX="15.0" layoutY="56.0" prefHeight="282.0" prefWidth="491.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="15.0" minHeight="15.0" prefHeight="15.0" />
+                      <RowConstraints maxHeight="16.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="rSense" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="outGainLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="inGainLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Out Gain" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="In Gain" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="rSenseLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Contacts" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Frequency" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="contactslabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="frequencyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Harmonic" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="harmonicLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="DC Bias" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="DCBiasLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Mode VI" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="modeVILabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Measure Technique" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Measure Type" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Filter" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Phase Shift Mode" GridPane.rowIndex="12">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="PhaseShift" GridPane.rowIndex="13">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="measureTechniqueLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="measureTypeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="filterLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="phaseShiftModeLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="phaseShiftLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="13">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="IQ" GridPane.rowIndex="14">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="IQLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Conversion Rate" GridPane.rowIndex="15">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="conversionRateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="In Port ADC" GridPane.rowIndex="16">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="inPortADCLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="16">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="nData" GridPane.rowIndex="17">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="nDataLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="17">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Range Min" GridPane.rowIndex="19">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="rangeMinLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="19">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Range Max" GridPane.rowIndex="20">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="rangeMaxLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="20">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Default Alarm Threshold" GridPane.rowIndex="21">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="defaultAlarmThresholdLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="21">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Multiplier" GridPane.rowIndex="22">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="multiplierLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="22">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="measureUnitLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="23">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Measure Unit" GridPane.rowIndex="23">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="id SP Sensing Element">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="idSPSensingElementLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label text="Name" GridPane.rowIndex="18">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="18">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                     </children>
+                  </GridPane>
+                  <ButtonBar layoutX="51.0" layoutY="338.0" prefHeight="40.0" prefWidth="419.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#handleSearchSPSensingElement" text="Search..." textFill="#1d1f8d">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleNewSPSensingElement" text="New..." textFill="#1d1f8d">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleEditSPSensingElement" text="Edit..." textFill="#1d1f8d">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleDeleteSPSensingELement" text="Delete..." textFill="#1d1f8d">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                    </buttons>
+                  </ButtonBar>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

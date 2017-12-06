@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d575a518-028a-4674-9adf-4c9cc4cb3acd" name="SensiplusConfigurationServer" url="https://alexandro1992@bitbucket.org/gruppo7ids/semsiplus-configuration-manager.git">
+        <fileTransfer port="0" mountedRoot="E:\Dropbox\Progetto Ingegneria Software\Sensiplus Configutation Manager" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
