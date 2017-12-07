@@ -23,7 +23,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class MainApp extends Application {
-    //funziona
+
     private Stage primaryStage;
     private BorderPane rootLayout;
 
