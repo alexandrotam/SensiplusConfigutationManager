@@ -273,7 +273,7 @@ public class SPSensingElementOverviewController {
         SPSensingElement tempSPSensingElement = new SPSensingElement();
         boolean okClicked = mainApp.showSPSensingElementEditDialog(tempSPSensingElement,false);
         if (okClicked) {
-            //mainApp.getColleghiData().add(tempColleghi);
+            mainApp.getSPSensingElementData().add(tempSPSensingElement);
             try {
                 List<SPSensingElement> list = SPSensingElementDAOMySQLImpl.getInstance().select(tempSPSensingElement);
                 mainApp.getSPSensingElementData().clear();

@@ -210,15 +210,13 @@ import javafx.stage.Stage;
             if (outGainField.getText() != null && !outGainField.getText().matches("0||1||2||3||4||5||6||7")){
                 errorMessage+= "No valid Out Gain!\n";
             }
-            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
 
-            }
 
             if (contactsField.getText() == null && verifyLen) {
                 errorMessage += "No valid Contacts!\n";
             }
 
-            if (outGainField.getText() != null && !outGainField.getText().matches("(?i)TWO||(?i)FOUR")){
+            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
                 errorMessage+= "No valid Contacts!\n";
             }
 
@@ -310,7 +308,7 @@ import javafx.stage.Stage;
             }
 
             if (IQField.getText() != null &&
-                    !phaseShiftField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE")){
+                    !IQField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE")){
                 errorMessage+= "No valid IQ!\n";
             }
 
