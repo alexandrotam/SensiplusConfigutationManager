@@ -286,12 +286,22 @@ import javafx.stage.Stage;
                 errorMessage+= "No valid filter!\n";
             }
 
+            if (phaseShiftModeField.getText() == null && verifyLen) {
+                errorMessage += "No valid Phase Shift!\n";
+            }
+
+            if (phaseShiftModeField.getText() != null &&
+                    !phaseShiftModeField.getText().matches("(?i)QUADRANTS||(?i)COARSE||(?i)FINE")){
+                errorMessage+= "No valid Phase Shift!\n";
+            }
+
+
             if (phaseShiftField.getText() == null && verifyLen) {
                 errorMessage += "No valid Phase Shift!\n";
             }
 
             if (phaseShiftField.getText() != null &&
-                    !phaseShiftField.getText().matches("(?i)QUADRANTS||(?i)COARSE||(?i)FINE")){
+                    (Integer.parseInt(phaseShiftField.getText())<0 || Integer.parseInt(phaseShiftField.getText())>360)){
                 errorMessage+= "No valid Phase Shift!\n";
             }
 
