@@ -191,7 +191,7 @@ import javafx.stage.Stage;
                 errorMessage += "No valid rSense!\n";
             }
 
-            if (rSenseField.getText() != null && !rSenseField.getText().matches("50|500|5000|50000")){
+            if (rSenseField.getText() != null && !rSenseField.getText().matches("50||500||5000||50000")){
                     errorMessage+= "No valid rSense!\n";
             }
 
@@ -199,7 +199,7 @@ import javafx.stage.Stage;
                 errorMessage += "No valid In Gain!\n";
             }
 
-            if (inGainField.getText() != null && !inGainField.getText().matches("1|12|20|40")){
+            if (inGainField.getText() != null && !inGainField.getText().matches("1||12||20||40")){
                 errorMessage+= "No valid In Gain!\n";
             }
 
@@ -210,15 +210,13 @@ import javafx.stage.Stage;
             if (outGainField.getText() != null && !outGainField.getText().matches("0||1||2||3||4||5||6||7")){
                 errorMessage+= "No valid Out Gain!\n";
             }
-            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
 
-            }
 
             if (contactsField.getText() == null && verifyLen) {
                 errorMessage += "No valid Contacts!\n";
             }
 
-            if (outGainField.getText() != null && !outGainField.getText().matches("(?i)TWO||(?i)FOUR")){
+            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
                 errorMessage+= "No valid Contacts!\n";
             }
 
@@ -297,12 +295,12 @@ import javafx.stage.Stage;
 
 
             if (phaseShiftField.getText() == null && verifyLen) {
-                errorMessage += "No valid Phase Shift!\n";
+                errorMessage += "No valid Phase Shift Mode!\n";
             }
 
             if (phaseShiftField.getText() != null &&
                     (Integer.parseInt(phaseShiftField.getText())<0 || Integer.parseInt(phaseShiftField.getText())>360)){
-                errorMessage+= "No valid Phase Shift!\n";
+                errorMessage+= "No valid Phase Shift Mode!\n";
             }
 
             if (IQField.getText() == null && verifyLen) {
@@ -310,7 +308,7 @@ import javafx.stage.Stage;
             }
 
             if (IQField.getText() != null &&
-                    !phaseShiftField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE")){
+                    !IQField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE")){
                 errorMessage+= "No valid IQ!\n";
             }
 

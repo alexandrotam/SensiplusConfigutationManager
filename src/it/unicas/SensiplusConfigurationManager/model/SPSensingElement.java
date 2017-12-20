@@ -103,9 +103,10 @@ public class SPSensingElement {
 
 
     public SPSensingElement() {
-        this(0, 0, 0,null,0.0,null,0,null,null,null,
-                0,null,0,null,0,null,0,null,0.0,0.0,0.0,
-                0,null,null);
+        this(50, 1, 0,"TWO",78125.0,"FIRST HARMONIC",0,
+                "VOUT IIN","EIS","IN PHASE",1,"QUADRANTS",0,
+                "IN PHASE",50,"IA",1,null,0.0,100.0,
+                50.0,0,"O",null);
     }
 
     public SPSensingElement(String idSPSensingElement, String name) {
@@ -117,7 +118,7 @@ public class SPSensingElement {
 
     public String getIdSPSensingElement() {
         if (idSPSensingElement == null){
-            idSPSensingElement = new SimpleStringProperty("/0");
+            idSPSensingElement = new SimpleStringProperty("");
         }
         return idSPSensingElement.get();
     }
@@ -135,7 +136,7 @@ public class SPSensingElement {
     }
 
 
-    public int getrSense() {
+    public Integer getrSense() {
         return rSense.get();
     }
 
@@ -147,7 +148,7 @@ public class SPSensingElement {
         this.rSense.set(rSense);
     }
 
-    public int getInGain() {
+    public Integer getInGain() {
         return inGain.get();
     }
 
@@ -159,7 +160,7 @@ public class SPSensingElement {
         this.inGain.set(inGain);
     }
 
-    public int getOutGain() {
+    public Integer getOutGain() {
         return outGain.get();
     }
 
@@ -183,7 +184,7 @@ public class SPSensingElement {
         this.contacts.set(contacts);
     }
 
-    public double getFrequency() {
+    public Double getFrequency() {
         return frequency.get();
     }
 
@@ -207,7 +208,7 @@ public class SPSensingElement {
         this.harmonic.set(harmonic);
     }
 
-    public int getDCBias() {
+    public Integer getDCBias() {
         return DCBias.get();
     }
 
@@ -255,7 +256,7 @@ public class SPSensingElement {
         this.measureType.set(measureType);
     }
 
-    public int getFilter() {
+    public Integer getFilter() {
         return filter.get();
     }
 
@@ -279,7 +280,7 @@ public class SPSensingElement {
         this.phaseShiftMode.set(phaseShiftMode);
     }
 
-    public int getPhaseShift() {
+    public Integer getPhaseShift() {
         return phaseShift.get();
     }
 
@@ -303,7 +304,7 @@ public class SPSensingElement {
         this.IQ.set(IQ);
     }
 
-    public int getConversionRate() {
+    public Integer getConversionRate() {
         return conversionRate.get();
     }
 
@@ -327,7 +328,7 @@ public class SPSensingElement {
         this.inPortADC.set(inPortADC);
     }
 
-    public int getnData() {
+    public Integer getnData() {
         return nData.get();
     }
 
@@ -351,7 +352,7 @@ public class SPSensingElement {
         this.name.set(name);
     }
 
-    public double getRangeMin() {
+    public Double getRangeMin() {
         return rangeMin.get();
     }
 
@@ -363,7 +364,7 @@ public class SPSensingElement {
         this.rangeMin.set(rangeMin);
     }
 
-    public double getRangeMax() {
+    public Double getRangeMax() {
         return rangeMax.get();
     }
 
@@ -375,7 +376,7 @@ public class SPSensingElement {
         this.rangeMax.set(rangeMax);
     }
 
-    public double getDefaultAlarmThreshold() {
+    public Double getDefaultAlarmThreshold() {
         return defaultAlarmThreshold.get();
     }
 
@@ -387,7 +388,7 @@ public class SPSensingElement {
         this.defaultAlarmThreshold.set(defaultAlarmThreshold);
     }
 
-    public int getMultiplier() {
+    public Integer getMultiplier() {
         return multiplier.get();
     }
 

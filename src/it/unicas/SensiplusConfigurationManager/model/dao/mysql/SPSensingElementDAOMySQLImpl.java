@@ -81,28 +81,28 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
             ArrayList<SPSensingElement> lista = new ArrayList<SPSensingElement>();
             try{
 
-                if (a == null || a.getrSense() == 0
-                        || a.getInGain() == 0
-                        || a.getOutGain() == 0
+                if (a == null || a.getrSense() == null
+                        || a.getInGain() == null
+                        || a.getOutGain() == null
                         || a.getContacts() == null
-                        || a.getFrequency() == 0
+                        || a.getFrequency() == null
                         || a.getHarmonic() == null
-                        || a.getDCBias() == 0
+                        || a.getDCBias() == null
                         || a.getModeVI() == null
                         || a.getMeasureTechnique() == null
                         || a.getMeasureType() == null
-                        || a.getFilter() == 0
+                        || a.getFilter() == null
                         || a.getPhaseShiftMode() == null
-                        || a.getPhaseShift() == 0
+                        || a.getPhaseShift() == null
                         || a.getIQ() == null
-                        || a.getConversionRate() == 0
+                        || a.getConversionRate() == null
                         || a.getInPortADC() == null
-                        || a.getnData() == 0
+                        || a.getnData() == null
                         || a.getName() == null
-                        || a.getRangeMin() == 0
-                        || a.getRangeMax() == 0
-                        || a.getDefaultAlarmThreshold() == 0
-                        || a.getMultiplier() == 0
+                        || a.getRangeMin() == null
+                        || a.getRangeMax() == null
+                        || a.getDefaultAlarmThreshold() == null
+                        || a.getMultiplier() == null
                         || a.getMeasureUnit() == null)
                 {
                     throw new DAOException("In select: any field can be null");
@@ -161,28 +161,28 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
         @Override
         public void delete(SPSensingElement a) throws DAOException {
-            if (a == null || a.getrSense() == 0
-                    || a.getInGain() == 0
-                    || a.getOutGain() == 0
+            if (a == null || a.getrSense() == null
+                    || a.getInGain() == null
+                    || a.getOutGain() == null
                     || a.getContacts() == null
-                    || a.getFrequency() == 0
+                    || a.getFrequency() == null
                     || a.getHarmonic() == null
-                    || a.getDCBias() == 0
+                    || a.getDCBias() == null
                     || a.getModeVI() == null
                     || a.getMeasureTechnique() == null
                     || a.getMeasureType() == null
-                    || a.getFilter() == 0
+                    || a.getFilter() == null
                     || a.getPhaseShiftMode() == null
-                    || a.getPhaseShift() == 0
+                    || a.getPhaseShift() == null
                     || a.getIQ() == null
-                    || a.getConversionRate() == 0
+                    || a.getConversionRate() == null
                     || a.getInPortADC() == null
-                    || a.getnData() == 0
+                    || a.getnData() == null
                     || a.getName() == null
-                    || a.getRangeMin() == 0
-                    || a.getRangeMax() == 0
-                    || a.getDefaultAlarmThreshold() == 0
-                    || a.getMultiplier() == 0
+                    || a.getRangeMin() == null
+                    || a.getRangeMax() == null
+                    || a.getDefaultAlarmThreshold() == null
+                    || a.getMultiplier() == null
                     || a.getMeasureUnit() == null)
             {
                 throw new DAOException("In delete: any field can be null");
@@ -207,35 +207,37 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
         public void insert(SPSensingElement a) throws DAOException {
 
 
-            if (a == null || a.getrSense() == 0
-                    || a.getInGain() == 0
-                    || a.getOutGain() == 0
+            if (a == null || a.getrSense() == null
+                    || a.getInGain() == null
+                    || a.getOutGain() == null
                     || a.getContacts() == null
-                    || a.getFrequency() == 0
+                    || a.getFrequency() == null
                     || a.getHarmonic() == null
-                    || a.getDCBias() == 0
+                    || a.getDCBias() == null
                     || a.getModeVI() == null
                     || a.getMeasureTechnique() == null
                     || a.getMeasureType() == null
-                    || a.getFilter() == 0
+                    || a.getFilter() == null
                     || a.getPhaseShiftMode() == null
-                    || a.getPhaseShift() == 0
+                    || a.getPhaseShift() == null
                     || a.getIQ() == null
-                    || a.getConversionRate() == 0
+                    || a.getConversionRate() == null
                     || a.getInPortADC() == null
-                    || a.getnData() == 0
+                    || a.getnData() == null
                     || a.getName() == null
-                    || a.getRangeMin() == 0
-                    || a.getRangeMax() == 0
-                    || a.getDefaultAlarmThreshold() == 0
-                    || a.getMultiplier() == 0
+                    || a.getRangeMin() == null
+                    || a.getRangeMax() == null
+                    || a.getDefaultAlarmThreshold() == null
+                    || a.getMultiplier() == null
                     || a.getMeasureUnit() == null){
                 throw new DAOException("In select: any field can be null");
             }
 
 
-            String query ="INSERT INTO spsensingelement (idSPSensingElement,rSense,inGain,outGain,contacts,frequency,harmonic,DCBIas,modeVI,measureTechnique,measureType,filter,phaseShiftMode," +
-                    "phaseShift,IQ,conversionRate,inPortADC,nData,name,rangeMin,rangeMax,defaultALarmThreshold,multiplier,measureUnit) VALUES  ('" + a.getIdSPSensingElement()+ "', '" +a.getrSense()
+            String query ="INSERT INTO spsensingelement (idSPSensingElement,rSense,inGain,outGain,contacts,frequency," +
+                    "harmonic,DCBias,modeVI,measureTechnique,measureType,filter,phaseShiftMode," +
+                    "phaseShift,IQ,conversionRate,inPortADC,nData,name,rangeMin,rangeMax,defaultALarmThreshold,multiplier,measureUnit) " +
+                    "VALUES  ('" + a.getIdSPSensingElement()+ "', '" +a.getrSense()
                     + "', '" +a.getInGain()+ "', '" +a.getOutGain()
                     + "', '" +a.getContacts()+ "', '" +a.getFrequency()
                     + "', '" +a.getHarmonic()+ "', '" +a.getDCBias()
@@ -246,7 +248,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                     + "', '" +a.getInPortADC()+ "', '" +a.getnData()
                     + "', '" +a.getName()+ "', '" +a.getRangeMin()
                     + "', '" +a.getRangeMax()+ "', '" +a.getDefaultAlarmThreshold()
-                    + "', '" +a.getMultiplier()+ "', '" +a.getMeasureUnit()+"', NULL)";
+                    + "', '" +a.getMultiplier()+ "', '" +a.getMeasureUnit()+"')";
 
             logger.info("SQL: " + query);
 
@@ -264,28 +266,28 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
         @Override
         public void update(SPSensingElement a) throws DAOException {
-            if (a == null || a.getrSense() == 0
-                    || a.getInGain() == 0
-                    || a.getOutGain() == 0
+            if (a == null || a.getrSense() == null
+                    || a.getInGain() == null
+                    || a.getOutGain() == null
                     || a.getContacts() == null
-                    || a.getFrequency() == 0
+                    || a.getFrequency() == null
                     || a.getHarmonic() == null
-                    || a.getDCBias() == 0
+                    || a.getDCBias() == null
                     || a.getModeVI() == null
                     || a.getMeasureTechnique() == null
                     || a.getMeasureType() == null
-                    || a.getFilter() == 0
+                    || a.getFilter() == null
                     || a.getPhaseShiftMode() == null
-                    || a.getPhaseShift() == 0
+                    || a.getPhaseShift() == null
                     || a.getIQ() == null
-                    || a.getConversionRate() == 0
+                    || a.getConversionRate() ==null
                     || a.getInPortADC() == null
-                    || a.getnData() == 0
+                    || a.getnData() == null
                     || a.getName() == null
-                    || a.getRangeMin() == 0
-                    || a.getRangeMax() == 0
-                    || a.getDefaultAlarmThreshold() == 0
-                    || a.getMultiplier() == 0
+                    || a.getRangeMin() == null
+                    || a.getRangeMax() == null
+                    || a.getDefaultAlarmThreshold() == null
+                    || a.getMultiplier() ==null
                     || a.getMeasureUnit() == null){
                 throw new DAOException("In select: any field can be null");
             }
