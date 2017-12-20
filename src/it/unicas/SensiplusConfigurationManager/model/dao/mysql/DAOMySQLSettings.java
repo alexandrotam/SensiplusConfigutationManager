@@ -11,7 +11,7 @@ public class DAOMySQLSettings {
     public final static String HOST = "127.0.0.1";
     public final static String USERNAME = "root";
     public final static String PWD = "root";
-    public final static String SCHEMA = "sensidb";
+    public final static String SCHEMA = "sensiDB";
     public final static String PARAMETERS = "?useSSL=false&serverTimezone=UTC";
 
 
