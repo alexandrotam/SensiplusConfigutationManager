@@ -248,7 +248,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                     + "', '" +a.getInPortADC()+ "', '" +a.getnData()
                     + "', '" +a.getName()+ "', '" +a.getRangeMin()
                     + "', '" +a.getRangeMax()+ "', '" +a.getDefaultAlarmThreshold()
-                    + "', '" +a.getMultiplier()+ "', '" +a.getMeasureUnit()+"')";
+                    + "', '" +a.getMultiplier()+ "', '" +a.getMeasureUnit()+"')"; // insert
 
             logger.info("SQL: " + query);
 
