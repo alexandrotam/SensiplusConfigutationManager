@@ -96,6 +96,7 @@ import javafx.stage.Stage;
         public void setSpSensingElement(SPSensingElement spSensingElement) {
             this.spSensingElement = spSensingElement;
 
+
             idSPSensingElementField.setText(spSensingElement.getIdSPSensingElement());
             rSenseField.setText(String.valueOf(spSensingElement.getrSense()));
             inGainField.setText(String.valueOf(spSensingElement.getInGain()));
