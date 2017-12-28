@@ -45,7 +45,7 @@
          <children>
             <Label text="Id SP Sensing Element" />
             <Label layoutX="310.0" layoutY="55.0" text="rSense" GridPane.rowIndex="1" />
-            <Label text="In Gane" GridPane.rowIndex="2" />
+            <Label text="In Gain" GridPane.rowIndex="2" />
             <Label text="Out Gain" GridPane.rowIndex="3" />
             <Label text="Contacts" GridPane.rowIndex="4" />
             <Label text="Mode VI" GridPane.rowIndex="8" />
@@ -68,7 +68,6 @@
             <Label text="Default Alarm Threashold" GridPane.rowIndex="21" />
             <Label text="Range Max" GridPane.rowIndex="20" />
             <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
-            <TextField fx:id="rSenseField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="outGainField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <TextField fx:id="inGainField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="contactsField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
@@ -91,6 +90,7 @@
             <TextField fx:id="defaultAlarmThresholdField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
             <TextField fx:id="multiplierField" GridPane.columnIndex="1" GridPane.rowIndex="22" />
             <TextField fx:id="measureUnitField" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+            <TextField fx:id="rSenseField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <ButtonBar layoutX="142.0" layoutY="674.0" prefHeight="57.0" prefWidth="224.0">

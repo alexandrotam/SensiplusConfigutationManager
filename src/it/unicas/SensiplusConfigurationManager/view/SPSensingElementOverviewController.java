@@ -1,6 +1,5 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementDAOMySQLImpl;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
@@ -271,8 +270,8 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleSearchSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement(50,1,0,"",0.00,"",0,"","","",0,"",0,"",
-                50,"",1,"",0.00,0.00,0.00,0,"","");
+        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,"",0,"","","",0,"",0,"",
+                0,"",0,"",0.00,0.00,0.00,0,"","");
         boolean okClicked = mainApp.showSPSensingElementEditDialog(tempSPSensingElement,false);
         if (okClicked) {
             //mainApp.getSPSensingElementData().add(tempSPSensingElement);
