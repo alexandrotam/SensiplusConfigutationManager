@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="548.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementSearchDialogController">
+   <children>
+      <GridPane layoutX="24.0" layoutY="21.0" prefHeight="653.0" prefWidth="845.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
+            <TextField fx:id="frequencyField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="DCBiasField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="filterField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <TextField fx:id="phaseShiftField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+            <TextField fx:id="conversionRateField" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+            <TextField fx:id="nameField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+            <TextField fx:id="rangeMinField" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+            <TextField fx:id="rangeMaxField" GridPane.columnIndex="1" GridPane.rowIndex="20" />
+            <TextField fx:id="defaultAlarmThresholdField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
+            <ComboBox fx:id="rSenseField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="inGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="outGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="contactsField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="multiplierField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+            <ComboBox fx:id="measureUnitField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+            <ComboBox fx:id="harmonicField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="modeVIField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <ComboBox fx:id="measureTechniqueField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <ComboBox fx:id="measureTypeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <ComboBox fx:id="phaseShiftModeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <ComboBox fx:id="IQField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <ComboBox fx:id="inPortADCField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <ComboBox fx:id="nDataField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <CheckBox fx:id="idSPSensingElementCheck" mnemonicParsing="false" text="Id SP Sensing Element" />
+            <CheckBox fx:id="rSenseCheck" mnemonicParsing="false" text="rSense" GridPane.rowIndex="1" />
+            <CheckBox fx:id="inGainCheck" mnemonicParsing="false" text="In Gain" GridPane.rowIndex="2" />
+            <CheckBox fx:id="outGainCheck" mnemonicParsing="false" text="Out Gain" GridPane.rowIndex="3" />
+            <CheckBox fx:id="contactsCheck" mnemonicParsing="false" text="Contacts" GridPane.rowIndex="4" />
+            <CheckBox fx:id="frequencyCheck" mnemonicParsing="false" text="Frequency" GridPane.rowIndex="5" />
+            <CheckBox fx:id="harmonicCheck" mnemonicParsing="false" text="Harmonic" GridPane.rowIndex="6" />
+            <CheckBox fx:id="DCBiasCheck" mnemonicParsing="false" text="DC Bias" GridPane.rowIndex="7" />
+            <CheckBox fx:id="modeVICheck" mnemonicParsing="false" text="Mode VI" GridPane.rowIndex="8" />
+            <CheckBox fx:id="measureTechniqueCheck" mnemonicParsing="false" text="Measure Technique" GridPane.rowIndex="9" />
+            <CheckBox fx:id="measureTypeCheck" mnemonicParsing="false" text="Measure Type" GridPane.rowIndex="10" />
+            <CheckBox fx:id="filterCheck" mnemonicParsing="false" text="Filter" GridPane.rowIndex="11" />
+            <CheckBox fx:id="phaseShiftModeCheck" mnemonicParsing="false" text="Phase Shift Mode" GridPane.rowIndex="12" />
+            <CheckBox fx:id="phaseShiftCheck" mnemonicParsing="false" text="Phase Shift" GridPane.rowIndex="13" />
+            <CheckBox fx:id="IQCheck" mnemonicParsing="false" text="IQ" GridPane.rowIndex="14" />
+            <CheckBox fx:id="conversionRate" mnemonicParsing="false" text="Conversion Rate" GridPane.rowIndex="15" />
+            <CheckBox fx:id="inPortADC" mnemonicParsing="false" text="In Port ADC" GridPane.rowIndex="16" />
+            <CheckBox fx:id="nDataCheck" mnemonicParsing="false" text="nData" GridPane.rowIndex="17" />
+            <CheckBox fx:id="nameCheck" mnemonicParsing="false" text="Name" GridPane.rowIndex="18" />
+            <CheckBox fx:id="rangeMinCheck" mnemonicParsing="false" text="Range Min" GridPane.rowIndex="19" />
+            <CheckBox fx:id="rangeMaxCheck" mnemonicParsing="false" text=" Range Max" GridPane.rowIndex="20" />
+            <CheckBox fx:id="defaultAlarmThreasholdCheck" mnemonicParsing="false" text="Default Alarm Threashold" GridPane.rowIndex="21" />
+            <CheckBox fx:id="multiplierCheck" mnemonicParsing="false" text="Multiplier" GridPane.rowIndex="22" />
+            <CheckBox fx:id="measureUnitCheck" mnemonicParsing="false" text="Measure Unit" GridPane.rowIndex="23" />
+         </children>
+      </GridPane>
+      <ButtonBar layoutX="152.0" layoutY="684.0" prefHeight="57.0" prefWidth="224.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
