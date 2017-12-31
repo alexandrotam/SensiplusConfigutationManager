@@ -144,7 +144,7 @@ public class SPSensingElement {
         return rSense;
     }
 
-    public void setrSense(int rSense) {
+    public void setrSense(Integer rSense) {
         this.rSense.set(rSense);
     }
 

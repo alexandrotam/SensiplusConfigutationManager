@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
+<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="11.0" prefHeight="653.0" prefWidth="845.0">
         <columnConstraints>
@@ -69,8 +69,8 @@
             <Label text="Default Alarm Threashold" GridPane.rowIndex="21" />
             <Label text="Range Max" GridPane.rowIndex="20" />
             <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
-            <TextField fx:id="frequencyField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="DCBiasField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextField fx:id="frequencyField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="DCBiasField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             <TextField fx:id="filterField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
             <TextField fx:id="phaseShiftField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
             <TextField fx:id="conversionRateField" GridPane.columnIndex="1" GridPane.rowIndex="15" />

@@ -3,6 +3,7 @@ package it.unicas.SensiplusConfigurationManager.model.dao.mysql;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOSPSensingElement;
+import it.unicas.SensiplusConfigurationManager.view.SPSensingElementSearchDialogController;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -110,8 +111,9 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
                 Statement st = DAOMySQLSettings.getStatement();
 
+
                 String sql = "select * from spsensingelement where idSPSensingElement like '";
-                sql += a.getIdSPSensingElement() + "%' or rSense  ="+a.getrSense();
+                sql += a.getIdSPSensingElement() + "%' and rSense  ="+a.getrSense();
                 sql += " or  inGain =" + a.getInGain();
                 sql += " or outGain =" + a.getInGain();
                 sql += " and contacts like '" + a.getContacts() + "%'";

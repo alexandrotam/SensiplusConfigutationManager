@@ -2,10 +2,7 @@ package it.unicas.SensiplusConfigurationManager;
 
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.DAOMySQLSettings;
-import it.unicas.SensiplusConfigurationManager.view.RootLayoutController;
-import it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController;
-import it.unicas.SensiplusConfigurationManager.view.SPSensingElementOverviewController;
-import it.unicas.SensiplusConfigurationManager.view.SettingsEditDialogController;
+import it.unicas.SensiplusConfigurationManager.view.*;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -170,6 +167,35 @@ public class MainApp extends Application {
             dialogStage.setScene(scene);
 
             SPSensingElementEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingElement(spSensingElement);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showSPSensingElementSearchDialog(SPSensingElement spSensingElement, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingELementSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPSensingELement");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPSensingElementSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPSensingElement(spSensingElement);
 

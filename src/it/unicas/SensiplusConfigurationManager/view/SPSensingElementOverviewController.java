@@ -270,9 +270,10 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleSearchSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,"",0,"","","",0,"",0,"",
-                0,"",0,"",0.00,0.00,0.00,0,"","");
-        boolean okClicked = mainApp.showSPSensingElementEditDialog(tempSPSensingElement,false);
+        SPSensingElement tempSPSensingElement = new SPSensingElement(0,1,0,"",0.00,
+                "",0,"","","",0,"",0,"",
+                50,"",1,"",0.00,0.00,0.00,0,"","");
+        boolean okClicked = mainApp.showSPSensingElementSearchDialog(tempSPSensingElement,false);
         if (okClicked) {
             //mainApp.getSPSensingElementData().add(tempSPSensingElement);
             try {
@@ -322,4 +323,6 @@ public class SPSensingElementOverviewController {
             alert.showAndWait();
         }
     }
+
+
 }
