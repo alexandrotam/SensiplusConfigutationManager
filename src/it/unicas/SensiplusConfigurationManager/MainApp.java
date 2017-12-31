@@ -171,7 +171,7 @@ public class MainApp extends Application {
 
             SPSensingElementEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
-            controller.setSpSensingElement(spSensingElement);
+            controller.setSPSensingElement(spSensingElement);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

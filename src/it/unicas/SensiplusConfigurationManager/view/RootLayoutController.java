@@ -55,6 +55,7 @@ public class RootLayoutController {
 
     }
 
+
     /**
      * Opens the birthday statistics.
      */

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
+<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="11.0" prefHeight="653.0" prefWidth="845.0">
         <columnConstraints>
@@ -68,29 +69,29 @@
             <Label text="Default Alarm Threashold" GridPane.rowIndex="21" />
             <Label text="Range Max" GridPane.rowIndex="20" />
             <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
-            <TextField fx:id="outGainField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="inGainField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="contactsField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="frequencyField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="harmonicField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
             <TextField fx:id="DCBiasField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField fx:id="modeVIField" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <TextField fx:id="measureTechniqueField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <TextField fx:id="measureTypeField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
             <TextField fx:id="filterField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <TextField fx:id="phaseShiftModeField" GridPane.columnIndex="1" GridPane.rowIndex="12" />
             <TextField fx:id="phaseShiftField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <TextField fx:id="IQField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
             <TextField fx:id="conversionRateField" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <TextField fx:id="inPortADCField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-            <TextField fx:id="nDataField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
             <TextField fx:id="nameField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
             <TextField fx:id="rangeMinField" GridPane.columnIndex="1" GridPane.rowIndex="19" />
             <TextField fx:id="rangeMaxField" GridPane.columnIndex="1" GridPane.rowIndex="20" />
             <TextField fx:id="defaultAlarmThresholdField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
-            <TextField fx:id="multiplierField" GridPane.columnIndex="1" GridPane.rowIndex="22" />
-            <TextField fx:id="measureUnitField" GridPane.columnIndex="1" GridPane.rowIndex="23" />
-            <TextField fx:id="rSenseField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="rSenseField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <ComboBox fx:id="inGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ComboBox fx:id="outGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="contactsField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="multiplierField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+            <ComboBox fx:id="measureUnitField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="23" />
+            <ComboBox fx:id="harmonicField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="modeVIField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <ComboBox fx:id="measureTechniqueField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <ComboBox fx:id="measureTypeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <ComboBox fx:id="phaseShiftModeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+            <ComboBox fx:id="IQField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+            <ComboBox fx:id="inPortADCField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <ComboBox fx:id="nDataField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
          </children>
       </GridPane>
       <ButtonBar layoutX="142.0" layoutY="674.0" prefHeight="57.0" prefWidth="224.0">

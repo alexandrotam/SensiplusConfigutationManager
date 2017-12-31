@@ -2,10 +2,16 @@ package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
+import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.stage.Stage;
+
+import java.util.List;
 
 public class SPFamilyOverviewController {
     @FXML
@@ -40,23 +46,9 @@ public class SPFamilyOverviewController {
 
     public SPFamilyOverviewController() {
     }
+
     /*
-    private void initialize() {
-        idSPFamilyColumn.setCellValueFactory(cellData->toString(cellData.getValue().idspfamilyProperty));
-        nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        idColumn.setCellValueFactory(cellData->cellData.getValue().idProperty());
-        showSPFamilyElementDetails(null);
 
-        spFamilyTableView.getSelectionModel().selectedItemProperty().addListener(
-                (observable, oldValue, newValue) -> showSPFamilyElementDetails(newValue));
-    }
-
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
-
-        // Add observable list data to the table
-        spFamilyTableView.setItems(mainApp.getSPFamilyData());
-    }
 */
 }
 

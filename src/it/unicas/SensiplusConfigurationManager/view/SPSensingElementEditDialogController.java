@@ -3,11 +3,14 @@ package it.unicas.SensiplusConfigurationManager.view;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.*;
 
-    /**
+
+/**
      * Dialog to edit details of a spSensingElement.
      *
      * @author Gruppo #7
@@ -17,39 +20,39 @@ import javafx.stage.Stage;
         @FXML
         private TextField idSPSensingElementField;
         @FXML
-        private TextField rSenseField;
+        private ComboBox rSenseField;
         @FXML
-        private TextField inGainField;
+        private ComboBox inGainField;
         @FXML
-        private TextField outGainField;
+        private ComboBox outGainField;
         @FXML
-        private TextField contactsField;
+        private ComboBox contactsField;
         @FXML
         private TextField frequencyField;
         @FXML
-        private TextField harmonicField;
+        private ComboBox harmonicField;
         @FXML
         private TextField DCBiasField;
         @FXML
-        private TextField modeVIField;
+        private ComboBox modeVIField;
         @FXML
-        private TextField measureTechniqueField;
-        @FXML
-        private TextField measureTypeField;
+        private ComboBox measureTypeField;
         @FXML
         private TextField filterField;
         @FXML
-        private TextField phaseShiftModeField;
+        private ComboBox phaseShiftModeField;
         @FXML
         private TextField phaseShiftField;
         @FXML
-        private TextField IQField;
+        private ComboBox IQField;
         @FXML
         private TextField conversionRateField;
         @FXML
-        private TextField inPortADCField;
+        private ComboBox inPortADCField;
         @FXML
-        private TextField nDataField;
+        private ComboBox nDataField;
+        @FXML
+        private ComboBox measureUnitField;
         @FXML
         private TextField nameField;
         @FXML
@@ -59,338 +62,183 @@ import javafx.stage.Stage;
         @FXML
         private TextField defaultAlarmThresholdField;
         @FXML
-        private TextField multiplierField;
+        private ComboBox multiplierField;
         @FXML
-        private TextField measureUnitField;
+        private ComboBox measureTechniqueField;
+
 
 
         private Stage dialogStage;
-        private SPSensingElement spSensingElement;
+        private SPSensingElement SensingElement;
         private boolean okClicked = false;
         private boolean verifyLen = true;
 
-        /**
-         * Initializes the controller class. This method is automatically called
-         * after the fxml file has been loaded.
-         */
+
         @FXML
-        private void initialize() {
+        private void initialize(){
+            rSenseField.getItems().addAll("50", "500","5000","50000");
+            inGainField.getItems().addAll("1","12","20","40");
+            outGainField.getItems().addAll("1","2","3","4","5","6","7");
+            contactsField.getItems().addAll("TWO","FOUR");
+            harmonicField.getItems().addAll("FIRST_HARMONIC","SECOND_HARMONIC","THIRD_HARMONIC");
+            modeVIField.getItems().addAll("VOUT_IIN","VIN_IIN","VOUT_VIN","VOUT_VOUT");
+            measureTypeField.getItems().addAll("IN-PHASE","QUADRATURE","MODULE","PHASE","RESISTANCE","CAPACITANCE","INDUCTANCE");
+            phaseShiftModeField.getItems().addAll("QUADRANTS","COARSE","FINE");
+            IQField.getItems().addAll("IN_PHASE","QUADRATURE");
+            inPortADCField.getItems().addAll("IA","VA");
+            nDataField.getItems().addAll("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16");
+            multiplierField.getItems().addAll("-21","-18","-15","-14","-13","-12","-11","-10","-9","-8","-7","-6","-5","-4","-3","-2","-1","0","3","6","7","8","9","10","11","12","13","14","15","16","17","18","21");
+            measureUnitField.getItems().addAll("O","F","H","C","%","V","A","L","t");
+            measureTechniqueField.getItems().addAll("DIRECT","EIS","POT","ENERGY_SPECTROSCOPY","ULTRASOUND");
+
         }
 
-        /**
-         * Sets the stage of this dialog.
-         *
-         * @param dialogStage
-         */
         public void setDialogStage(Stage dialogStage, boolean verifyLen) {
             this.dialogStage = dialogStage;
             this.verifyLen = verifyLen;
 
+            // Set the dialog icon.
+
         }
 
-        /**
-         * Sets the spSensingElement to be edited in the dialog.
-         *
-         * @param spSensingElement
-         */
-        public void setSpSensingElement(SPSensingElement spSensingElement) {
-            this.spSensingElement = spSensingElement;
+        public void setSPSensingElement(SPSensingElement SensingElement) {
+            this.SensingElement = SensingElement;
 
+            idSPSensingElementField.setText(SensingElement.getIdSPSensingElement());
+            rSenseField.setValue(SensingElement.getrSense());
+            inGainField.setValue(SensingElement.getInGain());
+            outGainField.setValue(SensingElement.getOutGain());
+            contactsField.setValue(SensingElement.getContacts());
+            frequencyField.setText(SensingElement.getFrequency().toString());
+            harmonicField.setValue(SensingElement.getHarmonic());
+            DCBiasField.setText(SensingElement.getDCBias().toString());
+            modeVIField.setValue(SensingElement.getModeVI());
+            measureTypeField.setValue(SensingElement.getMeasureType());
+            measureTechniqueField.setValue(SensingElement.getMeasureTechnique());
+            filterField.setText(SensingElement.getFilter().toString());
+            phaseShiftModeField.setValue(SensingElement.getPhaseShiftMode());
+            phaseShiftField.setText(SensingElement.getPhaseShift().toString());
+            IQField.setValue(SensingElement.getIQ());
+            conversionRateField.setText(SensingElement.getConversionRate().toString());
+            inPortADCField.setValue(SensingElement.getInPortADC());
+            nDataField.setValue(SensingElement.getnData());
+            measureUnitField.setValue(SensingElement.getMeasureUnit());
+            nameField.setText(SensingElement.getName());
+            rangeMinField.setText(SensingElement.getRangeMin().toString());
+            rangeMaxField.setText(SensingElement.getRangeMax().toString());
+            defaultAlarmThresholdField.setText(SensingElement.getDefaultAlarmThreshold().toString());
+            multiplierField.setValue(SensingElement.getMultiplier());
 
-            idSPSensingElementField.setText(spSensingElement.getIdSPSensingElement());
-            rSenseField.setText(String.valueOf(spSensingElement.getrSense()));
-            inGainField.setText(String.valueOf(spSensingElement.getInGain()));
-            outGainField.setText(String.valueOf(spSensingElement.getOutGain()));
-            contactsField.setText(spSensingElement.getContacts());
-            frequencyField.setText(String.valueOf(spSensingElement.getFrequency()));
-            harmonicField.setText(spSensingElement.getHarmonic());
-            DCBiasField.setText(String.valueOf(spSensingElement.getDCBias()));
-            modeVIField.setText(spSensingElement.getModeVI());
-            measureTechniqueField.setText(spSensingElement.getMeasureTechnique());
-            measureTypeField.setText(spSensingElement.getMeasureType());
-            filterField.setText(String.valueOf(spSensingElement.getFilter()));
-            phaseShiftModeField.setText(spSensingElement.getPhaseShiftMode());
-            phaseShiftField.setText(String.valueOf(spSensingElement.getPhaseShift()));
-            IQField.setText(spSensingElement.getIQ());
-            conversionRateField.setText(String.valueOf(spSensingElement.getConversionRate()));
-            inPortADCField.setText(spSensingElement.getInPortADC());
-            nDataField.setText(String.valueOf(spSensingElement.getnData()));
-            nameField.setText(spSensingElement.getName());
-            rangeMinField.setText(String.valueOf(spSensingElement.getRangeMin()));
-            rangeMaxField.setText(String.valueOf(spSensingElement.getRangeMax()));
-            defaultAlarmThresholdField.setText(String.valueOf(spSensingElement.getDefaultAlarmThreshold()));
-            multiplierField.setText(String.valueOf(spSensingElement.getMultiplier()));
-            measureUnitField.setText(spSensingElement.getMeasureUnit());
+            if(SensingElement.getIdSPSensingElement()!=null){
+                disableParameter();
+            }
         }
 
-        /**
-         * Returns true if the user clicked OK, false otherwise.
-         *
-         * @return
-         */
+        public void disableParameter(){
+            if(measureTechniqueField.getValue().toString()=="DIRECT"){
+                rSenseField.setDisable(true);
+                inGainField.setDisable(true);
+                outGainField.setDisable(true);
+                contactsField.setDisable(true);
+                frequencyField.setDisable(true);
+                harmonicField.setDisable(true);
+                DCBiasField.setDisable(true);
+                modeVIField.setDisable(true);
+                measureTypeField.setDisable(true);
+                phaseShiftModeField.setDisable(true);
+                phaseShiftField.setDisable(true);
+                IQField.setDisable(true);
+
+
+            }
+            else{
+                rSenseField.setDisable(false);
+                inGainField.setDisable(false);
+                outGainField.setDisable(false);
+                contactsField.setDisable(false);
+                frequencyField.setDisable(false);
+                harmonicField.setDisable(false);
+                DCBiasField.setDisable(false);
+                modeVIField.setDisable(false);
+                measureTypeField.setDisable(false);
+                phaseShiftModeField.setDisable(false);
+                phaseShiftField.setDisable(false);
+                IQField.setDisable(false);
+
+            }
+        }
+
+
         public boolean isOkClicked() {
             return okClicked;
         }
 
-        /**
-         * Called when the user clicks ok.
-         */
         @FXML
         private void handleOk() {
             if (isInputValid(verifyLen)) {
-                spSensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
-                spSensingElement.setrSense(Integer.parseInt(rSenseField.getText()));
-                spSensingElement.setInGain(Integer.parseInt(inGainField.getText()));
-                spSensingElement.setOutGain(Integer.parseInt(outGainField.getText()));
-                spSensingElement.setContacts(contactsField.getText());
-                spSensingElement.setFrequency(Double.parseDouble(frequencyField.getText()));
-                spSensingElement.setHarmonic(harmonicField.getText());
-                spSensingElement.setDCBias(Integer.parseInt(DCBiasField.getText()));
-                spSensingElement.setModeVI(modeVIField.getText());
-                spSensingElement.setMeasureTechnique(measureTechniqueField.getText());
-                spSensingElement.setMeasureType(measureTypeField.getText());
-                spSensingElement.setFilter(Integer.parseInt(filterField.getText()));
-                spSensingElement.setPhaseShiftMode(phaseShiftModeField.getText());
-                spSensingElement.setPhaseShift(Integer.parseInt(phaseShiftField.getText()));
-                spSensingElement.setIQ(IQField.getText());
-                spSensingElement.setConversionRate(Integer.parseInt(conversionRateField.getText()));
-                spSensingElement.setInPortADC(inPortADCField.getText());
-                spSensingElement.setnData(Integer.parseInt(nDataField.getText()));
-                spSensingElement.setName(nameField.getText());
-                spSensingElement.setRangeMin(Double.parseDouble(rangeMinField.getText()));
-                spSensingElement.setRangeMax(Double.parseDouble(rangeMaxField.getText()));
-                spSensingElement.setDefaultAlarmThreshold(Double.parseDouble(defaultAlarmThresholdField.getText()));
-                spSensingElement.setMultiplier(Integer.parseInt(multiplierField.getText()));
-                spSensingElement.setMeasureUnit(measureUnitField.getText());
+                SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
+                SensingElement.setrSense(Integer.parseInt(rSenseField.getValue().toString()));
+                SensingElement.setInGain(Integer.parseInt(inGainField.getValue().toString()));
+                SensingElement.setOutGain(Integer.parseInt(outGainField.getValue().toString()));
+                SensingElement.setContacts(contactsField.getValue().toString());
+                SensingElement.setFrequency(Double.valueOf(frequencyField.getText()));
+                SensingElement.setHarmonic(harmonicField.getValue().toString());
+                SensingElement.setDCBias(Integer.valueOf(DCBiasField.getText()));
+                SensingElement.setModeVI(modeVIField.getValue().toString());
+                SensingElement.setMeasureType(measureTypeField.getValue().toString());
+                SensingElement.setMeasureTechnique(measureTechniqueField.getValue().toString());
+                SensingElement.setFilter(Integer.valueOf(filterField.getText()));
+                SensingElement.setPhaseShiftMode(phaseShiftModeField.getValue().toString());
+                SensingElement.setPhaseShift(Integer.parseInt(phaseShiftField.getText().toString()));
+                SensingElement.setIQ(IQField.getValue().toString());
+                SensingElement.setConversionRate(Integer.parseInt(conversionRateField.getText().toString()));
+                SensingElement.setInPortADC(inPortADCField.getValue().toString());
+                SensingElement.setnData(Integer.parseInt(nDataField.getValue().toString()));
+                SensingElement.setMeasureUnit(measureUnitField.getValue().toString());
+                SensingElement.setName(nameField.getText());
+                SensingElement.setRangeMin(Double.valueOf(rangeMinField.getText()));
+                SensingElement.setRangeMax(Double.valueOf(rangeMaxField.getText()));
+                SensingElement.setDefaultAlarmThreshold(Double.valueOf(defaultAlarmThresholdField.getText()));
+                SensingElement.setMultiplier(Integer.parseInt(multiplierField.getValue().toString()));
 
                 okClicked = true;
                 dialogStage.close();
             }
         }
 
-        /**
-         * Called when the user clicks cancel.
-         */
         @FXML
         private void handleCancel() {
             dialogStage.close();
         }
 
-        /**
-         * Validates the user input in the text fields.
-         *
-         * @return true if the input is valid
-         */
+
         private boolean isInputValid(boolean verifyLen) {
             String errorMessage = "";
 
-            if (idSPSensingElementField.getText() == null || (verifyLen && idSPSensingElementField.getText().length() == 0)) {
-                errorMessage += "No valid id!\n";
+            if(Double.parseDouble(frequencyField.getText()) < 0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000)) {
+                errorMessage += "No valid frequence!\n";
             }
 
-            if (rSenseField.getText() == null && verifyLen) {
-                errorMessage += "No valid rSense!\n";
+            if(Integer.parseInt(DCBiasField.getText()) < -2048 || (verifyLen && Integer.parseInt(DCBiasField.getText()) > 2048)) {
+                errorMessage += "No valid DCBias!\n";
             }
 
-            if (rSenseField.getText() != null && !rSenseField.getText().matches("50||500||5000||50000")){
-                    errorMessage+= "No valid rSense!\n";
+            if(Integer.parseInt(filterField.getText()) < 1 || (verifyLen && Integer.parseInt(filterField.getText()) > 256)) {
+                errorMessage += "No valid filter!\n";
             }
 
-            if (inGainField.getText() == null && verifyLen) {
-                errorMessage += "No valid In Gain!\n";
+            if(Double.parseDouble(phaseShiftField.getText()) < 0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
+                errorMessage += "No valid phaseShift!\n";
             }
 
-            if (inGainField.getText() != null && !inGainField.getText().matches("1||12||20||40")){
-                errorMessage+= "No valid In Gain!\n";
-            }
-
-            if (outGainField.getText() == null && verifyLen) {
-                errorMessage += "No valid Out Gain!\n";
-            }
-
-            if (outGainField.getText() != null && !outGainField.getText().matches("0||1||2||3||4||5||6||7")){
-                errorMessage+= "No valid Out Gain!\n";
-            }
-
-
-            if (contactsField.getText() == null && verifyLen) {
-                errorMessage += "No valid Contacts!\n";
-            }
-
-            if (contactsField.getText() != null && !contactsField.getText().matches("(?i)TWO||(?i)FOUR")){
-                errorMessage+= "No valid Contacts!\n";
-            }
-
-            if (frequencyField.getText() == null && verifyLen) {
-                errorMessage += "No valid Frequency!\n";
-            }
-
-            if (frequencyField.getText() != null &&
-                    (Double.parseDouble(frequencyField.getText())<0 || Double.parseDouble(frequencyField.getText())>5000000)){
-                errorMessage+= "No valid Frequency!\n";
-            }
-
-            if (harmonicField.getText() == null && verifyLen) {
-                errorMessage += "No valid Harmonic!\n";
-            }
-
-            if (harmonicField.getText() != null &&
-                    !harmonicField.getText().matches("(?i)FIRST HARMONIC||(?i)SECOND HARMONIC||(?i)THIRD HARMONIC")){
-                errorMessage+= "No valid Harmonic!\n";
-            }
-
-            if (DCBiasField.getText() == null && verifyLen) {
-                errorMessage += "No valid DC Bias!\n";
-            }
-
-            if (DCBiasField.getText() != null &&
-                    (Double.parseDouble(DCBiasField.getText())<(-2048) || Double.parseDouble(DCBiasField.getText())>2048)){
-                errorMessage+= "No valid DC Bias!\n";
-            }
-
-            if (modeVIField.getText() == null && verifyLen) {
-                errorMessage += "No valid Mode VI!\n";
-            }
-
-            if (modeVIField.getText() != null &&
-                    !modeVIField.getText().matches("(?i)VOUT IIN||(?i)VIN IIN||(?i)VOUT VIN||(?i)VOUT VOUT")){
-                errorMessage+= "No valid Mode VI!\n";
-            }
-
-            if (measureTechniqueField.getText() == null && verifyLen) {
-                errorMessage += "No valid Measure Technique!\n";
-            }
-
-            if (measureTechniqueField.getText() != null &&
-                    !measureTechniqueField.getText().matches("(?i)DIRECT||(?i)EIS||(?i)POT||(?i)ENERGY SPECTROSCOPY||(?i)ULTRASOUND")){
-                errorMessage+= "No valid Measure Technique!\n";
-            }
-
-            if (measureTypeField.getText() == null && verifyLen) {
-                errorMessage += "No valid Measure Type!\n";
-            }
-
-            if (measureTypeField.getText() != null &&
-                    !measureTypeField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE||(?i)MODULE||(?i)PHASE||" +
-                            "(?i)RESISTANCE||(?i)CAPACITANCE||(?i)INDUCTANCE")){
-                errorMessage+= "No valid Measure Type!\n";
-            }
-
-            if (filterField.getText() == null && verifyLen) {
-                errorMessage += "No valid Filter!\n";
-            }
-
-            if (filterField.getText() != null &&
-                    (Integer.parseInt(filterField.getText())<0 || Integer.parseInt(filterField.getText())>256)){
-                errorMessage+= "No valid filter!\n";
-            }
-
-            if (phaseShiftModeField.getText() == null && verifyLen) {
-                errorMessage += "No valid Phase Shift!\n";
-            }
-
-            if (phaseShiftModeField.getText() != null &&
-                    !phaseShiftModeField.getText().matches("(?i)QUADRANTS||(?i)COARSE||(?i)FINE")){
-                errorMessage+= "No valid Phase Shift!\n";
-            }
-
-
-            if (phaseShiftField.getText() == null && verifyLen) {
-                errorMessage += "No valid Phase Shift Mode!\n";
-            }
-
-            if (phaseShiftField.getText() != null &&
-                    (Integer.parseInt(phaseShiftField.getText())<0 || Integer.parseInt(phaseShiftField.getText())>360)){
-                errorMessage+= "No valid Phase Shift Mode!\n";
-            }
-
-            if (IQField.getText() == null && verifyLen) {
-                errorMessage += "No valid IQ!\n";
-            }
-
-            if (IQField.getText() != null &&
-                    !IQField.getText().matches("(?i)IN PHASE||(?i)QUADRATURE")){
-                errorMessage+= "No valid IQ!\n";
-            }
-
-            if (conversionRateField.getText() == null && verifyLen) {
-                errorMessage += "No valid Conversion Rate!\n";
-            }
-
-            if (conversionRateField.getText() != null &&
-                    (Double.parseDouble(conversionRateField.getText())<1 || Double.parseDouble(conversionRateField.getText())>100000)){
-                errorMessage+= "No valid Conversion Rate!\n";
-            }
-
-            if (inPortADCField.getText() == null && verifyLen) {
-                errorMessage += "No valid In Port ADC!\n";
-            }
-
-            if (inPortADCField.getText() != null &&
-                    !inPortADCField.getText().matches("(?i)IA||(?i)VA")){
-                errorMessage+= "No valid In Port Rate!\n";
-            }
-
-            if (nDataField.getText() == null && verifyLen) {
-                errorMessage += "No valid nData!\n";
-            }
-
-            if (nDataField.getText() != null &&
-                    (Integer.parseInt(nDataField.getText())<1 || Integer.parseInt(nDataField.getText())>16)){
-                errorMessage+= "No valid nData!\n";
-            }
-
-            if (rangeMinField.getText() == null && verifyLen) {
-                errorMessage += "No valid Range Min!\n";
-            }
-
-            if (rangeMinField.getText() != null &&
-                    (Double.parseDouble(rangeMinField.getText())<(-10E-21) || Double.parseDouble(rangeMinField.getText())>(10E21))){
-                errorMessage+= "No valid Range Min!\n";
-            }
-
-            if (rangeMaxField.getText() == null && verifyLen) {
-                errorMessage += "No valid Range Max!\n";
-            }
-
-            if (rangeMaxField.getText() != null &&
-                    (Double.parseDouble(rangeMaxField.getText())<(-10E-21) || Double.parseDouble(rangeMaxField.getText())>(10E21))){
-                errorMessage+= "No valid Range Max!\n";
-            }
-
-            if (defaultAlarmThresholdField.getText() == null && verifyLen) {
-                errorMessage += "No valid Default Alarm Threshold!\n";
-            }
-
-            if (defaultAlarmThresholdField.getText() != null &&
-                    (Double.parseDouble(defaultAlarmThresholdField.getText())<(-10E-21) || Double.parseDouble(defaultAlarmThresholdField.getText())>(10E21))
-                    && (Double.parseDouble(defaultAlarmThresholdField.getText())<Double.parseDouble(rangeMinField.getText())
-                    || Double.parseDouble(defaultAlarmThresholdField.getText())>Double.parseDouble(rangeMaxField.getText()))){
-                errorMessage+= "No valid Default Alarm Threshold!\n";
-            }
-
-            if (multiplierField.getText() == null && verifyLen) {
-                errorMessage += "No valid Multiplier!\n";
-            }
-
-            if (multiplierField.getText() != null &&
-                    (Integer.parseInt(multiplierField.getText())<(-21) || Integer.parseInt(multiplierField.getText())>21)){
-                errorMessage+= "No valid Multiplier!\n";
-            }
-
-            if (measureUnitField.getText() == null && verifyLen) {
-                errorMessage += "No valid Measure Unit!\n";
-            }
-
-            if (measureUnitField.getText() != null &&
-                    !measureUnitField.getText().matches("(?i)O||(?i)F||(?i)H||(?i)C||%||(?i)V||(?i)A||(?i)L||(?i)T")){
-                errorMessage+= "No valid Measure Unit!\n";
+            if(Double.parseDouble(conversionRateField.getText()) < 1 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
+                errorMessage += "No valid  conversionRate!\n";
             }
 
             if (errorMessage.length() == 0) {
                 return true;
-            } else {
-                // Show the error message.
+            }else {
+
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.initOwner(dialogStage);
                 alert.setTitle("Invalid Fields");
@@ -403,4 +251,3 @@ import javafx.stage.Stage;
             }
         }
     }
-
