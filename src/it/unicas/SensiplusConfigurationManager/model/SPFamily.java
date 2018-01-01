@@ -68,7 +68,7 @@ public class SPFamily {
         this.idSPFamily.set(idSPFamily);
     }
 
-    public IntegerProperty IdSPSenseingElementProperty() {
+    public IntegerProperty IdSPFamilyProperty() {
         return idSPFamily;
     }
 

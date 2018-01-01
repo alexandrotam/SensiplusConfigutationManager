@@ -131,7 +131,7 @@ public class SPSensingElement {
         this.idSPSensingElement.set(idSPSensingElement);
     }
 
-    public StringProperty IdSPSenseingElementProperty() {
+    public StringProperty IdSPSensingElementProperty() {
         return idSPSensingElement;
     }
 

@@ -131,7 +131,7 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void initialize() {
-        idSPSensingElementColumn.setCellValueFactory(cellData -> cellData.getValue().IdSPSenseingElementProperty());
+        idSPSensingElementColumn.setCellValueFactory(cellData -> cellData.getValue().IdSPSensingElementProperty());
 
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         showSPSensingElementDetails(null);
