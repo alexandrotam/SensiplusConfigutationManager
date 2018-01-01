@@ -31,6 +31,10 @@ public class RootLayoutController {
 
     }
 
+    public void handleSPFamily(){
+
+    }
+
 
     /**
      * Opens an about dialog.

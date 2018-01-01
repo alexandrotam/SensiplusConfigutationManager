@@ -56,6 +56,7 @@ public class MainApp extends Application {
 
         initRootLayout();
         showSPSensingElementOverview();
+        showSPFamilyOverview();
         this.primaryStage.show();
     }
 
@@ -78,6 +79,27 @@ public class MainApp extends Application {
         }
 
     }
+
+    private void showSPFamilyOverview() {
+        try {
+            // Load SPFamily overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPFamilyOverview.fxml"));
+            AnchorPane SPFamilyOverview = (AnchorPane) loader.load();
+
+            // Set SPFamily overview into the center of root layout.
+            rootLayout.setCenter(SPFamilyOverview);
+
+            // Give the controller access to the main app.
+            SPFamilyOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 
     public void initRootLayout() {
