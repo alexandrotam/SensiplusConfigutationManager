@@ -150,12 +150,14 @@ public class SPFamilyOverviewController {
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new SPSensingElement.
+     * details for a new SPFamily.
      */
     @FXML
     private void handleSearchSPFamily() {
         SPFamily tempSPFamily = new SPFamily(0,"","","","","");
-              try {
+        boolean okClicked = mainApp.showSPFamilyEditDialog(tempSPFamily,false);
+        if (okClicked) {
+            try {
                 List<SPFamily> list = SPFamilyDAOMySQLImpl.getInstance().select(tempSPFamily);
                 mainApp.getSPFamilyData().clear();
                 mainApp.getSPFamilyData().addAll(list);
@@ -173,19 +175,21 @@ public class SPFamilyOverviewController {
 
 
 
+
+
     /**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected SPFamily.
      */
-  /* @FXML
+   @FXML
     private void handleEditSPFamily() {
-        SPFamily selectedSPFamily = spFamilyTableView.getSelectionModel().getSelectedItem();
-        if (selectedSPFamily != null) {
-            boolean okClicked = mainApp.showSPFamilyEditDialog(selectedSPFamily,true);
+       SPFamily selectedSpFamily=spFamilyTableView.getSelectionModel().getSelectedItem();
+        if (selectedSpFamily != null) {
+            boolean okClicked = mainApp.showSPFamilyEditDialog(selectedSpFamily,true);
             if (okClicked) {
                 try {
-                    SPFamilyDAOMySQLImpl.getInstance().update(selectedSPFamily);
-                    showSPFamilyDetails(selectedSPFamily);
+                    SPFamilyDAOMySQLImpl.getInstance().update(selectedSpFamily);
+                    showSPFamilyDetails(selectedSpFamily);
                 } catch (DAOException e) {
                     e.printStackTrace();
                 }
@@ -201,7 +205,9 @@ public class SPFamilyOverviewController {
 
             alert.showAndWait();
         }
-   }*/
+   }
+}
+
 
 
 

@@ -31,8 +31,12 @@ public class RootLayoutController {
 
     }
 
-    public void handleSPFamily(){
+    public void handleSPSensingElement(){
+        mainApp.showSPSensingElementOverview();
+    }
 
+    public void handleSPFamily(){
+        mainApp.showSPFamilyOverview();
     }
 
 
@@ -43,7 +47,7 @@ public class RootLayoutController {
     private void handleAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("AddressApp");
-        alert.setHeaderText("About");
+        alert.setHeaderText("Tarallo & Fusco");
         alert.setContentText("Author: Gruppo 7\nVersione 1.0");
 
         alert.showAndWait();
@@ -61,7 +65,7 @@ public class RootLayoutController {
 
 
     /**
-     * Opens the birthday statistics.
+     *
      */
 
 }

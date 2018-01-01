@@ -56,11 +56,10 @@ public class MainApp extends Application {
 
         initRootLayout();
         showSPSensingElementOverview();
-        showSPFamilyOverview();
         this.primaryStage.show();
     }
 
-    private void showSPSensingElementOverview() {
+    public void showSPSensingElementOverview() {
         try {
             // Load SPSensingElement overview.
             FXMLLoader loader = new FXMLLoader();
@@ -80,7 +79,7 @@ public class MainApp extends Application {
 
     }
 
-    private void showSPFamilyOverview() {
+    public void showSPFamilyOverview() {
         try {
             // Load SPFamily overview.
             FXMLLoader loader = new FXMLLoader();
