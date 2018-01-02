@@ -103,10 +103,10 @@ public class SPSensingElement {
 
 
     public SPSensingElement() {
-        this(50, 1, 0,"TWO",78125.0,"FIRST HARMONIC",0,
-                "VOUT IIN","EIS","IN PHASE",1,"QUADRANTS",0,
-                "IN PHASE",50,"IA",1,null,0.0,100.0,
-                50.0,0,"O",null);
+        this(0, 0, 0,null,0.0,null,0,
+                "","","",0,"",0,
+                "",0,"",0,null,0.0,0.0,
+                0.0,0,"O",null);
     }
 
     public SPSensingElement(String idSPSensingElement, String name) {

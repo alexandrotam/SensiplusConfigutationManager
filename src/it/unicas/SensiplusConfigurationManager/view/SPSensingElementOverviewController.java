@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import it.unicas.SensiplusConfigurationManager.MainApp;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.List;
@@ -244,7 +245,9 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleNewSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement();
+        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,
+                "",0,"","","",0,"",0,"",
+                0,"",0,"",0.00,0.00,0.00,0,"","");
         boolean okClicked = mainApp.showSPSensingElementEditDialog(tempSPSensingElement, true);
         Stage dialog=new Stage();
 
@@ -270,9 +273,9 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleSearchSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement(0,1,0,"",0.00,
+        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,
                 "",0,"","","",0,"",0,"",
-                50,"",1,"",0.00,0.00,0.00,0,"","");
+                0,"",0,"",0.00,0.00,0.00,0,"","");
         boolean okClicked = mainApp.showSPSensingElementSearchDialog(tempSPSensingElement,false);
         if (okClicked) {
             //mainApp.getSPSensingElementData().add(tempSPSensingElement);
@@ -301,6 +304,7 @@ public class SPSensingElementOverviewController {
     @FXML
     private void handleEditSPSensingElement() {
         SPSensingElement selectedSPSensingElement = spSensingElementTableView.getSelectionModel().getSelectedItem();
+
         if (selectedSPSensingElement != null) {
             boolean okClicked = mainApp.showSPSensingElementEditDialog(selectedSPSensingElement,true);
             if (okClicked) {

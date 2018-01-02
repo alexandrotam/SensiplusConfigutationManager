@@ -8,7 +8,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.RootLayoutController">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menu1" BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="Main">
             <items>
@@ -17,7 +17,7 @@
               <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Select">
+            <Menu fx:id="SelectMenu" mnemonicParsing="false" text="Select">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElement" text="Sensing Element" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPFamily" text="Family" />

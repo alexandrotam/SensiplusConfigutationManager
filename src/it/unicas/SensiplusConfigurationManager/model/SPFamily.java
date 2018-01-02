@@ -16,6 +16,7 @@ public class SPFamily {
     private StringProperty osctrim;
 
 
+
     public SPFamily(Integer idSPFamily,String name,String id,String hwVersion,String sysclock,String osctrim) {
         this.name = new SimpleStringProperty(name);
         this.id = new SimpleStringProperty(id);
@@ -71,6 +72,7 @@ public class SPFamily {
     public IntegerProperty IdSPFamilyProperty() {
         return idSPFamily;
     }
+
 
     public String getName() {
         return name.get();

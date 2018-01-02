@@ -9,14 +9,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -37,10 +37,7 @@ public class MainApp extends Application {
     public MainApp() {
     }
 
-    /**
-     * Returns the data as an observable list of spSensingElement.
-     * @return
-     */
+
 
     public ObservableList<SPSensingElement> getSPSensingElementData() {
         return SPSensigElementData;
@@ -53,6 +50,8 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage=primaryStage;
         this.primaryStage.setTitle("Sensiplus Configuration Manager");
+
+        this.primaryStage.getIcons().add(new Image("https://previews.123rf.com/images/hedgehogvector/hedgehogvector1603/hedgehogvector160302981/54703708-icona-del-sensore-del-carburante-Archivio-Fotografico.jpg"));
 
         initRootLayout();
         showSPSensingElementOverview();
@@ -191,6 +190,7 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
 
             SPSensingElementEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -235,6 +235,35 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPFamilySearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPFamily");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPFamilySearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPFamily(spFamily);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPSensingElementSearchDialog(SPSensingElement spSensingElement, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -244,7 +273,7 @@ public class MainApp extends Application {
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit SPSensingELement");
+            dialogStage.setTitle("Search SPSensingELement");
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);

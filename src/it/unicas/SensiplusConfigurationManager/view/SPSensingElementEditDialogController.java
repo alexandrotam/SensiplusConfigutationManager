@@ -134,6 +134,8 @@ import java.awt.*;
             }
         }
 
+
+
         public void disableParameter(){
             if(measureTechniqueField.getValue().toString()=="DIRECT"){
                 rSenseField.setDisable(true);
@@ -201,6 +203,7 @@ import java.awt.*;
                 SensingElement.setDefaultAlarmThreshold(Double.valueOf(defaultAlarmThresholdField.getText()));
                 SensingElement.setMultiplier(Integer.parseInt(multiplierField.getValue().toString()));
 
+
                 okClicked = true;
                 dialogStage.close();
             }
@@ -223,15 +226,15 @@ import java.awt.*;
                 errorMessage += "No valid DCBias!\n";
             }
 
-            if(Integer.parseInt(filterField.getText()) < 1 || (verifyLen && Integer.parseInt(filterField.getText()) > 256)) {
+            if(Integer.parseInt(filterField.getText()) <0 || (verifyLen && Integer.parseInt(filterField.getText()) > 256)) {
                 errorMessage += "No valid filter!\n";
             }
 
-            if(Double.parseDouble(phaseShiftField.getText()) < 0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
+            if(Double.parseDouble(phaseShiftField.getText()) <0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
                 errorMessage += "No valid phaseShift!\n";
             }
 
-            if(Double.parseDouble(conversionRateField.getText()) < 1 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
+            if(Double.parseDouble(conversionRateField.getText()) <0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
                 errorMessage += "No valid  conversionRate!\n";
             }
 

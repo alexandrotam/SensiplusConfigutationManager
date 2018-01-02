@@ -4,6 +4,7 @@ import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
+import javafx.beans.property.IntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -17,7 +18,7 @@ public class SPFamilyOverviewController {
     @FXML
     private TableView<SPFamily> spFamilyTableView;
     @FXML
-    private TableColumn<SPFamily, String> idSPFamilyColumn;
+    private TableColumn<SPFamily, Integer> idSPFamilyColumn;
     @FXML
     private TableColumn<SPFamily, String> nameColumn;
     @FXML
@@ -53,7 +54,9 @@ public class SPFamilyOverviewController {
      */
     @FXML
     private void initialize() {
-        //idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().IdSPFamilyProperty());
+
+       //idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().IdSPFamilyProperty());
+
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         showSPFamilyDetails(null);
 
@@ -124,7 +127,7 @@ public class SPFamilyOverviewController {
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new SPSensingElement.
+     * details for a new SPFamily.
      */
     @FXML
     private void handleNewSPFamily() {
@@ -155,7 +158,7 @@ public class SPFamilyOverviewController {
     @FXML
     private void handleSearchSPFamily() {
         SPFamily tempSPFamily = new SPFamily(0,"","","","","");
-        boolean okClicked = mainApp.showSPFamilyEditDialog(tempSPFamily,false);
+        boolean okClicked = mainApp.showSPFamilySearchDialog(tempSPFamily,false);
         if (okClicked) {
             try {
                 List<SPFamily> list = SPFamilyDAOMySQLImpl.getInstance().select(tempSPFamily);
