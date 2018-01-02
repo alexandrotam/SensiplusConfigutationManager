@@ -350,24 +350,24 @@ public class SPSensingElementSearchDialogController {
         inGainField.setValue(SensingElement.getInGain());
         outGainField.setValue(SensingElement.getOutGain());
         contactsField.setValue(SensingElement.getContacts());
-        frequencyField.setText(SensingElement.getFrequency().toString());
+        frequencyField.setText(SensingElement.getFrequency());
         harmonicField.setValue(SensingElement.getHarmonic());
-        DCBiasField.setText(SensingElement.getDCBias().toString());
+        DCBiasField.setText(SensingElement.getDCBias());
         modeVIField.setValue(SensingElement.getModeVI());
         measureTypeField.setValue(SensingElement.getMeasureType());
         measureTechniqueField.setValue(SensingElement.getMeasureTechnique());
-        filterField.setText(SensingElement.getFilter().toString());
+        filterField.setText(SensingElement.getFilter());
         phaseShiftModeField.setValue(SensingElement.getPhaseShiftMode());
-        phaseShiftField.setText(SensingElement.getPhaseShift().toString());
+        phaseShiftField.setText(SensingElement.getPhaseShift());
         IQField.setValue(SensingElement.getIQ());
-        conversionRateField.setText(SensingElement.getConversionRate().toString());
+        conversionRateField.setText(SensingElement.getConversionRate());
         inPortADCField.setValue(SensingElement.getInPortADC());
         nDataField.setValue(SensingElement.getnData());
         measureUnitField.setValue(SensingElement.getMeasureUnit());
         nameField.setText(SensingElement.getName());
-        rangeMinField.setText(SensingElement.getRangeMin().toString());
-        rangeMaxField.setText(SensingElement.getRangeMax().toString());
-        defaultAlarmThresholdField.setText(SensingElement.getDefaultAlarmThreshold().toString());
+        rangeMinField.setText(SensingElement.getRangeMin());
+        rangeMaxField.setText(SensingElement.getRangeMax());
+        defaultAlarmThresholdField.setText(SensingElement.getDefaultAlarmThreshold());
         multiplierField.setValue(SensingElement.getMultiplier());
 
         if(SensingElement.getIdSPSensingElement()!=null){
@@ -376,7 +376,7 @@ public class SPSensingElementSearchDialogController {
     }
 
     public void disableParameter(){
-       
+
     }
 
 
@@ -388,29 +388,29 @@ public class SPSensingElementSearchDialogController {
     private void handleOk() {
         if (isInputValid(verifyLen)) {
             SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
-            SensingElement.setrSense(Integer.parseInt(rSenseField.getValue().toString()));
-            SensingElement.setInGain(Integer.parseInt(inGainField.getValue().toString()));
-            SensingElement.setOutGain(Integer.parseInt(outGainField.getValue().toString()));
+            SensingElement.setrSense(rSenseField.getValue().toString());
+            SensingElement.setInGain(inGainField.getValue().toString());
+            SensingElement.setOutGain(outGainField.getValue().toString());
             SensingElement.setContacts(contactsField.getValue().toString());
-            SensingElement.setFrequency(Double.valueOf(frequencyField.getText()));
+            SensingElement.setFrequency(frequencyField.getText());
             SensingElement.setHarmonic(harmonicField.getValue().toString());
-            SensingElement.setDCBias(Integer.valueOf(DCBiasField.getText()));
+            SensingElement.setDCBias(DCBiasField.getText());
             SensingElement.setModeVI(modeVIField.getValue().toString());
             SensingElement.setMeasureType(measureTypeField.getValue().toString());
             SensingElement.setMeasureTechnique(measureTechniqueField.getValue().toString());
-            SensingElement.setFilter(Integer.valueOf(filterField.getText()));
+            SensingElement.setFilter(filterField.getText());
             SensingElement.setPhaseShiftMode(phaseShiftModeField.getValue().toString());
-            SensingElement.setPhaseShift(Integer.parseInt(phaseShiftField.getText().toString()));
+            SensingElement.setPhaseShift(phaseShiftField.getText().toString());
             SensingElement.setIQ(IQField.getValue().toString());
-            SensingElement.setConversionRate(Integer.parseInt(conversionRateField.getText().toString()));
+            SensingElement.setConversionRate(conversionRateField.getText().toString());
             SensingElement.setInPortADC(inPortADCField.getValue().toString());
-            SensingElement.setnData(Integer.parseInt(nDataField.getValue().toString()));
+            SensingElement.setnData(nDataField.getValue().toString());
             SensingElement.setMeasureUnit(measureUnitField.getValue().toString());
             SensingElement.setName(nameField.getText());
-            SensingElement.setRangeMin(Double.valueOf(rangeMinField.getText()));
-            SensingElement.setRangeMax(Double.valueOf(rangeMaxField.getText()));
-            SensingElement.setDefaultAlarmThreshold(Double.valueOf(defaultAlarmThresholdField.getText()));
-            SensingElement.setMultiplier(Integer.parseInt(multiplierField.getValue().toString()));
+            SensingElement.setRangeMin(rangeMinField.getText());
+            SensingElement.setRangeMax(rangeMaxField.getText());
+            SensingElement.setDefaultAlarmThreshold(defaultAlarmThresholdField.getText());
+            SensingElement.setMultiplier(multiplierField.getValue().toString());
 
             okClicked = true;
             dialogStage.close();
@@ -428,25 +428,82 @@ public class SPSensingElementSearchDialogController {
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
 
+        if(idSPSensingElementField.getText() == null || idSPSensingElementField.getText().length() == 0){
+            errorMessage += "No valid Id Sp Sensing Element!\n";
+        }
+
+        if(frequencyField.getText() == null || frequencyField.getText().length() == 0){
+            errorMessage += "No valid frequency!\n";
+        }
+
         if(Double.parseDouble(frequencyField.getText()) < 0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000)) {
             errorMessage += "No valid frequence!\n";
+        }
+
+        if(DCBiasField.getText() == null || DCBiasField.getText().length() == 0){
+            errorMessage += "No valid DCBias!\n";
         }
 
         if(Integer.parseInt(DCBiasField.getText()) < -2048 || (verifyLen && Integer.parseInt(DCBiasField.getText()) > 2048)) {
             errorMessage += "No valid DCBias!\n";
         }
 
+        if(filterField.getText() == null || filterField.getText().length() == 0){
+            errorMessage += "No valid filter!\n";
+        }
+
         if(Integer.parseInt(filterField.getText()) < 0 || (verifyLen && Integer.parseInt(filterField.getText()) > 256))  {
             errorMessage += "No valid filter!\n";
+        }
+
+        if(phaseShiftField.getText() == null || phaseShiftField.getText().length() == 0){
+            errorMessage += "No valid phaseShift!\n";
         }
 
         if(Double.parseDouble(phaseShiftField.getText()) < 0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
             errorMessage += "No valid phaseShift!\n";
         }
 
+        if(conversionRateField.getText() == null || conversionRateField.getText().length() == 0){
+            errorMessage += "No valid conversionRate!\n";
+        }
+
         if(Double.parseDouble(conversionRateField.getText()) < 0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
             errorMessage += "No valid  conversionRate!\n";
         }
+
+        if(nameField.getText() == null || nameField.getText().length() == 0){
+            errorMessage += "No valid Name!\n";
+        }
+
+        if(rangeMinField.getText() == null || rangeMinField.getText().length() == 0){
+            errorMessage += "No valid Range Min!\n";
+        }
+
+        if(Double.parseDouble(rangeMinField.getText()) < -10E-21 || Double.parseDouble(rangeMinField.getText()) > 10E21 ){
+            errorMessage += "No valid Range Min!\n";
+        }
+
+        if(rangeMaxField.getText() == null || rangeMaxField.getText().length() == 0){
+            errorMessage += "No valid Range Max!\n";
+        }
+
+        if((Double.parseDouble(rangeMaxField.getText()) < -10E-21 || Double.parseDouble(rangeMaxField.getText()) > 10E21)
+                && Double.parseDouble(rangeMaxField.getText()) < Double.parseDouble(rangeMinField.getText())){
+            errorMessage += "No valid Range Max!\n";
+        }
+
+        if(defaultAlarmThresholdField.getText() == null || defaultAlarmThresholdField.getText().length() == 0){
+            errorMessage += "No valid default alarm threshold!\n";
+        }
+
+        if((Double.parseDouble(defaultAlarmThresholdField.getText()) < -10E-21 || Double.parseDouble(defaultAlarmThresholdField.getText()) > 10E21)
+                && (Double.parseDouble(defaultAlarmThresholdField.getText()) > Double.parseDouble(rangeMaxField.getText()))
+        || (Double.parseDouble(defaultAlarmThresholdField.getText()) < Double.parseDouble(rangeMinField.getText()))) {
+            errorMessage += "No valid deafult alarm threshold!\n";
+        }
+
+
 
         if (errorMessage.length() == 0) {
             return true;

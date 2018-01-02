@@ -245,9 +245,10 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleNewSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,
-                "",0,"","","",0,"",0,"",
-                0,"",0,"",0.00,0.00,0.00,0,"","");
+        SPSensingElement tempSPSensingElement = new SPSensingElement("50","1","0","TWO","78125",
+                "FIRST HARMONIC","0","VOUT IIN","EIS","IN PHASE","1",
+                "QUADRANTS","0","IN PHASE","50","IA","1","","0",
+                "100","50","0","O","");
         boolean okClicked = mainApp.showSPSensingElementEditDialog(tempSPSensingElement, true);
         Stage dialog=new Stage();
 
@@ -273,9 +274,9 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleSearchSPSensingElement() {
-        SPSensingElement tempSPSensingElement = new SPSensingElement(0,0,0,"",0.00,
-                "",0,"","","",0,"",0,"",
-                0,"",0,"",0.00,0.00,0.00,0,"","");
+        SPSensingElement tempSPSensingElement = new SPSensingElement("","","","","",
+                "","","","","","","","","",
+                "","","","","","","","","","");
         boolean okClicked = mainApp.showSPSensingElementSearchDialog(tempSPSensingElement,false);
         if (okClicked) {
             //mainApp.getSPSensingElementData().add(tempSPSensingElement);

@@ -36,28 +36,28 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
 
             SPSensingElement toDelete = new SPSensingElement();
-            toDelete.setrSense(0);
-            toDelete.setInGain(0);
-            toDelete.setOutGain(0);
+            toDelete.setrSense("");
+            toDelete.setInGain("");
+            toDelete.setOutGain("");
             toDelete.setContacts("");
-            toDelete.setFrequency(0);
+            toDelete.setFrequency("");
             toDelete.setHarmonic("");
-            toDelete.setDCBias(0);
+            toDelete.setDCBias("");
             toDelete.setModeVI("");
             toDelete.setMeasureTechnique("");
             toDelete.setMeasureType("");
-            toDelete.setFilter(0);
+            toDelete.setFilter("");
             toDelete.setPhaseShiftMode("");
-            toDelete.setPhaseShift(0);
+            toDelete.setPhaseShift("");
             toDelete.setIQ("");
-            toDelete.setConversionRate(0);
+            toDelete.setConversionRate("");
             toDelete.setInPortADC("");
-            toDelete.setnData(0);
+            toDelete.setnData("");
             toDelete.setName("");
-            toDelete.setRangeMin(0);
-            toDelete.setRangeMax(0);
-            toDelete.setDefaultAlarmThreshold(0);
-            toDelete.setMultiplier(0);
+            toDelete.setRangeMin("");
+            toDelete.setRangeMax("");
+            toDelete.setDefaultAlarmThreshold("");
+            toDelete.setMultiplier("");
             toDelete.setMeasureUnit("");
 
             s.delete(toDelete);
@@ -75,8 +75,10 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
         public List<SPSensingElement> select(SPSensingElement a) throws DAOException {
 
             if (a == null){
-                a=new SPSensingElement(0,0,0,"",0.00,"",0,"","","",0,"",0,"",
-                        0,"",0,"",0.00,0.00,0.00,0,"","");
+                a=new SPSensingElement("","","","","","","","",
+                        "","","","","","",
+                        "","","","","","","",
+                        "","","");
                             }
 
             ArrayList<SPSensingElement> lista = new ArrayList<SPSensingElement>();
@@ -113,44 +115,22 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
 
                 String sql = "select * from spsensingelement where idSPSensingElement like '";
-                sql += a.getIdSPSensingElement() + "%' and rSense  ="+a.getrSense();
-                sql += " or  inGain =" + a.getInGain();
-                sql += " or outGain =" + a.getInGain();
-                sql += " and contacts like '" + a.getContacts() + "%'";
-                sql += " or frequency=" + a.getFrequency();
-                sql += " and harmonic like'" + a.getHarmonic() + "%'";
-                sql += " or  DCBias=" + a.getDCBias();
-                sql += " and  modeVI like '" + a.getModeVI() + "%'";
-                sql += " and  measureTechnique like '" + a.getMeasureTechnique() + "%'";
-                sql += " and  measureType like '" + a.getMeasureType() + "%'";
-                sql += " or  filter=" + a.getFilter();
-                sql += " and  phaseShiftMode like '" + a.getPhaseShiftMode() + "%'";
-                sql += " or  phaseShift=" + a.getPhaseShift();
-                sql += " and  IQ like '" + a.getIQ() + "%'";
-                sql += " or conversionRate=" + a.getConversionRate();
-                sql += " and  inPortADC like '" + a.getInPortADC() + "%'";
-                sql += " or nData=" + a.getnData();
-                sql += " and  name like '" + a.getName() + "%'";
-                sql += " or rangeMin=" + a.getRangeMin();
-                sql += " or  rangeMax=" + a.getRangeMax();
-                sql += " or  defaultAlarmThreshold=" + a.getDefaultAlarmThreshold();
-                sql += " or multiplier=" + a.getMultiplier();
-                sql += " and  measureUnit like '" + a.getMeasureUnit() + "%'";
+                sql += a.getIdSPSensingElement() + "%'";
 
 
 
                 logger.info("SQL: " + sql);
                 ResultSet rs = st.executeQuery(sql);
                 while(rs.next()){
-                    lista.add(new SPSensingElement(rs.getInt("rSense"),rs.getInt("inGain"),
-                            rs.getInt("outGain"),rs.getString("contacts"),rs.getDouble("frequency"),
-                            rs.getString("harmonic"),rs.getInt("DCBias"),rs.getString("modeVI"),
+                    lista.add(new SPSensingElement(rs.getString("rSense"),rs.getString("inGain"),
+                            rs.getString("outGain"),rs.getString("contacts"),rs.getString("frequency"),
+                            rs.getString("harmonic"),rs.getString("DCBias"),rs.getString("modeVI"),
                             rs.getString("measureTechnique"),rs.getString("measureType"),
-                            rs.getInt("filter"),rs.getString("phaseShiftMode"),rs.getInt("phaseShift"),
-                            rs.getString("IQ"),rs.getInt("conversionRate"),rs.getString("inPortADC"),
-                            rs.getInt("nData"),rs.getString("name"),rs.getDouble("rangeMin"),
-                            rs.getDouble("rangeMax"),rs.getDouble("defaultAlarmThreshold"),
-                            rs.getInt("multiplier"),rs.getString("measureUnit"),rs.getString("idSPSensingElement")));
+                            rs.getString("filter"),rs.getString("phaseShiftMode"),rs.getString("phaseShift"),
+                            rs.getString("IQ"),rs.getString("conversionRate"),rs.getString("inPortADC"),
+                            rs.getString("nData"),rs.getString("name"),rs.getString("rangeMin"),
+                            rs.getString("rangeMax"),rs.getString("defaultAlarmThreshold"),
+                            rs.getString("multiplier"),rs.getString("measureUnit"),rs.getString("idSPSensingElement")));
                 }
                 DAOMySQLSettings.closeStatement(st);
 

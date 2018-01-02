@@ -10,59 +10,59 @@ import java.util.List;
 public class SPSensingElement {
 
         private StringProperty idSPSensingElement;
-        private IntegerProperty rSense;
-        private IntegerProperty inGain;
-        private IntegerProperty outGain;
+        private StringProperty rSense;
+        private StringProperty inGain;
+        private StringProperty outGain;
         private StringProperty contacts;
-        private DoubleProperty frequency;
+        private StringProperty frequency;
         private StringProperty harmonic;
-        private IntegerProperty DCBias;
+        private StringProperty DCBias;
         private StringProperty modeVI;
         private StringProperty measureTechnique;
         private StringProperty measureType;
-        private IntegerProperty filter;
+        private StringProperty filter;
         private StringProperty phaseShiftMode;
-        private IntegerProperty phaseShift;
+        private StringProperty phaseShift;
         private StringProperty IQ;
-        private IntegerProperty conversionRate;
+        private StringProperty conversionRate;
         private StringProperty inPortADC;
-        private IntegerProperty nData;
+        private StringProperty nData;
         private StringProperty name;
-        private DoubleProperty rangeMin;
-        private DoubleProperty rangeMax;
-        private DoubleProperty defaultAlarmThreshold;
-        private IntegerProperty multiplier;
+        private StringProperty rangeMin;
+        private StringProperty rangeMax;
+        private StringProperty defaultAlarmThreshold;
+        private StringProperty multiplier;
         private StringProperty measureUnit;
 
 
 
-    public SPSensingElement(Integer rSense, Integer inGain, Integer outGain, String contacts, Double frequency,
-                            String harmonic, Integer DCBias, String modeVI, String measureTechnique, String measureType,
-                            Integer filter, String phaseShiftMode, Integer phaseShift, String IQ, Integer conversionRate,
-                            String inPortADC, Integer nData, String name, Double rangeMin, Double rangeMax,
-                            Double defaultAlarmThreshold, Integer multiplier, String measureUnit,String idSPSensingElement) {
-        this.rSense = new SimpleIntegerProperty(rSense);
-        this.inGain = new SimpleIntegerProperty(inGain);
-        this.outGain = new SimpleIntegerProperty(outGain);
+    public SPSensingElement(String rSense, String inGain, String outGain, String contacts, String frequency,
+                            String harmonic, String DCBias, String modeVI, String measureTechnique, String measureType,
+                            String filter, String phaseShiftMode, String phaseShift, String IQ, String conversionRate,
+                            String inPortADC, String nData, String name, String rangeMin, String rangeMax,
+                            String defaultAlarmThreshold, String multiplier, String measureUnit,String idSPSensingElement) {
+        this.rSense = new SimpleStringProperty(rSense);
+        this.inGain = new SimpleStringProperty(inGain);
+        this.outGain = new SimpleStringProperty(outGain);
         this.contacts = new SimpleStringProperty(contacts);
-        this.frequency=new SimpleDoubleProperty(frequency);
+        this.frequency=new SimpleStringProperty(frequency);
         this.harmonic=new SimpleStringProperty(harmonic);
-        this.DCBias=new SimpleIntegerProperty(DCBias);
+        this.DCBias=new SimpleStringProperty(DCBias);
         this.modeVI=new SimpleStringProperty(modeVI);
         this.measureTechnique=new SimpleStringProperty(measureTechnique);
         this.measureType=new SimpleStringProperty(measureType);
-        this.filter=new SimpleIntegerProperty(filter);
+        this.filter=new SimpleStringProperty(filter);
         this.phaseShiftMode=new SimpleStringProperty(phaseShiftMode);
-        this.phaseShift=new SimpleIntegerProperty(phaseShift);
+        this.phaseShift=new SimpleStringProperty(phaseShift);
         this.IQ=new SimpleStringProperty(IQ);
-        this.conversionRate=new SimpleIntegerProperty(conversionRate);
+        this.conversionRate=new SimpleStringProperty(conversionRate);
         this.inPortADC=new SimpleStringProperty(inPortADC);
-        this.nData=new SimpleIntegerProperty(nData);
+        this.nData=new SimpleStringProperty(nData);
         this.name=new SimpleStringProperty(name);
-        this.rangeMin=new SimpleDoubleProperty(rangeMin);
-        this.rangeMax=new SimpleDoubleProperty(rangeMax);
-        this.defaultAlarmThreshold=new SimpleDoubleProperty(defaultAlarmThreshold);
-        this.multiplier=new SimpleIntegerProperty(multiplier);
+        this.rangeMin=new SimpleStringProperty(rangeMin);
+        this.rangeMax=new SimpleStringProperty(rangeMax);
+        this.defaultAlarmThreshold=new SimpleStringProperty(defaultAlarmThreshold);
+        this.multiplier=new SimpleStringProperty(multiplier);
         this.measureUnit=new SimpleStringProperty(measureUnit);
         if ( idSPSensingElement != null){
             this.idSPSensingElement = new SimpleStringProperty(idSPSensingElement);
@@ -73,40 +73,11 @@ public class SPSensingElement {
     }
 
 
-    public SPSensingElement (String idSensingElement){
-        this.idSPSensingElement= new SimpleStringProperty(idSensingElement);
-        this.rSense = new SimpleIntegerProperty(50);
-        this.inGain = new SimpleIntegerProperty(1);
-        this.outGain = new SimpleIntegerProperty(0);
-        this.contacts = new SimpleStringProperty("TWO");
-        this.frequency = null;
-        this.harmonic = new SimpleStringProperty("FIRST_HARMONIC");
-        this.DCBias = null;
-        this.modeVI = new SimpleStringProperty("VOUT_IIN");
-        this.measureTechnique = new SimpleStringProperty("EIS");
-        this.measureType = new SimpleStringProperty("IN_PHASE");
-        this.filter = null;
-        this.phaseShiftMode = new SimpleStringProperty("QUADRANT");
-        this.phaseShift = null;
-        this.IQ = new SimpleStringProperty("IN_PHASE");
-        this.conversionRate = null;
-        this.inPortADC = new SimpleStringProperty("IA");
-        this.nData = new SimpleIntegerProperty(1);
-        this.measureUnit = new SimpleStringProperty("F");
-        this.name = null;
-        this.rangeMin = null;
-        this.rangeMax = null;
-        this.defaultAlarmThreshold = null;
-        this.multiplier = new SimpleIntegerProperty(0);
-
-    }
-
-
     public SPSensingElement() {
-        this(0, 0, 0,null,0.0,null,0,
-                "","","",0,"",0,
-                "",0,"",0,null,0.0,0.0,
-                0.0,0,"O",null);
+        this("", "", "","","","","",
+                "","","","","","",
+                "","","","","","","",
+                "","","","");
     }
 
     public SPSensingElement(String idSPSensingElement, String name) {
@@ -135,40 +106,39 @@ public class SPSensingElement {
         return idSPSensingElement;
     }
 
-
-    public Integer getrSense() {
+    public String getrSense() {
         return rSense.get();
     }
 
-    public IntegerProperty rSenseProperty() {
+    public StringProperty rSenseProperty() {
         return rSense;
     }
 
-    public void setrSense(Integer rSense) {
+    public void setrSense(String rSense) {
         this.rSense.set(rSense);
     }
 
-    public Integer getInGain() {
+    public String getInGain() {
         return inGain.get();
     }
 
-    public IntegerProperty inGainProperty() {
+    public StringProperty inGainProperty() {
         return inGain;
     }
 
-    public void setInGain(int inGain) {
+    public void setInGain(String inGain) {
         this.inGain.set(inGain);
     }
 
-    public Integer getOutGain() {
+    public String getOutGain() {
         return outGain.get();
     }
 
-    public IntegerProperty outGainProperty() {
+    public StringProperty outGainProperty() {
         return outGain;
     }
 
-    public void setOutGain(int outGain) {
+    public void setOutGain(String outGain) {
         this.outGain.set(outGain);
     }
 
@@ -184,15 +154,15 @@ public class SPSensingElement {
         this.contacts.set(contacts);
     }
 
-    public Double getFrequency() {
+    public String getFrequency() {
         return frequency.get();
     }
 
-    public DoubleProperty frequencyProperty() {
+    public StringProperty frequencyProperty() {
         return frequency;
     }
 
-    public void setFrequency(double frequency) {
+    public void setFrequency(String frequency) {
         this.frequency.set(frequency);
     }
 
@@ -208,15 +178,15 @@ public class SPSensingElement {
         this.harmonic.set(harmonic);
     }
 
-    public Integer getDCBias() {
+    public String getDCBias() {
         return DCBias.get();
     }
 
-    public IntegerProperty DCBiasProperty() {
+    public StringProperty DCBiasProperty() {
         return DCBias;
     }
 
-    public void setDCBias(int DCBias) {
+    public void setDCBias(String DCBias) {
         this.DCBias.set(DCBias);
     }
 
@@ -256,15 +226,15 @@ public class SPSensingElement {
         this.measureType.set(measureType);
     }
 
-    public Integer getFilter() {
+    public String getFilter() {
         return filter.get();
     }
 
-    public IntegerProperty filterProperty() {
+    public StringProperty filterProperty() {
         return filter;
     }
 
-    public void setFilter(int filter) {
+    public void setFilter(String filter) {
         this.filter.set(filter);
     }
 
@@ -280,15 +250,15 @@ public class SPSensingElement {
         this.phaseShiftMode.set(phaseShiftMode);
     }
 
-    public Integer getPhaseShift() {
+    public String getPhaseShift() {
         return phaseShift.get();
     }
 
-    public IntegerProperty phaseShiftProperty() {
+    public StringProperty phaseShiftProperty() {
         return phaseShift;
     }
 
-    public void setPhaseShift(int phaseShift) {
+    public void setPhaseShift(String phaseShift) {
         this.phaseShift.set(phaseShift);
     }
 
@@ -304,15 +274,15 @@ public class SPSensingElement {
         this.IQ.set(IQ);
     }
 
-    public Integer getConversionRate() {
+    public String getConversionRate() {
         return conversionRate.get();
     }
 
-    public IntegerProperty conversionRateProperty() {
+    public StringProperty conversionRateProperty() {
         return conversionRate;
     }
 
-    public void setConversionRate(int conversionRate) {
+    public void setConversionRate(String conversionRate) {
         this.conversionRate.set(conversionRate);
     }
 
@@ -328,15 +298,15 @@ public class SPSensingElement {
         this.inPortADC.set(inPortADC);
     }
 
-    public Integer getnData() {
+    public String getnData() {
         return nData.get();
     }
 
-    public IntegerProperty nDataProperty() {
+    public StringProperty nDataProperty() {
         return nData;
     }
 
-    public void setnData(int nData) {
+    public void setnData(String nData) {
         this.nData.set(nData);
     }
 
@@ -352,51 +322,51 @@ public class SPSensingElement {
         this.name.set(name);
     }
 
-    public Double getRangeMin() {
+    public String getRangeMin() {
         return rangeMin.get();
     }
 
-    public DoubleProperty rangeMinProperty() {
+    public StringProperty rangeMinProperty() {
         return rangeMin;
     }
 
-    public void setRangeMin(double rangeMin) {
+    public void setRangeMin(String rangeMin) {
         this.rangeMin.set(rangeMin);
     }
 
-    public Double getRangeMax() {
+    public String getRangeMax() {
         return rangeMax.get();
     }
 
-    public DoubleProperty rangeMaxProperty() {
+    public StringProperty rangeMaxProperty() {
         return rangeMax;
     }
 
-    public void setRangeMax(double rangeMax) {
+    public void setRangeMax(String rangeMax) {
         this.rangeMax.set(rangeMax);
     }
 
-    public Double getDefaultAlarmThreshold() {
+    public String getDefaultAlarmThreshold() {
         return defaultAlarmThreshold.get();
     }
 
-    public DoubleProperty defaultAlarmThresholdProperty() {
+    public StringProperty defaultAlarmThresholdProperty() {
         return defaultAlarmThreshold;
     }
 
-    public void setDefaultAlarmThreshold(double defaultAlarmThreshold) {
+    public void setDefaultAlarmThreshold(String defaultAlarmThreshold) {
         this.defaultAlarmThreshold.set(defaultAlarmThreshold);
     }
 
-    public Integer getMultiplier() {
+    public String getMultiplier() {
         return multiplier.get();
     }
 
-    public IntegerProperty multiplierProperty() {
+    public StringProperty multiplierProperty() {
         return multiplier;
     }
 
-    public void setMultiplier(int multiplier) {
+    public void setMultiplier(String multiplier) {
         this.multiplier.set(multiplier);
     }
 
