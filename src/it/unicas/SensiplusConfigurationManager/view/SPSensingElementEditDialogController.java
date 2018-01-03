@@ -175,7 +175,7 @@ import java.awt.*;
 
         @FXML
         private void handleOk() {
-            if (isInputValid(verifyLen)) {
+            if (isInputValid()) {
                 SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
                 SensingElement.setrSense(rSenseField.getValue().toString());
                 SensingElement.setInGain(inGainField.getValue().toString());
@@ -213,7 +213,7 @@ import java.awt.*;
         }
 
 
-    private boolean isInputValid(boolean verifyLen) {
+    private boolean isInputValid() {
         String errorMessage = "";
 
         if(idSPSensingElementField.getText() == null || idSPSensingElementField.getText().length() == 0){
@@ -224,7 +224,7 @@ import java.awt.*;
             errorMessage += "No valid frequency!\n";
         }
 
-        if(Double.parseDouble(frequencyField.getText()) < 0.0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000.0)) {
+        if(Double.parseDouble(frequencyField.getText()) < 0.0 || (Double.parseDouble(frequencyField.getText()) > 5000000.0)) {
             errorMessage += "No valid frequence!\n";
         }
 
@@ -232,7 +232,7 @@ import java.awt.*;
             errorMessage += "No valid DCBias!\n";
         }
 
-        if(Integer.parseInt(DCBiasField.getText()) < -2048 || (verifyLen && Integer.parseInt(DCBiasField.getText()) > 2048)) {
+        if(Integer.parseInt(DCBiasField.getText()) < -2048 || (Integer.parseInt(DCBiasField.getText()) > 2048)) {
             errorMessage += "No valid DCBias!\n";
         }
 
@@ -240,7 +240,7 @@ import java.awt.*;
             errorMessage += "No valid filter!\n";
         }
 
-        if(Integer.parseInt(filterField.getText()) < 0 || (verifyLen && Integer.parseInt(filterField.getText()) > 256))  {
+        if(Integer.parseInt(filterField.getText()) < 0 || (Integer.parseInt(filterField.getText()) > 256))  {
             errorMessage += "No valid filter!\n";
         }
 
@@ -248,7 +248,7 @@ import java.awt.*;
             errorMessage += "No valid phaseShift!\n";
         }
 
-        if(Double.parseDouble(phaseShiftField.getText()) < 0.0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
+        if(Double.parseDouble(phaseShiftField.getText()) < 0.0 || (Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
             errorMessage += "No valid phaseShift!\n";
         }
 
@@ -256,7 +256,7 @@ import java.awt.*;
             errorMessage += "No valid conversionRate!\n";
         }
 
-        if(Double.parseDouble(conversionRateField.getText()) < 0.0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
+        if(Double.parseDouble(conversionRateField.getText()) < 0.0 || (Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
             errorMessage += "No valid  conversionRate!\n";
         }
 
