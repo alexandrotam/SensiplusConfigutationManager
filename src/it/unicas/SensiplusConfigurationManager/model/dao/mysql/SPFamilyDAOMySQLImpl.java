@@ -41,7 +41,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
         toDelete.setName("");
         toDelete.setOsctrim("");
         toDelete.setSysclock("");
-        toDelete.setIdSPFamily(0);
+        toDelete.setIdSPFamily("");
         s.delete(toDelete);
 
         list = s.select((SPFamily) null);
@@ -57,7 +57,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
     public List<SPFamily> select(SPFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPFamily(0,null,null,null,null,null);
+            a=new SPFamily(null,null,null,null,null,null);
         }
 
         ArrayList<SPFamily> lista = new ArrayList<SPFamily>();
@@ -68,7 +68,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
                     || a.getName() == null
                     || a.getOsctrim() == null
                     || a.getSysclock() == null
-                    || a.getidSPFamily() == 0)
+                    || a.getidSPFamily() == null)
             {
                 throw new DAOException("In select: any field can be null");
             }
@@ -76,17 +76,17 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             Statement st = DAOMySQLSettings.getStatement();
 
             String sql = "select * from spfamily where idSPFamily like '";
-            sql += a.getidSPFamily() + "%' and HwVersion  like '"+a.getHwVersion();
-            sql += "%' and  Id like '" + a.getId() + "%'";
-            sql += "%' and  Name like '" + a.getName() + "%'";
-            sql += "%' and  Osctrim like '" + a.getOsctrim() + "%'";
-            sql += "%' and  Sysclock like '" + a.getSysclock() + "%'";
+            sql += a.getidSPFamily() + "%' and hwVersion  like '"+a.getHwVersion();
+            sql += "%' and  id like '" + a.getId() + "%'";
+            sql += " and  name like '" + a.getName() + "%'";
+            sql += " and  osctrim like '" + a.getOsctrim() + "%'";
+            sql += " and  sysclock like '" + a.getSysclock() + "%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPFamily(rs.getInt("idSPFamily"),rs.getString("Hwversion"),
+                lista.add(new SPFamily(rs.getString("idSPFamily"),rs.getString("Hwversion"),
                         rs.getString("Id"),rs.getString("Name"),rs.getString("Osctrim"),
                         rs.getString("Sysclock")));
             }
@@ -101,7 +101,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
 
     @Override
     public void delete(SPFamily a) throws DAOException {
-        if (a == null || a.getidSPFamily() == 0
+        if (a == null || a.getidSPFamily() == ""
                 || a.getSysclock() == ""
                 || a.getOsctrim() == ""
                 || a.getName() == ""
@@ -130,7 +130,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
     public void insert(SPFamily a) throws DAOException {
 
 
-        if (a == null || a.getidSPFamily() == 0
+        if (a == null || a.getidSPFamily() == ""
                 || a.getSysclock() == ""
                 || a.getOsctrim() == ""
                 || a.getName() == ""
@@ -161,7 +161,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
 
     @Override
     public void update(SPFamily a) throws DAOException {
-        if (a == null || a.getidSPFamily() == 0
+        if (a == null || a.getidSPFamily() == ""
                 || a.getHwVersion() == ""
                 || a.getId() == ""
                 || a.getName() == ""

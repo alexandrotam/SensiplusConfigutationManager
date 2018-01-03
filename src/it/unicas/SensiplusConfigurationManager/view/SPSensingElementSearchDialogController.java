@@ -123,26 +123,25 @@ public class SPSensingElementSearchDialogController {
     private boolean verifyLen = true;
 
 
-
     @FXML
-    private void initialize(){
-        rSenseField.getItems().addAll("50", "500","5000","50000");
-        inGainField.getItems().addAll("1","12","20","40");
-        outGainField.getItems().addAll("1","2","3","4","5","6","7");
-        contactsField.getItems().addAll("TWO","FOUR");
-        harmonicField.getItems().addAll("FIRST_HARMONIC","SECOND_HARMONIC","THIRD_HARMONIC");
-        modeVIField.getItems().addAll("VOUT_IIN","VIN_IIN","VOUT_VIN","VOUT_VOUT");
-        measureTypeField.getItems().addAll("IN-PHASE","QUADRATURE","MODULE","PHASE","RESISTANCE","CAPACITANCE","INDUCTANCE");
-        phaseShiftModeField.getItems().addAll("QUADRANTS","COARSE","FINE");
-        IQField.getItems().addAll("IN_PHASE","QUADRATURE");
-        inPortADCField.getItems().addAll("IA","VA");
-        nDataField.getItems().addAll("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16");
-        multiplierField.getItems().addAll("-21","-18","-15","-14","-13","-12","-11","-10","-9","-8","-7","-6","-5","-4","-3","-2","-1","0","3","6","7","8","9","10","11","12","13","14","15","16","17","18","21");
-        measureUnitField.getItems().addAll("O","F","H","C","%","V","A","L","t");
-        measureTechniqueField.getItems().addAll("DIRECT","EIS","POT","ENERGY_SPECTROSCOPY","ULTRASOUND");
+    private void initialize() {
+        rSenseField.getItems().addAll("50", "500", "5000", "50000");
+        inGainField.getItems().addAll("1", "12", "20", "40");
+        outGainField.getItems().addAll("1", "2", "3", "4", "5", "6", "7");
+        contactsField.getItems().addAll("TWO", "FOUR");
+        harmonicField.getItems().addAll("FIRST_HARMONIC", "SECOND_HARMONIC", "THIRD_HARMONIC");
+        modeVIField.getItems().addAll("VOUT_IIN", "VIN_IIN", "VOUT_VIN", "VOUT_VOUT");
+        measureTypeField.getItems().addAll("IN-PHASE", "QUADRATURE", "MODULE", "PHASE", "RESISTANCE", "CAPACITANCE", "INDUCTANCE");
+        phaseShiftModeField.getItems().addAll("QUADRANTS", "COARSE", "FINE");
+        IQField.getItems().addAll("IN_PHASE", "QUADRATURE");
+        inPortADCField.getItems().addAll("IA", "VA");
+        nDataField.getItems().addAll("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16");
+        multiplierField.getItems().addAll("-21", "-18", "-15", "-14", "-13", "-12", "-11", "-10", "-9", "-8", "-7", "-6", "-5", "-4", "-3", "-2", "-1", "0", "3", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "21");
+        measureUnitField.getItems().addAll("O", "F", "H", "C", "%", "V", "A", "L", "t");
+        measureTechniqueField.getItems().addAll("DIRECT", "EIS", "POT", "ENERGY_SPECTROSCOPY", "ULTRASOUND");
     }
 
-    public void disableTextboxidSPSenginElement(){
+    public void disableTextboxidSPSenginElement() {
         if (idSPSensingElementCheck.isSelected())
             idSPSensingElementField.setDisable(false);
         else
@@ -150,7 +149,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxrSense(){
+    public void disableTextboxrSense() {
         if (rSenseCheck.isSelected())
             rSenseField.setDisable(false);
         else
@@ -158,7 +157,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxinGain(){
+    public void disableTextboxinGain() {
         if (inGainCheck.isSelected())
             inGainField.setDisable(false);
         else
@@ -166,14 +165,14 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxoutGain(){
-        if(outGainCheck.isSelected())
+    public void disableTextboxoutGain() {
+        if (outGainCheck.isSelected())
             outGainField.setDisable(false);
         else
             outGainField.setDisable(true);
     }
 
-    public void disableTextboxContacts(){
+    public void disableTextboxContacts() {
         if (contactsCheck.isSelected())
             contactsField.setDisable(false);
         else
@@ -181,7 +180,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxfrequency(){
+    public void disableTextboxfrequency() {
         if (frequencyCheck.isSelected())
             frequencyField.setDisable(false);
         else
@@ -189,7 +188,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxHarmonic(){
+    public void disableTextboxHarmonic() {
         if (harmonicCheck.isSelected())
             harmonicField.setDisable(false);
         else
@@ -197,7 +196,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxDCBias(){
+    public void disableTextboxDCBias() {
         if (DCBiasCheck.isSelected())
             DCBiasField.setDisable(false);
         else
@@ -205,14 +204,14 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextBoxModeVI(){
+    public void disableTextBoxModeVI() {
         if (modeVICheck.isSelected())
             modeVIField.setDisable(false);
         else
             modeVIField.setDisable(true);
     }
 
-    public void disableTextBoxMeasureTechnique(){
+    public void disableTextBoxMeasureTechnique() {
         if (measureTechniqueCheck.isSelected())
             measureTechniqueField.setDisable(false);
         else
@@ -220,7 +219,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextBoxMeasureType(){
+    public void disableTextBoxMeasureType() {
         if (measureTypeCheck.isSelected())
             measureTypeField.setDisable(false);
         else
@@ -228,17 +227,16 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxfilter(){
-        if (filterCheck.isSelected()){
+    public void disableTextboxfilter() {
+        if (filterCheck.isSelected()) {
             filterField.setDisable(false);
 
-        }
-        else
+        } else
             filterField.setDisable(true);
 
     }
 
-    public void disableTextboxPhaseShiftMode(){
+    public void disableTextboxPhaseShiftMode() {
         if (phaseShiftModeCheck.isSelected())
             phaseShiftModeField.setDisable(false);
         else
@@ -246,7 +244,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxPhaseShift(){
+    public void disableTextboxPhaseShift() {
         if (phaseShiftCheck.isSelected())
             phaseShiftField.setDisable(false);
         else
@@ -254,7 +252,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxIQ(){
+    public void disableTextboxIQ() {
         if (IQCheck.isSelected())
             IQField.setDisable(false);
         else
@@ -262,7 +260,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxConversionRate(){
+    public void disableTextboxConversionRate() {
         if (conversionRateCheck.isSelected())
             conversionRateField.setDisable(false);
         else
@@ -270,7 +268,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxinPortADC(){
+    public void disableTextboxinPortADC() {
         if (inPortADCCheck.isSelected())
             inPortADCField.setDisable(false);
         else
@@ -278,7 +276,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxnData(){
+    public void disableTextboxnData() {
         if (nDataCheck.isSelected())
             nDataField.setDisable(false);
         else
@@ -286,7 +284,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxName(){
+    public void disableTextboxName() {
         if (nameCheck.isSelected())
             nameField.setDisable(false);
         else
@@ -294,7 +292,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxRangeMin(){
+    public void disableTextboxRangeMin() {
         if (rangeMinCheck.isSelected())
             rangeMinField.setDisable(false);
         else
@@ -302,7 +300,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxRangeMax(){
+    public void disableTextboxRangeMax() {
         if (rangeMaxCheck.isSelected())
             rangeMaxField.setDisable(false);
         else
@@ -310,7 +308,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxDefaultAlarmThreshold(){
+    public void disableTextboxDefaultAlarmThreshold() {
         if (defaultAlarmThresholdCheck.isSelected())
             defaultAlarmThresholdField.setDisable(false);
         else
@@ -318,7 +316,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxMultiplier(){
+    public void disableTextboxMultiplier() {
         if (multiplierCheck.isSelected())
             multiplierField.setDisable(false);
         else
@@ -326,7 +324,7 @@ public class SPSensingElementSearchDialogController {
 
     }
 
-    public void disableTextboxMeasureUnit(){
+    public void disableTextboxMeasureUnit() {
         if (measureUnitCheck.isSelected())
             measureUnitField.setDisable(false);
         else
@@ -337,7 +335,6 @@ public class SPSensingElementSearchDialogController {
     public void setDialogStage(Stage dialogStage, boolean verifyLen) {
         this.dialogStage = dialogStage;
         this.verifyLen = verifyLen;
-
 
 
     }
@@ -370,12 +367,12 @@ public class SPSensingElementSearchDialogController {
         defaultAlarmThresholdField.setText(SensingElement.getDefaultAlarmThreshold());
         multiplierField.setValue(SensingElement.getMultiplier());
 
-        if(SensingElement.getIdSPSensingElement()!=null){
+        if (SensingElement.getIdSPSensingElement() != null) {
             disableParameter();
         }
     }
 
-    public void disableParameter(){
+    public void disableParameter() {
 
     }
 
@@ -386,7 +383,7 @@ public class SPSensingElementSearchDialogController {
 
     @FXML
     private void handleOk() {
-        if (isInputValid(verifyLen)) {
+        if (isInputValid()) {
             SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
             SensingElement.setrSense(rSenseField.getValue().toString());
             SensingElement.setInGain(inGainField.getValue().toString());
@@ -418,92 +415,15 @@ public class SPSensingElementSearchDialogController {
     }
 
 
-
     @FXML
     private void handleCancel() {
         dialogStage.close();
     }
 
 
-    private boolean isInputValid(boolean verifyLen) {
+    private boolean isInputValid() {
+
         String errorMessage = "";
-
-        if(idSPSensingElementField.getText() == null || idSPSensingElementField.getText().length() == 0){
-            errorMessage += "No valid Id Sp Sensing Element!\n";
-        }
-
-        if(frequencyField.getText() == null || frequencyField.getText().length() == 0){
-            errorMessage += "No valid frequency!\n";
-        }
-
-        if(Double.parseDouble(frequencyField.getText()) < 0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000)) {
-            errorMessage += "No valid frequence!\n";
-        }
-
-        if(DCBiasField.getText() == null || DCBiasField.getText().length() == 0){
-            errorMessage += "No valid DCBias!\n";
-        }
-
-        if(Integer.parseInt(DCBiasField.getText()) < -2048 || (verifyLen && Integer.parseInt(DCBiasField.getText()) > 2048)) {
-            errorMessage += "No valid DCBias!\n";
-        }
-
-        if(filterField.getText() == null || filterField.getText().length() == 0){
-            errorMessage += "No valid filter!\n";
-        }
-
-        if(Integer.parseInt(filterField.getText()) < 0 || (verifyLen && Integer.parseInt(filterField.getText()) > 256))  {
-            errorMessage += "No valid filter!\n";
-        }
-
-        if(phaseShiftField.getText() == null || phaseShiftField.getText().length() == 0){
-            errorMessage += "No valid phaseShift!\n";
-        }
-
-        if(Double.parseDouble(phaseShiftField.getText()) < 0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
-            errorMessage += "No valid phaseShift!\n";
-        }
-
-        if(conversionRateField.getText() == null || conversionRateField.getText().length() == 0){
-            errorMessage += "No valid conversionRate!\n";
-        }
-
-        if(Double.parseDouble(conversionRateField.getText()) < 0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
-            errorMessage += "No valid  conversionRate!\n";
-        }
-
-        if(nameField.getText() == null || nameField.getText().length() == 0){
-            errorMessage += "No valid Name!\n";
-        }
-
-        if(rangeMinField.getText() == null || rangeMinField.getText().length() == 0){
-            errorMessage += "No valid Range Min!\n";
-        }
-
-        if(Double.parseDouble(rangeMinField.getText()) < -10E-21 || Double.parseDouble(rangeMinField.getText()) > 10E21 ){
-            errorMessage += "No valid Range Min!\n";
-        }
-
-        if(rangeMaxField.getText() == null || rangeMaxField.getText().length() == 0){
-            errorMessage += "No valid Range Max!\n";
-        }
-
-        if((Double.parseDouble(rangeMaxField.getText()) < -10E-21 || Double.parseDouble(rangeMaxField.getText()) > 10E21)
-                && Double.parseDouble(rangeMaxField.getText()) < Double.parseDouble(rangeMinField.getText())){
-            errorMessage += "No valid Range Max!\n";
-        }
-
-        if(defaultAlarmThresholdField.getText() == null || defaultAlarmThresholdField.getText().length() == 0){
-            errorMessage += "No valid default alarm threshold!\n";
-        }
-
-        if((Double.parseDouble(defaultAlarmThresholdField.getText()) < -10E-21 || Double.parseDouble(defaultAlarmThresholdField.getText()) > 10E21)
-                && (Double.parseDouble(defaultAlarmThresholdField.getText()) > Double.parseDouble(rangeMaxField.getText()))
-        || (Double.parseDouble(defaultAlarmThresholdField.getText()) < Double.parseDouble(rangeMinField.getText()))) {
-            errorMessage += "No valid deafult alarm threshold!\n";
-        }
-
-
 
         if (errorMessage.length() == 0) {
             return true;

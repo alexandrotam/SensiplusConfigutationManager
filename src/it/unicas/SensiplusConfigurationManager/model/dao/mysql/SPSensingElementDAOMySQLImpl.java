@@ -115,7 +115,30 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
 
                 String sql = "select * from spsensingelement where idSPSensingElement like '";
-                sql += a.getIdSPSensingElement() + "%'";
+                sql += a.getIdSPSensingElement() + "%' and rSense  like '"+a.getrSense();
+                sql += "%' and  inGain like '" + a.getInGain() + "%'";
+                sql += " and  outGain like '" + a.getOutGain() + "%'";
+                sql += " and  contacts like '" + a.getContacts() + "%'";
+                sql += " and  frequency like '" + a.getFrequency() + "%'";
+                sql += " and  harmonic like '" + a.getHarmonic() + "%'";
+                sql += " and  DCBias like '" + a.getDCBias() + "%'";
+                sql += " and  modeVI like '" + a.getModeVI() + "%'";
+                sql += " and  measureTechnique like '" + a.getMeasureTechnique() + "%'";
+                sql += " and  measureType like '" + a.getMeasureType() + "%'";
+                sql += " and  filter like '" + a.getFilter() + "%'";
+                sql += " and  phaseShiftMode like '" + a.getPhaseShiftMode() + "%'";
+                sql += " and  phaseShift like '" + a.getPhaseShift() + "%'";
+                sql += " and  IQ like '" + a.getIQ() + "%'";
+                sql += " and  conversionRate like '" + a.getConversionRate() + "%'";
+                sql += " and  inPortADC like '" + a.getInPortADC() + "%'";
+                sql += " and  nData like '" + a.getnData() + "%'";
+                sql += " and  name like '" + a.getName() + "%'";
+                sql += " and  rangeMin like '" + a.getRangeMin() + "%'";
+                sql += " and  rangeMax like '" + a.getRangeMax() + "%'";
+                sql += " and  defaultAlarmThreshold like '" + a.getDefaultAlarmThreshold() + "%'";
+                sql += " and  multiplier like '" + a.getMultiplier() + "%'";
+                sql += " and  measureUnit like '" + a.getMeasureUnit() + "%'";
+
 
 
 

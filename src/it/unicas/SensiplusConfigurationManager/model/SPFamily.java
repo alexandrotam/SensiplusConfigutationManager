@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class SPFamily {
 
-    private IntegerProperty idSPFamily;
+    private StringProperty idSPFamily;
     private StringProperty name;
     private StringProperty id;
     private StringProperty hwVersion;
@@ -17,7 +17,7 @@ public class SPFamily {
 
 
 
-    public SPFamily(Integer idSPFamily,String name,String id,String hwVersion,String sysclock,String osctrim) {
+    public SPFamily(String idSPFamily,String name,String id,String hwVersion,String sysclock,String osctrim) {
         this.name = new SimpleStringProperty(name);
         this.id = new SimpleStringProperty(id);
         this.hwVersion = new SimpleStringProperty(hwVersion);
@@ -25,7 +25,7 @@ public class SPFamily {
         this.osctrim = new SimpleStringProperty(osctrim);
 
         if ( idSPFamily != null){
-            this.idSPFamily = new SimpleIntegerProperty(idSPFamily);
+            this.idSPFamily = new SimpleStringProperty(idSPFamily);
         } else {
             this.idSPFamily = null;
         }
@@ -33,8 +33,8 @@ public class SPFamily {
     }
 
 
-    public SPFamily (Integer idSPFamily){
-        this.idSPFamily= new SimpleIntegerProperty(idSPFamily);
+    public SPFamily (String idSPFamily){
+        this.idSPFamily= new SimpleStringProperty(idSPFamily);
         this.name = new SimpleStringProperty("MEASURING_INSTRUMENT");
         this.id = new SimpleStringProperty("0x01");
         this.hwVersion = new SimpleStringProperty("RUN4");
@@ -44,32 +44,32 @@ public class SPFamily {
 
 
     public SPFamily() {
-        this(0,null,null,null,null,null);
+        this(null,null,null,null,null,null);
     }
 
-    public SPFamily(Integer idSPFamily, String name) {
-        this.idSPFamily = new SimpleIntegerProperty(idSPFamily);
+    public SPFamily(String idSPFamily, String name) {
+        this.idSPFamily = new SimpleStringProperty(idSPFamily);
         this.name=new SimpleStringProperty(name);
 
     }
 
 
-    public int getidSPFamily() {
+    public String getidSPFamily() {
         if (idSPFamily == null){
-            idSPFamily = new SimpleIntegerProperty(0);
+            idSPFamily = new SimpleStringProperty(null);
         }
         return idSPFamily.get();
     }
 
 
-    public void setIdSPFamily(Integer idSPFamily) {
+    public void setIdSPFamily(String idSPFamily) {
         if (this.idSPFamily == null){
-            this.idSPFamily = new SimpleIntegerProperty();
+            this.idSPFamily = new SimpleStringProperty();
         }
         this.idSPFamily.set(idSPFamily);
     }
 
-    public IntegerProperty IdSPFamilyProperty() {
+    public StringProperty IdSPFamilyProperty() {
         return idSPFamily;
     }
 

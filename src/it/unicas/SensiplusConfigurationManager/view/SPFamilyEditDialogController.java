@@ -44,7 +44,7 @@ public class SPFamilyEditDialogController {
     public void setSPFamily(SPFamily Family) {
         this.Family = Family;
 
-        idSPFamilyField.setText(String.valueOf(Family.getidSPFamily()));
+        idSPFamilyField.setText(Family.getidSPFamily());
         nameField.setText(Family.getName());
         idField.setText(Family.getId());
         hwVersionField.setText(Family.getHwVersion());
@@ -63,7 +63,7 @@ public class SPFamilyEditDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid(verifyLen)) {
-            Family.setIdSPFamily(Integer.parseInt(idSPFamilyField.getText()));
+            Family.setIdSPFamily(idSPFamilyField.getText());
             Family.setName(nameField.getText());
             Family.setId(idField.getText());
             Family.setHwVersion(hwVersionField.getText());
@@ -83,6 +83,9 @@ public class SPFamilyEditDialogController {
 
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
+
+        if (Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
+            errorMessage += "No valid Id Sp Sensing Element!\n";
 
 
         if (errorMessage.length() == 0) {

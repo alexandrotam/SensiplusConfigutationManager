@@ -122,7 +122,7 @@ public class SPFamilySearchDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid(verifyLen)) {
-            Family.setIdSPFamily(Integer.parseInt(idSPFamilyField.getText()));
+            Family.setIdSPFamily(idSPFamilyField.getText());
             Family.setName(nameField.getText());
             Family.setId(idField.getText());
             Family.setHwVersion(hwVersionField.getText());
@@ -143,10 +143,14 @@ public class SPFamilySearchDialogController {
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
 
-        
+        if (Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
+            errorMessage += "No valid Id Sp Sensing Element!\n";
 
 
-        if (errorMessage.length() == 0) {
+
+
+
+            if (errorMessage.length() == 0) {
             return true;
         }else {
 

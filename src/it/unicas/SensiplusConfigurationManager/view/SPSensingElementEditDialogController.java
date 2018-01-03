@@ -224,7 +224,7 @@ import java.awt.*;
             errorMessage += "No valid frequency!\n";
         }
 
-        if(Double.parseDouble(frequencyField.getText()) < 0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000)) {
+        if(Double.parseDouble(frequencyField.getText()) < 0.0 || (verifyLen && Double.parseDouble(frequencyField.getText()) > 5000000.0)) {
             errorMessage += "No valid frequence!\n";
         }
 
@@ -248,7 +248,7 @@ import java.awt.*;
             errorMessage += "No valid phaseShift!\n";
         }
 
-        if(Double.parseDouble(phaseShiftField.getText()) < 0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360)) {
+        if(Double.parseDouble(phaseShiftField.getText()) < 0.0 || (verifyLen && Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
             errorMessage += "No valid phaseShift!\n";
         }
 
@@ -256,7 +256,7 @@ import java.awt.*;
             errorMessage += "No valid conversionRate!\n";
         }
 
-        if(Double.parseDouble(conversionRateField.getText()) < 0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000)) {
+        if(Double.parseDouble(conversionRateField.getText()) < 0.0 || (verifyLen && Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
             errorMessage += "No valid  conversionRate!\n";
         }
 

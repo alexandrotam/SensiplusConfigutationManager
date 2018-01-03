@@ -18,7 +18,7 @@ public class SPFamilyOverviewController {
     @FXML
     private TableView<SPFamily> spFamilyTableView;
     @FXML
-    private TableColumn<SPFamily, Integer> idSPFamilyColumn;
+    private TableColumn<SPFamily, String> idSPFamilyColumn;
     @FXML
     private TableColumn<SPFamily, String> nameColumn;
     @FXML
@@ -55,7 +55,7 @@ public class SPFamilyOverviewController {
     @FXML
     private void initialize() {
 
-       //idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().IdSPFamilyProperty());
+       idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().IdSPFamilyProperty());
 
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
         showSPFamilyDetails(null);
@@ -81,7 +81,7 @@ public class SPFamilyOverviewController {
     private void showSPFamilyDetails(SPFamily spFamily) {
         if (spFamily != null) {
             // Fill the labels with info from the spFamily object.
-            idSPFamilyLabel.setText(String.valueOf(spFamily.getidSPFamily()));
+            idSPFamilyLabel.setText(spFamily.getidSPFamily());
             nameLabel.setText(spFamily.getName());
             idLabel.setText(String.valueOf(spFamily.getId()));
             hwVersionLabel.setText(String.valueOf(spFamily.getHwVersion()));
@@ -157,7 +157,7 @@ public class SPFamilyOverviewController {
      */
     @FXML
     private void handleSearchSPFamily() {
-        SPFamily tempSPFamily = new SPFamily(0,"","","","","");
+        SPFamily tempSPFamily = new SPFamily("","","","","","");
         boolean okClicked = mainApp.showSPFamilySearchDialog(tempSPFamily,false);
         if (okClicked) {
             try {
