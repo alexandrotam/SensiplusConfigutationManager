@@ -61,7 +61,7 @@
                         <Label fx:id="osctrimLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="9.0" layoutY="338.0" prefHeight="69.0" prefWidth="461.0">
+                  <ButtonBar layoutX="-37.0" layoutY="339.0" prefHeight="69.0" prefWidth="461.0">
                     <buttons>
                         <Button mnemonicParsing="false" onAction="#handleSearchSPFamily" text="Search" />
                         <Button mnemonicParsing="false" onAction="#handleNewSPFamily" text="New" />

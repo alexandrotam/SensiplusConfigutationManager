@@ -20,6 +20,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Optional;
 
+
+
 public class MainApp extends Application {
 
     private Stage primaryStage;
@@ -31,11 +33,14 @@ public class MainApp extends Application {
     private ObservableList<SPSensingElement> SPSensigElementData = FXCollections.observableArrayList();
     private ObservableList<SPFamily> SPFamilyData = FXCollections.observableArrayList();
 
+
     /**
      * Constructor
      */
     public MainApp() {
     }
+
+
 
 
 

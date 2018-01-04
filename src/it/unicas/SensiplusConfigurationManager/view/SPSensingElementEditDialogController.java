@@ -1,6 +1,7 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
+import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
@@ -67,7 +68,6 @@ import java.awt.*;
         private ComboBox measureTechniqueField;
 
 
-
         private Stage dialogStage;
         private SPSensingElement SensingElement;
         private boolean okClicked = false;
@@ -103,7 +103,6 @@ import java.awt.*;
 
         public void setSPSensingElement(SPSensingElement SensingElement) {
             this.SensingElement = SensingElement;
-
             idSPSensingElementField.setText(SensingElement.getIdSPSensingElement());
             rSenseField.setValue(SensingElement.getrSense());
             inGainField.setValue(SensingElement.getInGain());
@@ -215,48 +214,33 @@ import java.awt.*;
 
     private boolean isInputValid() {
         String errorMessage = "";
+        boolean intero;
+        boolean dble;
 
         if(idSPSensingElementField.getText() == null || idSPSensingElementField.getText().length() == 0){
             errorMessage += "No valid Id Sp Sensing Element!\n";
         }
 
-        if(frequencyField.getText() == null || frequencyField.getText().length() == 0){
+
+        if( intero=isInt(frequencyField.getText())==false ||(Double.parseDouble(frequencyField.getText()) < 0.0 || (Double.parseDouble(frequencyField.getText()) > 5000000.0))) {
             errorMessage += "No valid frequency!\n";
         }
 
-        if(Double.parseDouble(frequencyField.getText()) < 0.0 || (Double.parseDouble(frequencyField.getText()) > 5000000.0)) {
-            errorMessage += "No valid frequence!\n";
-        }
-
-        if(DCBiasField.getText() == null || DCBiasField.getText().length() == 0){
+        if(intero=isInt(DCBiasField.getText())==false || Integer.parseInt(DCBiasField.getText()) < -2048 || (Integer.parseInt(DCBiasField.getText()) > 2048)) {
             errorMessage += "No valid DCBias!\n";
         }
 
-        if(Integer.parseInt(DCBiasField.getText()) < -2048 || (Integer.parseInt(DCBiasField.getText()) > 2048)) {
-            errorMessage += "No valid DCBias!\n";
-        }
-
-        if(filterField.getText() == null || filterField.getText().length() == 0){
+        if(intero=isInt(filterField.getText())==false || Integer.parseInt(filterField.getText()) < 0 || (Integer.parseInt(filterField.getText()) > 256))  {
             errorMessage += "No valid filter!\n";
         }
 
-        if(Integer.parseInt(filterField.getText()) < 0 || (Integer.parseInt(filterField.getText()) > 256))  {
-            errorMessage += "No valid filter!\n";
-        }
-
-        if(phaseShiftField.getText() == null || phaseShiftField.getText().length() == 0){
+        if(dble=isDouble(phaseShiftField.getText())==false ||Double.parseDouble(phaseShiftField.getText()) < 0.0 || (Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
             errorMessage += "No valid phaseShift!\n";
         }
 
-        if(Double.parseDouble(phaseShiftField.getText()) < 0.0 || (Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
-            errorMessage += "No valid phaseShift!\n";
-        }
 
-        if(conversionRateField.getText() == null || conversionRateField.getText().length() == 0){
-            errorMessage += "No valid conversionRate!\n";
-        }
 
-        if(Double.parseDouble(conversionRateField.getText()) < 0.0 || (Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
+        if( dble=isDouble(conversionRateField.getText())==false  || Double.parseDouble(conversionRateField.getText()) < 0.0 || (Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
             errorMessage += "No valid  conversionRate!\n";
         }
 
@@ -264,30 +248,17 @@ import java.awt.*;
             errorMessage += "No valid Name!\n";
         }
 
-        if(rangeMinField.getText() == null || rangeMinField.getText().length() == 0){
+        if(dble=isDouble(rangeMinField.getText())==false  || Double.parseDouble(rangeMinField.getText()) < -10E-21 || Double.parseDouble(rangeMinField.getText()) > 10E21 ){
             errorMessage += "No valid Range Min!\n";
         }
 
-        if(Double.parseDouble(rangeMinField.getText()) < -10E-21 || Double.parseDouble(rangeMinField.getText()) > 10E21 ){
-            errorMessage += "No valid Range Min!\n";
-        }
-
-        if(rangeMaxField.getText() == null || rangeMaxField.getText().length() == 0){
+        if((dble=isDouble(rangeMaxField.getText())==false  || Double.parseDouble(rangeMaxField.getText()) < -10E-21 || Double.parseDouble(rangeMaxField.getText()) > 10E21)
+                || Double.parseDouble(rangeMaxField.getText()) < Double.parseDouble(rangeMinField.getText())){
             errorMessage += "No valid Range Max!\n";
         }
 
-        if((Double.parseDouble(rangeMaxField.getText()) < -10E-21 || Double.parseDouble(rangeMaxField.getText()) > 10E21)
-                && Double.parseDouble(rangeMaxField.getText()) < Double.parseDouble(rangeMinField.getText())){
-            errorMessage += "No valid Range Max!\n";
-        }
-
-        if(defaultAlarmThresholdField.getText() == null || defaultAlarmThresholdField.getText().length() == 0){
-            errorMessage += "No valid default alarm threshold!\n";
-        }
-
-        if((Double.parseDouble(defaultAlarmThresholdField.getText()) < -10E-21 || Double.parseDouble(defaultAlarmThresholdField.getText()) > 10E21)
-                && (Double.parseDouble(defaultAlarmThresholdField.getText()) > Double.parseDouble(rangeMaxField.getText()))
-                || (Double.parseDouble(defaultAlarmThresholdField.getText()) < Double.parseDouble(rangeMinField.getText()))) {
+       if((dble=isDouble(defaultAlarmThresholdField.getText())==false  || Double.parseDouble(defaultAlarmThresholdField.getText()) < -10E-21 || Double.parseDouble(defaultAlarmThresholdField.getText()) > 10E21)
+                ) {
             errorMessage += "No valid deafult alarm threshold!\n";
         }
 
@@ -308,4 +279,22 @@ import java.awt.*;
             return false;
         }
     }
-    }
+    public static boolean isInt(String str) {
+
+        try{
+            int iCheck = Integer.parseInt(str);
+            return true;
+        }
+        catch(NumberFormatException e) { return false; }
+     }
+
+     public static boolean isDouble(String str){
+         try{
+             double iCheck=Double.parseDouble(str);
+             return true;
+         }
+         catch(NumberFormatException e) { return false; }
+
+     }
+}
+    

@@ -11,6 +11,9 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.awt.event.ItemEvent;
 
+import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController.isDouble;
+import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController.isInt;
+
 
 /**
  * Dialog to search details of a spSensingElement.
@@ -397,9 +400,9 @@ public class SPSensingElementSearchDialogController {
             SensingElement.setMeasureTechnique(measureTechniqueField.getValue().toString());
             SensingElement.setFilter(filterField.getText());
             SensingElement.setPhaseShiftMode(phaseShiftModeField.getValue().toString());
-            SensingElement.setPhaseShift(phaseShiftField.getText().toString());
+            SensingElement.setPhaseShift(phaseShiftField.getText());
             SensingElement.setIQ(IQField.getValue().toString());
-            SensingElement.setConversionRate(conversionRateField.getText().toString());
+            SensingElement.setConversionRate(conversionRateField.getText());
             SensingElement.setInPortADC(inPortADCField.getValue().toString());
             SensingElement.setnData(nDataField.getValue().toString());
             SensingElement.setMeasureUnit(measureUnitField.getValue().toString());
@@ -422,10 +425,11 @@ public class SPSensingElementSearchDialogController {
 
 
     private boolean isInputValid() {
-
         String errorMessage = "";
+        boolean intero;
+        boolean dble;
 
-        if (errorMessage.length() == 0) {
+       if (errorMessage.length() == 0) {
             return true;
         }else {
 

@@ -7,6 +7,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController.isInt;
+
 public class SPFamilySearchDialogController {
 
 
@@ -142,9 +144,8 @@ public class SPFamilySearchDialogController {
 
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
+        boolean intero;
 
-        if (Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
-            errorMessage += "No valid Id Sp Sensing Element!\n";
 
 
 

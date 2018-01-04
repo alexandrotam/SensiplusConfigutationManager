@@ -4,7 +4,6 @@ import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
-import javafx.beans.property.IntegerProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -125,13 +124,15 @@ public class SPFamilyOverviewController {
         }
     }
 
+
+
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
      * details for a new SPFamily.
      */
     @FXML
     private void handleNewSPFamily() {
-        SPFamily tempSPFamily = new SPFamily();
+        SPFamily tempSPFamily = new SPFamily("","","","","","");
         boolean okClicked = mainApp.showSPFamilyEditDialog(tempSPFamily, true);
         Stage dialog=new Stage();
 
@@ -209,10 +210,9 @@ public class SPFamilyOverviewController {
             alert.showAndWait();
         }
    }
+
+
 }
-
-
-
 
 
 

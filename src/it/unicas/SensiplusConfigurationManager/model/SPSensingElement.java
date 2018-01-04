@@ -9,6 +9,8 @@ import java.util.List;
 
 public class SPSensingElement {
 
+
+
         private StringProperty idSPSensingElement;
         private StringProperty rSense;
         private StringProperty inGain;
@@ -414,6 +416,8 @@ public class SPSensingElement {
 
 
         }
+
+
 
 }
 

@@ -7,6 +7,8 @@ import javafx.scene.control.Alert;
 
 import javafx.stage.Stage;
 
+import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController.isInt;
+
 public class SPFamilyEditDialogController {
 
     @FXML
@@ -83,10 +85,10 @@ public class SPFamilyEditDialogController {
 
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
+        boolean intero;
 
-        if (Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
+        if (intero=isInt(idSPFamilyField.getText())==false || Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
             errorMessage += "No valid Id Sp Sensing Element!\n";
-
 
         if (errorMessage.length() == 0) {
             return true;
