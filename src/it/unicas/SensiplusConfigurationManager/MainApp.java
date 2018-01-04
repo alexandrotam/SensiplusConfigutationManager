@@ -2,6 +2,7 @@ package it.unicas.SensiplusConfigurationManager;
 
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
+import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.DAOMySQLSettings;
 import it.unicas.SensiplusConfigurationManager.view.*;
 import javafx.application.Application;
@@ -32,6 +33,8 @@ public class MainApp extends Application {
      */
     private ObservableList<SPSensingElement> SPSensigElementData = FXCollections.observableArrayList();
     private ObservableList<SPFamily> SPFamilyData = FXCollections.observableArrayList();
+    private ObservableList<SPSensingelementOnFamily> SPSensingelementOnFamilyData = FXCollections.observableArrayList();
+
 
 
     /**
@@ -43,12 +46,15 @@ public class MainApp extends Application {
 
 
 
-
-    public ObservableList<SPSensingElement> getSPSensingElementData() {
+   public ObservableList<SPSensingElement> getSPSensingElementData() {
         return SPSensigElementData;
     }
     public ObservableList<SPFamily> getSPFamilyData() {
         return SPFamilyData;
+    }
+
+    public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){
+        return  SPSensingelementOnFamilyData;
     }
 
     @Override
@@ -95,6 +101,26 @@ public class MainApp extends Application {
 
             // Give the controller access to the main app.
             SPFamilyOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void showSPSensingelementOnFamilyOverview() {
+        try {
+            // Load SPSensingelementOnFamily overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingElementOnFamilyOverview.fxml"));
+            AnchorPane SPSensingelementOnFamilyOverview = (AnchorPane) loader.load();
+
+            // Set SPSensingelementOnFamily overview into the center of root layout.
+            rootLayout.setCenter(SPSensingelementOnFamilyOverview);
+
+            // Give the controller access to the main app.
+            SPSensingElementOnFamilyOverviewController controller = loader.getController();
             controller.setMainApp(this);
 
         } catch (IOException e) {
@@ -240,6 +266,35 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPSensingelementOnFamilyEditDialog(SPSensingelementOnFamily spSensingelementOnFamily, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingelementOnFamilyEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPSensingelementOnFamily");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPSensingElementOnFamilyEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingelementOnFamily(spSensingelementOnFamily);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -287,6 +342,35 @@ public class MainApp extends Application {
             SPSensingElementSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPSensingElement(spSensingElement);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showSPSensingelementOnFamilySearchDialog(SPSensingelementOnFamily spSensingelementOnFamily, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingElementOnFamilySearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPSensingelementOnFamily");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPSensingElementOnFamiySearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingelementOnFamily(spSensingelementOnFamily);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

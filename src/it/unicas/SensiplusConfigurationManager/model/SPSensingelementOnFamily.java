@@ -14,20 +14,20 @@ import java.util.List;
 public class SPSensingelementOnFamily {
 
 
-    private IntegerProperty idSPSensingElementOnFamily;
+    private StringProperty idSPSensingElementOnFamily;
     private StringProperty SPSensingElement_idSPSensingElement;
-    private IntegerProperty SPFamilyTemplate_idSPFamilyTemplate;
+    private StringProperty SPFamilyTemplate_idSPFamilyTemplate;
     private StringProperty name;
 
 
-    public SPSensingelementOnFamily(Integer idSPSensingElementOnFamily,String SPSensingElement_idSPSensingElement,
-                                    Integer SPFamilyTemplate_idSPFamilyTemplate,String name) {
+    public SPSensingelementOnFamily(String idSPSensingElementOnFamily,String SPSensingElement_idSPSensingElement,
+                                    String SPFamilyTemplate_idSPFamilyTemplate,String name) {
         this.SPSensingElement_idSPSensingElement=new SimpleStringProperty(SPSensingElement_idSPSensingElement);
-        this.SPFamilyTemplate_idSPFamilyTemplate=new SimpleIntegerProperty(SPFamilyTemplate_idSPFamilyTemplate);
+        this.SPFamilyTemplate_idSPFamilyTemplate=new SimpleStringProperty(SPFamilyTemplate_idSPFamilyTemplate);
         this.name = new SimpleStringProperty(name);
 
         if ( idSPSensingElementOnFamily != null){
-            this.idSPSensingElementOnFamily = new SimpleIntegerProperty(idSPSensingElementOnFamily);
+            this.idSPSensingElementOnFamily = new SimpleStringProperty(idSPSensingElementOnFamily);
         } else {
             this.idSPSensingElementOnFamily = null;
         }
@@ -35,37 +35,41 @@ public class SPSensingelementOnFamily {
     }
 
 
-    public SPSensingelementOnFamily (Integer idSPSensingElementOnFamily){
-        this.idSPSensingElementOnFamily= new SimpleIntegerProperty(idSPSensingElementOnFamily);
+    public SPSensingelementOnFamily (String idSPSensingElementOnFamily){
+        this.idSPSensingElementOnFamily= new SimpleStringProperty(idSPSensingElementOnFamily);
         this.SPSensingElement_idSPSensingElement = new SimpleStringProperty("");
-        this.SPFamilyTemplate_idSPFamilyTemplate = new SimpleIntegerProperty(0);
+        this.SPFamilyTemplate_idSPFamilyTemplate = new SimpleStringProperty("");
         this.name = new SimpleStringProperty("");
 
     }
 
 
     public SPSensingelementOnFamily() {
-        this(0,null,0,null);
+        this(null,null,null,null);
     }
 
-    public SPSensingelementOnFamily(Integer idSPSensingElementOnFamily, String name) {
-        this.idSPSensingElementOnFamily = new SimpleIntegerProperty(idSPSensingElementOnFamily);
+    public SPSensingelementOnFamily(String idSPSensingElementOnFamily, String name) {
+        this.idSPSensingElementOnFamily = new SimpleStringProperty(idSPSensingElementOnFamily);
         this.name=new SimpleStringProperty(name);
 
     }
 
+    public StringProperty idSPSensingElementOnFamilyProperty() {
+        return idSPSensingElementOnFamily;
+    }
 
-    public int getidSPSensingElementOnFamily() {
+
+    public String getidSPSensingElementOnFamily() {
         if (idSPSensingElementOnFamily == null){
-            idSPSensingElementOnFamily = new SimpleIntegerProperty(0);
+            idSPSensingElementOnFamily = new SimpleStringProperty("");
         }
         return idSPSensingElementOnFamily.get();
     }
 
 
-    public void setidSPSensingElementOnFamily(Integer idSPFamily) {
+    public void setidSPSensingElementOnFamily(String idSPFamily) {
         if (this.idSPSensingElementOnFamily == null){
-            this.idSPSensingElementOnFamily = new SimpleIntegerProperty();
+            this.idSPSensingElementOnFamily = new SimpleStringProperty();
         }
         this.idSPSensingElementOnFamily.set(idSPFamily);
     }
@@ -82,15 +86,15 @@ public class SPSensingelementOnFamily {
         this.SPSensingElement_idSPSensingElement.set(SPSensingElement_idSPSensingElement);
     }
 
-    public int getSPFamilyTemplate_idSPFamilyTemplate() {
+    public String getSPFamilyTemplate_idSPFamilyTemplate() {
         return SPFamilyTemplate_idSPFamilyTemplate.get();
     }
 
-    public IntegerProperty SPFamilyTemplate_idSPFamilyTemplateProperty() {
+    public StringProperty SPFamilyTemplate_idSPFamilyTemplateProperty() {
         return SPFamilyTemplate_idSPFamilyTemplate;
     }
 
-    public void setSPFamilyTemplate_idSPFamilyTemplate(int SPFamilyTemplate_idSPFamilyTemplate) {
+    public void setSPFamilyTemplate_idSPFamilyTemplate(String SPFamilyTemplate_idSPFamilyTemplate) {
         this.SPFamilyTemplate_idSPFamilyTemplate.set(SPFamilyTemplate_idSPFamilyTemplate);
     }
 

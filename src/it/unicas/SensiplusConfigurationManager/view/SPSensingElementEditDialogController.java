@@ -248,16 +248,14 @@ import java.awt.*;
             errorMessage += "No valid Name!\n";
         }
 
-        if(dble=isDouble(rangeMinField.getText())==false  || Double.parseDouble(rangeMinField.getText()) < -10E-21 || Double.parseDouble(rangeMinField.getText()) > 10E21 ){
+        if(dble=isDouble(rangeMinField.getText())==false){
             errorMessage += "No valid Range Min!\n";
         }
 
-        if((dble=isDouble(rangeMaxField.getText())==false  || Double.parseDouble(rangeMaxField.getText()) < -10E-21 || Double.parseDouble(rangeMaxField.getText()) > 10E21)
-                || Double.parseDouble(rangeMaxField.getText()) < Double.parseDouble(rangeMinField.getText())){
-            errorMessage += "No valid Range Max!\n";
-        }
+        if(dble=isDouble(rangeMaxField.getText())==false|| Double.parseDouble(rangeMaxField.getText())<Double.parseDouble(rangeMinField.getText()))
+            errorMessage +="No valid range Max!\n";
 
-       if((dble=isDouble(defaultAlarmThresholdField.getText())==false  || Double.parseDouble(defaultAlarmThresholdField.getText()) < -10E-21 || Double.parseDouble(defaultAlarmThresholdField.getText()) > 10E21)
+       if((dble=isDouble(defaultAlarmThresholdField.getText())==false )
                 ) {
             errorMessage += "No valid deafult alarm threshold!\n";
         }

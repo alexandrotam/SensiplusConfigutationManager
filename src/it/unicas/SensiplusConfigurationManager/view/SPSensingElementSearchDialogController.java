@@ -73,7 +73,7 @@ public class SPSensingElementSearchDialogController {
     @FXML
     private CheckBox idSPSensingElementCheck;
     @FXML
-    public CheckBox rSenseCheck;
+    private CheckBox rSenseCheck;
     @FXML
     private CheckBox inGainCheck;
     @FXML

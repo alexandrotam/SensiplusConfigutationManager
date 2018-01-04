@@ -38,9 +38,9 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
         SPSensingelementOnFamily toDelete = new SPSensingelementOnFamily();
         toDelete.setName("");
-        toDelete.setSPFamilyTemplate_idSPFamilyTemplate(0);
+        toDelete.setSPFamilyTemplate_idSPFamilyTemplate("");
         toDelete.setSPSensingElement_idSPSensingElement("");
-        toDelete.setidSPSensingElementOnFamily(0);
+        toDelete.setidSPSensingElementOnFamily("");
         s.delete(toDelete);
 
         list = s.select((SPSensingelementOnFamily) null);
@@ -56,16 +56,16 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public List<SPSensingelementOnFamily> select(SPSensingelementOnFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingelementOnFamily(0,null,0,null);
+            a=new SPSensingelementOnFamily(null,null,null,null);
         }
 
         ArrayList<SPSensingelementOnFamily> lista = new ArrayList<SPSensingelementOnFamily>();
         try{
 
             if (a == null || a.getName() == null
-                    || a.getSPFamilyTemplate_idSPFamilyTemplate() == 0
+                    || a.getSPFamilyTemplate_idSPFamilyTemplate() == null
                     || a.getSPSensingElement_idSPSensingElement() == null
-                    || a.getidSPSensingElementOnFamily() == 0
+                    || a.getidSPSensingElementOnFamily() == null
                     )
             {
                 throw new DAOException("In select: any field can be null");
@@ -76,14 +76,14 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
             String sql = "select * from spsensingelementonfamily where idSPSensingElementOnFamily like '";
             sql += a.getidSPSensingElementOnFamily() + "%' and SPSensingElement_idSPSensingElement  like '"+a.getSPSensingElement_idSPSensingElement();
             sql += "%' and  SPFamilyTemplate_idSPFamilyTemplate like '" + a.getSPFamilyTemplate_idSPFamilyTemplate() + "%'";
-            sql += "%' and  Name like '" + a.getName() + "%'";
+            sql += " and  Name like '" + a.getName() + "%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPSensingelementOnFamily(rs.getInt("idSPSensingElementOnFamily"),rs.getString("SPSensingElement_idSPSensingElement"),
-                        rs.getInt("SPFamilyTemplate_idSPFamilyTemplate"),rs.getString("Name")));
+                lista.add(new SPSensingelementOnFamily(rs.getString("idSPSensingElementOnFamily"),rs.getString("SPSensingElement_idSPSensingElement"),
+                        rs.getString("SPFamilyTemplate_idSPFamilyTemplate"),rs.getString("Name")));
             }
             DAOMySQLSettings.closeStatement(st);
 
@@ -96,9 +96,9 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
     @Override
     public void delete(SPSensingelementOnFamily a) throws DAOException {
-        if (a == null || a.getidSPSensingElementOnFamily() == 0
+        if (a == null || a.getidSPSensingElementOnFamily() == ""
                 || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == 0
+                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
                 || a.getName() == "")
         {
             throw new DAOException("In delete: any field can be null");
@@ -123,9 +123,9 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public void insert(SPSensingelementOnFamily a) throws DAOException {
 
 
-        if (a == null || a.getidSPSensingElementOnFamily() == 0
+        if (a == null || a.getidSPSensingElementOnFamily() == ""
                 || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == 0
+                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
                 || a.getName() == "")
         {  throw new DAOException("In select: any field can be null");
         }
@@ -151,9 +151,9 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
     @Override
     public void update(SPSensingelementOnFamily a) throws DAOException {
-        if (a == null || a.getidSPSensingElementOnFamily() == 0
+        if (a == null || a.getidSPSensingElementOnFamily() == ""
                 || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == 0
+                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
                 || a.getName() == ""){
             throw new DAOException("In select: any field can be null");
         }

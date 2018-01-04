@@ -47,6 +47,11 @@ public class RootLayoutController {
         mainApp.showSPFamilyOverview();
     }
 
+    public void handleSPSensingElementOnFamily(){
+        mainApp.showSPSensingelementOnFamilyOverview();
+    }
+
+
 
     /**
      * Opens an about dialog.

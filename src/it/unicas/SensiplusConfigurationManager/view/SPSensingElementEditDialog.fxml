@@ -9,8 +9,9 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
+<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="11.0" prefHeight="653.0" prefWidth="845.0">
         <columnConstraints>
@@ -44,30 +45,102 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Id SP Sensing Element" />
-            <Label layoutX="310.0" layoutY="55.0" text="rSense" GridPane.rowIndex="1" />
-            <Label text="In Gain" GridPane.rowIndex="2" />
-            <Label text="Out Gain" GridPane.rowIndex="3" />
-            <Label text="Contacts" GridPane.rowIndex="4" />
-            <Label text="Mode VI" GridPane.rowIndex="8" />
-            <Label text="Harmonic" GridPane.rowIndex="6" />
-            <Label text="Frequency" GridPane.rowIndex="5" />
-            <Label text="DC Bias" GridPane.rowIndex="7" />
-            <Label text="Measure Technique" GridPane.rowIndex="9" />
-            <Label text="Measure Type" GridPane.rowIndex="10" />
-            <Label text="Filter" GridPane.rowIndex="11" />
-            <Label text="Phase Shift Mode" GridPane.rowIndex="12" />
-            <Label text="Phase Shift" GridPane.rowIndex="13" />
-            <Label text="IQ" GridPane.rowIndex="14" />
-            <Label text="Conversion Rate" GridPane.rowIndex="15" />
-            <Label text="Name" GridPane.rowIndex="18" />
-            <Label text="Range Min" GridPane.rowIndex="19" />
-            <Label text="nData" GridPane.rowIndex="17" />
-            <Label text="In Port ADC" GridPane.rowIndex="16" />
-            <Label text="Measure Unit" GridPane.rowIndex="23" />
-            <Label text="Multiplier" GridPane.rowIndex="22" />
-            <Label text="Default Alarm Threashold" GridPane.rowIndex="21" />
-            <Label text="Range Max" GridPane.rowIndex="20" />
+            <Label text="Id SP Sensing Element">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label layoutX="310.0" layoutY="55.0" text="rSense" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="In Gain" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Out Gain" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Contacts" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Mode VI" GridPane.rowIndex="8">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Harmonic" GridPane.rowIndex="6">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Frequency" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="DC Bias" GridPane.rowIndex="7">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Measure Technique" GridPane.rowIndex="9">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Measure Type" GridPane.rowIndex="10">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Filter" GridPane.rowIndex="11">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Phase Shift Mode" GridPane.rowIndex="12">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Phase Shift" GridPane.rowIndex="13">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="IQ" GridPane.rowIndex="14">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Conversion Rate" GridPane.rowIndex="15">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Name" GridPane.rowIndex="18">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Range Min" GridPane.rowIndex="19">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="nData" GridPane.rowIndex="17">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="In Port ADC" GridPane.rowIndex="16">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Measure Unit" GridPane.rowIndex="23">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Multiplier" GridPane.rowIndex="22">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Default Alarm Threashold" GridPane.rowIndex="21">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
+            <Label text="Range Max" GridPane.rowIndex="20">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Label>
             <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
             <TextField fx:id="frequencyField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <TextField fx:id="DCBiasField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
@@ -94,10 +167,16 @@
             <ComboBox fx:id="nDataField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
          </children>
       </GridPane>
-      <ButtonBar layoutX="142.0" layoutY="674.0" prefHeight="57.0" prefWidth="224.0">
+      <ButtonBar layoutX="251.0" layoutY="678.0" prefHeight="57.0" prefWidth="337.0">
         <buttons>
-          <Button mnemonicParsing="false" onAction="#handleOk" text="OK" />
-            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+          <Button mnemonicParsing="false" onAction="#handleOk" text="OK">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="44.0" prefWidth="161.0" text="Cancel">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+               </font></Button>
         </buttons>
       </ButtonBar>
    </children>

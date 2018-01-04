@@ -8,6 +8,7 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPFamilySearchDialogController">
     <children>
@@ -31,18 +32,42 @@
                 <TextField fx:id="hwVersionField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                 <TextField fx:id="sysclockField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 <TextField fx:id="oscrtimField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <CheckBox fx:id="idSPFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxIdSpFamily" text="Id SPFamily" />
-            <CheckBox fx:id="nameCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxName" text="Name" GridPane.rowIndex="1" />
-            <CheckBox fx:id="idCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxId" text="Id" GridPane.rowIndex="2" />
-            <CheckBox fx:id="hwVersionCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxHwVersion" text="HwVersion" GridPane.rowIndex="3" />
-            <CheckBox fx:id="sysclockCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSysClock" text="Sysclock" GridPane.rowIndex="4" />
-            <CheckBox fx:id="oscrtimCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxOsctrim" text="Osctrim" GridPane.rowIndex="5" />
+            <CheckBox fx:id="idSPFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxIdSpFamily" text="Id SPFamily">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="nameCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxName" text="Name" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="idCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxId" text="Id" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="hwVersionCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxHwVersion" text="HwVersion" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="sysclockCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSysClock" text="Sysclock" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="oscrtimCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxOsctrim" text="Osctrim" GridPane.rowIndex="5">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></CheckBox>
             </children>
         </GridPane>
-        <ButtonBar layoutX="178.0" layoutY="323.0" prefHeight="40.0" prefWidth="200.0">
+        <ButtonBar layoutX="163.0" layoutY="331.0" prefHeight="44.0" prefWidth="250.0">
             <buttons>
-                <Button mnemonicParsing="false" onAction="#handleOk" text="Ok" />
-                <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Button>
+                <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font></Button>
             </buttons>
         </ButtonBar>
     </children>

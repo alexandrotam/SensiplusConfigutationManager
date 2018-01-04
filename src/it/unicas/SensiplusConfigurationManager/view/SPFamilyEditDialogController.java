@@ -87,7 +87,7 @@ public class SPFamilyEditDialogController {
         String errorMessage = "";
         boolean intero;
 
-        if (intero=isInt(idSPFamilyField.getText())==false || Integer.parseInt(idSPFamilyField.getText())<-2E31 || Integer.parseInt(idSPFamilyField.getText())>(2E31-1))
+        if (intero=isInt(idSPFamilyField.getText())==false)
             errorMessage += "No valid Id Sp Sensing Element!\n";
 
         if (errorMessage.length() == 0) {

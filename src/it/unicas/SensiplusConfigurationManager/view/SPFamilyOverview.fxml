@@ -47,26 +47,78 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Id SPFamily" />
-                        <Label text="Id" GridPane.rowIndex="2" />
-                        <Label text="Osctrim" GridPane.rowIndex="5" />
-                        <Label text="SysClock" GridPane.rowIndex="4" />
-                        <Label text="Name" GridPane.rowIndex="1" />
-                        <Label text="Hw Version" GridPane.rowIndex="3" />
-                        <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1" />
-                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label fx:id="hwVersionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="sysclockLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                        <Label fx:id="osctrimLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <Label text="Id SPFamily">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label text="Id" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label text="Osctrim" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label text="SysClock" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label text="Name" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label text="Hw Version" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="hwVersionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="sysclockLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
+                        <Label fx:id="osctrimLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="-37.0" layoutY="339.0" prefHeight="69.0" prefWidth="461.0">
+                  <ButtonBar layoutX="-65.0" layoutY="324.0" prefHeight="69.0" prefWidth="461.0">
                     <buttons>
-                        <Button mnemonicParsing="false" onAction="#handleSearchSPFamily" text="Search" />
-                        <Button mnemonicParsing="false" onAction="#handleNewSPFamily" text="New" />
-                        <Button mnemonicParsing="false" onAction="#handleEditSPFamily" text="Edit" />
-                        <Button mnemonicParsing="false" onAction="#handleDeleteSPFamily" text="Delete" />
+                        <Button mnemonicParsing="false" onAction="#handleSearchSPFamily" text="Search" textFill="#12109c">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleNewSPFamily" text="New" textFill="#12109c">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleEditSPFamily" text="Edit" textFill="#12109c">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleDeleteSPFamily" text="Delete" textFill="#12109c">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
                     </buttons>
                   </ButtonBar>
                </children>

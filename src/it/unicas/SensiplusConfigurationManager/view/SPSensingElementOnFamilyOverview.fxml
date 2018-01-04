@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnFamilyOverviewController">
+   <children>
+      <SplitPane dividerPositions="0.5" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="393.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="idSPSensingElementOnFamilyColumn" prefWidth="181.13206005096436" text="idSPSensingElementOnFamily" />
+                      <TableColumn fx:id="nameColumn" prefWidth="51.622650782041205" text="name" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="417.0" prefWidth="521.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="14.0" prefHeight="45.0" prefWidth="143.0" text="Dettagli">
+                     <font>
+                        <Font name="Colonna MT" size="36.0" />
+                     </font>
+                  </Label>
+                  <GridPane layoutX="15.0" layoutY="56.0" prefHeight="282.0" prefWidth="491.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Name" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="SPFamilyTemplate_idSPFamilyTemplate" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="SPSensingElement_idSPSensingElement" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="SPSensingElement_idSPSensingElementLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="SPFamilyTemplate_idSPFamilyTemplateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="IdSPSensingElementOnFamily">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="idSPSensingElementOnFamilyLabel" text="Label" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <ButtonBar layoutX="-39.0" layoutY="339.0" prefHeight="69.0" prefWidth="461.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#handleSearchSPSensingelementOnFamily" text="Search" textFill="#161bb7">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleNewSPSensingelementOnFamily" text="New" textFill="#161bb7">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleEditSPSensingelementOnFamily" text="Edit" textFill="#161bb7">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleDeleteSPSensingelementOnFamily" text="Delete" textFill="#161bb7">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font>
+                        </Button>
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

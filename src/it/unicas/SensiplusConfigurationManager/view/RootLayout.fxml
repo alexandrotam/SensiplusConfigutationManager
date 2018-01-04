@@ -26,6 +26,11 @@
                   <SeparatorMenuItem mnemonicParsing="false" />
               </items>
             </Menu>
+            <Menu mnemonicParsing="false" text="Join">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnFamily" text="SPSensingElementOnFamily" />
+              </items>
+            </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
               <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
