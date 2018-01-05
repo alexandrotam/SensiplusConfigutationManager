@@ -136,18 +136,30 @@ import java.awt.*;
 
 
         public void disableParameter(){
-            if(measureTechniqueField.getValue().toString()=="DIRECT"){
+            if(measureTechniqueField.getValue().equals("DIRECT")){
+                rSenseField.getItems().clear();
                 rSenseField.setDisable(true);
+                inGainField.getItems().clear();
                 inGainField.setDisable(true);
+                outGainField.getItems().clear();
                 outGainField.setDisable(true);
+                contactsField.getItems().clear();
                 contactsField.setDisable(true);
+                frequencyField.clear();
                 frequencyField.setDisable(true);
+                harmonicField.getItems().clear();
                 harmonicField.setDisable(true);
+                DCBiasField.clear();
                 DCBiasField.setDisable(true);
+                modeVIField.getItems().clear();
                 modeVIField.setDisable(true);
+                measureTypeField.getItems().clear();
                 measureTypeField.setDisable(true);
+                phaseShiftModeField.getItems().clear();
                 phaseShiftModeField.setDisable(true);
+                phaseShiftField.clear();
                 phaseShiftField.setDisable(true);
+                IQField.getItems().clear();
                 IQField.setDisable(true);
             }
             else{
