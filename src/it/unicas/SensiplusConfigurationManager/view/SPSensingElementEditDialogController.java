@@ -78,18 +78,18 @@ import java.awt.*;
         private void initialize(){
             rSenseField.getItems().addAll("50", "500","5000","50000");
             inGainField.getItems().addAll("1","12","20","40");
-            outGainField.getItems().addAll("1","2","3","4","5","6","7");
+            outGainField.getItems().addAll("0","1","2","3","4","5","6","7");
             contactsField.getItems().addAll("TWO","FOUR");
-            harmonicField.getItems().addAll("FIRST_HARMONIC","SECOND_HARMONIC","THIRD_HARMONIC");
-            modeVIField.getItems().addAll("VOUT_IIN","VIN_IIN","VOUT_VIN","VOUT_VOUT");
-            measureTypeField.getItems().addAll("IN-PHASE","QUADRATURE","MODULE","PHASE","RESISTANCE","CAPACITANCE","INDUCTANCE");
+            harmonicField.getItems().addAll("FIRST HARMONIC","SECOND HARMONIC","THIRD HARMONIC");
+            modeVIField.getItems().addAll("VOUT IIN","VIN IIN","VOUT VIN","VOUT VOUT");
+            measureTypeField.getItems().addAll("IN PHASE","QUADRATURE","MODULE","PHASE","RESISTANCE","CAPACITANCE","INDUCTANCE");
             phaseShiftModeField.getItems().addAll("QUADRANTS","COARSE","FINE");
-            IQField.getItems().addAll("IN_PHASE","QUADRATURE");
+            IQField.getItems().addAll("IN PHASE","QUADRATURE");
             inPortADCField.getItems().addAll("IA","VA");
             nDataField.getItems().addAll("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16");
             multiplierField.getItems().addAll("-21","-18","-15","-14","-13","-12","-11","-10","-9","-8","-7","-6","-5","-4","-3","-2","-1","0","3","6","7","8","9","10","11","12","13","14","15","16","17","18","21");
             measureUnitField.getItems().addAll("O","F","H","C","%","V","A","L","t");
-            measureTechniqueField.getItems().addAll("DIRECT","EIS","POT","ENERGY_SPECTROSCOPY","ULTRASOUND");
+            measureTechniqueField.getItems().addAll("DIRECT","EIS","POT","ENERGY SPECTROSCOPY","ULTRASOUND");
 
         }
 
@@ -108,7 +108,7 @@ import java.awt.*;
             inGainField.setValue(SensingElement.getInGain());
             outGainField.setValue(SensingElement.getOutGain());
             contactsField.setValue(SensingElement.getContacts());
-            frequencyField.setText(SensingElement.getFrequency().toString());
+            frequencyField.setText(SensingElement.getFrequency());
             harmonicField.setValue(SensingElement.getHarmonic());
             DCBiasField.setText(SensingElement.getDCBias().toString());
             modeVIField.setValue(SensingElement.getModeVI());
@@ -138,28 +138,28 @@ import java.awt.*;
         public void disableParameter(){
             if(measureTechniqueField.getValue().equals("DIRECT")){
                 rSenseField.getItems().clear();
-                rSenseField.setDisable(true);
                 inGainField.getItems().clear();
-                inGainField.setDisable(true);
                 outGainField.getItems().clear();
-                outGainField.setDisable(true);
                 contactsField.getItems().clear();
-                contactsField.setDisable(true);
                 frequencyField.clear();
-                frequencyField.setDisable(true);
                 harmonicField.getItems().clear();
-                harmonicField.setDisable(true);
                 DCBiasField.clear();
-                DCBiasField.setDisable(true);
                 modeVIField.getItems().clear();
-                modeVIField.setDisable(true);
                 measureTypeField.getItems().clear();
-                measureTypeField.setDisable(true);
                 phaseShiftModeField.getItems().clear();
-                phaseShiftModeField.setDisable(true);
                 phaseShiftField.clear();
-                phaseShiftField.setDisable(true);
                 IQField.getItems().clear();
+                rSenseField.setDisable(true);
+                inGainField.setDisable(true);
+                outGainField.setDisable(true);
+                contactsField.setDisable(true);
+                frequencyField.setDisable(true);
+                harmonicField.setDisable(true);
+                DCBiasField.setDisable(true);
+                modeVIField.setDisable(true);
+                measureTypeField.setDisable(true);
+                phaseShiftModeField.setDisable(true);
+                phaseShiftField.setDisable(true);
                 IQField.setDisable(true);
             }
             else{
@@ -188,6 +188,21 @@ import java.awt.*;
         private void handleOk() {
             if (isInputValid()) {
                 SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
+                if(measureTechniqueField.getValue().equals("DIRECT")) {
+                    SensingElement.setrSense("");
+                    SensingElement.setInGain("");
+                    SensingElement.setOutGain("");
+                    SensingElement.setContacts("");
+                    SensingElement.setFrequency("");
+                    SensingElement.setHarmonic("");
+                    SensingElement.setDCBias("");
+                    SensingElement.setModeVI("");
+                    SensingElement.setMeasureType("");
+                    SensingElement.setPhaseShift("");
+                    SensingElement.setPhaseShiftMode("");
+                    SensingElement.setIQ("");
+                }
+                else{
                 SensingElement.setrSense(rSenseField.getValue().toString());
                 SensingElement.setInGain(inGainField.getValue().toString());
                 SensingElement.setOutGain(outGainField.getValue().toString());
@@ -197,11 +212,11 @@ import java.awt.*;
                 SensingElement.setDCBias(DCBiasField.getText());
                 SensingElement.setModeVI(modeVIField.getValue().toString());
                 SensingElement.setMeasureType(measureTypeField.getValue().toString());
+                    SensingElement.setPhaseShiftMode(phaseShiftModeField.getValue().toString());
+                    SensingElement.setPhaseShift(phaseShiftField.getText());
+                    SensingElement.setIQ(IQField.getValue().toString());}
                 SensingElement.setMeasureTechnique(measureTechniqueField.getValue().toString());
                 SensingElement.setFilter(filterField.getText());
-                SensingElement.setPhaseShiftMode(phaseShiftModeField.getValue().toString());
-                SensingElement.setPhaseShift(phaseShiftField.getText());
-                SensingElement.setIQ(IQField.getValue().toString());
                 SensingElement.setConversionRate(conversionRateField.getText().toString());
                 SensingElement.setInPortADC(inPortADCField.getValue().toString());
                 SensingElement.setnData(nDataField.getValue().toString());
@@ -233,25 +248,27 @@ import java.awt.*;
             errorMessage += "No valid Id Sp Sensing Element!\n";
         }
 
-
-        if( intero=isInt(frequencyField.getText())==false ||(Double.parseDouble(frequencyField.getText()) < 0.0 || (Double.parseDouble(frequencyField.getText()) > 5000000.0))) {
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
+            if( intero=isInt(frequencyField.getText())==false ||(Double.parseDouble(frequencyField.getText()) < 0.0 || (Double.parseDouble(frequencyField.getText()) > 5000000.0))) {
             errorMessage += "No valid frequency!\n";
         }
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if(intero=isInt(DCBiasField.getText())==false || Integer.parseInt(DCBiasField.getText()) < -2048 || (Integer.parseInt(DCBiasField.getText()) > 2048)) {
             errorMessage += "No valid DCBias!\n";
         }
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if(intero=isInt(filterField.getText())==false || Integer.parseInt(filterField.getText()) < 0 || (Integer.parseInt(filterField.getText()) > 256))  {
             errorMessage += "No valid filter!\n";
         }
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if(dble=isDouble(phaseShiftField.getText())==false ||Double.parseDouble(phaseShiftField.getText()) < 0.0 || (Double.parseDouble(phaseShiftField.getText()) > 360.0)) {
             errorMessage += "No valid phaseShift!\n";
         }
 
-
-
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if( dble=isDouble(conversionRateField.getText())==false  || Double.parseDouble(conversionRateField.getText()) < 0.0 || (Double.parseDouble(conversionRateField.getText()) > 100000.0)) {
             errorMessage += "No valid  conversionRate!\n";
         }
@@ -260,19 +277,20 @@ import java.awt.*;
             errorMessage += "No valid Name!\n";
         }
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if(dble=isDouble(rangeMinField.getText())==false){
             errorMessage += "No valid Range Min!\n";
         }
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
         if(dble=isDouble(rangeMaxField.getText())==false|| Double.parseDouble(rangeMaxField.getText())<Double.parseDouble(rangeMinField.getText()))
             errorMessage +="No valid range Max!\n";
 
+        if(!measureTechniqueField.getValue().equals("DIRECT"))
        if((dble=isDouble(defaultAlarmThresholdField.getText())==false )
                 ) {
             errorMessage += "No valid deafult alarm threshold!\n";
         }
-
-
 
         if (errorMessage.length() == 0) {
             return true;
