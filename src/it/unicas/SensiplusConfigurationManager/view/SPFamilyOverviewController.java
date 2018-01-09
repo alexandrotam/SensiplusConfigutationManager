@@ -20,14 +20,6 @@ public class SPFamilyOverviewController {
     private TableColumn<SPFamily, String> idSPFamilyColumn;
     @FXML
     private TableColumn<SPFamily, String> nameColumn;
-    @FXML
-    private TableColumn<SPFamily, String> idColumn;
-    @FXML
-    private TableColumn<SPFamily, String> hwVersionColumn;
-    @FXML
-    private TableColumn<SPFamily, String> sysclockColumn;
-    @FXML
-    private TableColumn<SPFamily, String> osctrimColumn;
 
     @FXML
     private Label idSPFamilyLabel;

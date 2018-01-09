@@ -21,52 +21,8 @@ public class SPSensingElementOverviewController {
     private TableView<SPSensingElement> spSensingElementTableView;
     @FXML
     private TableColumn<SPSensingElement, String> idSPSensingElementColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> rSenseColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> inGainColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> outGainColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> contactsColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> frequencyColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> harmonicColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> DCBiasColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> modeVIColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> measureTecniqueColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> measureTypeColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> filterColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> phaseShiftModeColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> phaseShiftColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> IQColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> conversionRateColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> inPortADCColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> nDataColumn;
-    @FXML
+     @FXML
     private TableColumn<SPSensingElement, String> nameColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> rangeMinColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> rangeMaxColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> defaultAlarmThresholdColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> multiplierColumn;
-    @FXML
-    private TableColumn<SPSensingElement, String> measureUnitColumn;
 
 
     @FXML
