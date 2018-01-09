@@ -258,19 +258,19 @@
                            </font></Label>
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="9.0" layoutY="338.0" prefHeight="70.0" prefWidth="503.0">
+                  <ButtonBar layoutX="-13.0" layoutY="332.0" prefHeight="62.0" prefWidth="534.0">
                     <buttons>
-                      <Button mnemonicParsing="false" onAction="#handleSearchSPSensingElement" text="Search..." textFill="#1d1f8d">
+                      <Button minWidth="63.0" mnemonicParsing="false" onAction="#handleSearchSPSensingElement" prefHeight="34.0" text="Search..." textFill="#1d1f8d">
                            <font>
                               <Font name="Calibri Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleNewSPSensingElement" text="New..." textFill="#1d1f8d">
+                        <Button minWidth="19.0" mnemonicParsing="false" onAction="#handleNewSPSensingElement" prefHeight="34.0" text="New..." textFill="#1d1f8d">
                            <font>
                               <Font name="Calibri Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleEditSPSensingElement" text="Edit..." textFill="#1d1f8d">
+                        <Button minWidth="40.0" mnemonicParsing="false" onAction="#handleEditSPSensingElement" prefHeight="34.0" text="Edit..." textFill="#1d1f8d">
                            <font>
                               <Font name="Calibri Bold Italic" size="18.0" />
                            </font>
@@ -280,7 +280,10 @@
                               <Font name="Calibri Bold Italic" size="18.0" />
                            </font>
                         </Button>
-                        <Button mnemonicParsing="false" text="Generate " />
+                        <Button minWidth="42.0" mnemonicParsing="false" onAction="#handleGenerateFamily" prefHeight="34.0" text="Generate " textFill="#08136f">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="18.0" />
+                           </font></Button>
                     </buttons>
                   </ButtonBar>
                </children></AnchorPane>

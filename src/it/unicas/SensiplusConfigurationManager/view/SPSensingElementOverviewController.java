@@ -1,8 +1,10 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
+import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementDAOMySQLImpl;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingelementOnFamilyDAOMySQLImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -288,11 +290,35 @@ public class SPSensingElementOverviewController {
     }
     @FXML
     private void handleGenerateFamily() throws IOException {
-
-        mainApp.showGenerateFamily();
+        SPSensingelementOnFamily tempSPSensingElementOnFamily= new SPSensingelementOnFamily();
+        boolean okClicked = mainApp.showGenerateFamily(tempSPSensingElementOnFamily, true);
         Stage dialog=new Stage();
+        boolean error=false;
+        if (okClicked) {
+            try {
+                SPSensingelementOnFamilyDAOMySQLImpl.getInstance().insert(tempSPSensingElementOnFamily);
+                mainApp.getSPSensingelementOnFamilyData().add(tempSPSensingElementOnFamily);
+
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during insert ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+                error=true;
+            }
+            if (error==false){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Family Generated");
+                alert.showAndWait();
+            }
 
         }
+
+               }
 
     }
 

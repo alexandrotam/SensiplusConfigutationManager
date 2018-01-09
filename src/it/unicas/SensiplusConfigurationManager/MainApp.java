@@ -265,35 +265,6 @@ public class MainApp extends Application {
         }
     }
 
-    public boolean showSPSensingelementOnFamilyEditDialog(SPSensingelementOnFamily spSensingelementOnFamily, boolean verifyLen) {
-        try {
-            // Load the fxml file and create a new stage for the popup dialog.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/SPSensingelementOnFamilyEditDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
-
-            // Create the dialog Stage.
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit SPSensingelementOnFamily");
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(primaryStage);
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-
-            SPSensingElementOnFamilyEditDialogController controller = loader.getController();
-            controller.setDialogStage(dialogStage, verifyLen);
-            controller.setSPSensingelementOnFamily(spSensingelementOnFamily);
-
-            // Show the dialog and wait until the user closes it
-            dialogStage.showAndWait();
-
-            return controller.isOkClicked();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -381,8 +352,8 @@ public class MainApp extends Application {
         }
     }
 
-    public void showGenerateFamily() throws IOException {
-
+    public boolean showGenerateFamily(SPSensingelementOnFamily spSensingelementOnFamily,boolean verifyLen)  {
+        try {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/GenerateFamily.fxml"));
@@ -395,11 +366,20 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
+
+            GenerateFamilyController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingElementOnFamily(spSensingelementOnFamily);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
 
-
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
 
     }
 

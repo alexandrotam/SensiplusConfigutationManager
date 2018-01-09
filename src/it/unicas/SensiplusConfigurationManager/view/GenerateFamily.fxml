@@ -22,6 +22,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="Id Sensing Element" textAlignment="CENTER">
@@ -39,25 +40,31 @@
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </Label>
-            <Label text="Id Family Template" GridPane.rowIndex="3">
+            <Label text="Id Family Template" GridPane.rowIndex="4">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </Label>
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="idSPSensingElementField" GridPane.columnIndex="1" />
+            <TextField fx:id="idSPFamilyField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="idSPPortField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="idSPFamilyTemplate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Name" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <ButtonBar layoutX="146.0" layoutY="332.0" prefHeight="65.0" prefWidth="254.0">
         <buttons>
-          <Button mnemonicParsing="false" prefHeight="36.0" prefWidth="123.0" text="OK">
+          <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="36.0" prefWidth="123.0" text="OK">
                <font>
                   <Font name="Calibri Bold Italic" size="24.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="35.0" text="Cancel">
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="35.0" text="Cancel">
                <font>
                   <Font name="Calibri Bold Italic" size="24.0" />
                </font>
