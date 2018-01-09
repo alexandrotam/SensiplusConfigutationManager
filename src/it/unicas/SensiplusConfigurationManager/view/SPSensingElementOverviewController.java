@@ -12,6 +12,7 @@ import it.unicas.SensiplusConfigurationManager.MainApp;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SPSensingElementOverviewController {
@@ -304,6 +305,7 @@ public class SPSensingElementOverviewController {
      */
     @FXML
     private void handleEditSPSensingElement() {
+
         SPSensingElement selectedSPSensingElement = spSensingElementTableView.getSelectionModel().getSelectedItem();
 
         if (selectedSPSensingElement != null) {
@@ -328,6 +330,15 @@ public class SPSensingElementOverviewController {
             alert.showAndWait();
         }
     }
+    @FXML
+    private void handleGenerateFamily() throws IOException {
+
+        mainApp.showGenerateFamily();
+        Stage dialog=new Stage();
+
+        }
+
+    }
 
 
-}
+

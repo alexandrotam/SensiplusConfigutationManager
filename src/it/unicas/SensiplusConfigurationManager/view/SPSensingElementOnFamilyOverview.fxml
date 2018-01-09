@@ -18,10 +18,10 @@
          <items>
             <AnchorPane prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="393.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="393.0" prefWidth="272.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idSPSensingElementOnFamilyColumn" prefWidth="181.13206005096436" text="idSPSensingElementOnFamily" />
-                      <TableColumn fx:id="nameColumn" prefWidth="51.622650782041205" text="name" />
+                      <TableColumn fx:id="idSPSensingElementOnFamilyColumn" prefWidth="121.3584852218628" text="idSPSensingElement" />
+                      <TableColumn fx:id="nameColumn" prefWidth="114.11323547363281" text="idSPFamily" />
                     </columns>
                   </TableView>
                </children>
@@ -50,12 +50,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="SPFamilyTemplate_idSPFamilyTemplate" GridPane.rowIndex="2">
+                        <Label text="Id Port" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="SPSensingElement_idSPSensingElement" GridPane.rowIndex="1">
+                        <Label text="Id Family" GridPane.rowIndex="1">
                            <font>
                               <Font size="14.0" />
                            </font>
@@ -63,32 +63,17 @@
                         <Label fx:id="SPSensingElement_idSPSensingElementLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="SPFamilyTemplate_idSPFamilyTemplateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label text="IdSPSensingElementOnFamily">
+                        <Label text="Id Sensing Element">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idSPSensingElementOnFamilyLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label text="Label" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="-39.0" layoutY="339.0" prefHeight="69.0" prefWidth="461.0">
+                  <ButtonBar layoutX="211.0" layoutY="339.0" prefHeight="70.0" prefWidth="82.0">
                     <buttons>
                       <Button mnemonicParsing="false" onAction="#handleSearchSPSensingelementOnFamily" text="Search" textFill="#161bb7">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#handleNewSPSensingelementOnFamily" text="New" textFill="#161bb7">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#handleEditSPSensingelementOnFamily" text="Edit" textFill="#161bb7">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#handleDeleteSPSensingelementOnFamily" text="Delete" textFill="#161bb7">
                            <font>
                               <Font name="Calibri Bold Italic" size="18.0" />
                            </font>

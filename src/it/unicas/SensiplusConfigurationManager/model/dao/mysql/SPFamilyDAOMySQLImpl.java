@@ -130,8 +130,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
     public void insert(SPFamily a) throws DAOException {
 
 
-        if (a == null || a.getidSPFamily() == ""
-                || a.getSysclock() == ""
+        if (a == null || a.getSysclock() == ""
                 || a.getOsctrim() == ""
                 || a.getName() == ""
                 || a.getId() == ""
@@ -141,7 +140,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
         }
 
 
-        String query ="INSERT INTO spfamily (idSPFamily,Sysclock,Osctrim,Name,Id,HWVersion) VALUES " +" ('" + a.getidSPFamily()+ "', '" +a.getSysclock()
+        String query ="INSERT INTO spfamily (Sysclock,Osctrim,Name,Id,HWVersion) VALUES " +" ('" +a.getSysclock()
                 + "', '" +a.getOsctrim()+ "', '" +a.getName()
                 + "', '" +a.getId()+ "', '" +a.getHwVersion()+"')";
 

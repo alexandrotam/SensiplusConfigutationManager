@@ -18,13 +18,18 @@ public class SPSensingelementOnFamily {
     private StringProperty SPSensingElement_idSPSensingElement;
     private StringProperty SPFamilyTemplate_idSPFamilyTemplate;
     private StringProperty name;
+    private StringProperty SPFamily_idSPFamily;
+    private StringProperty SPPort_idSPPort;
 
 
     public SPSensingelementOnFamily(String idSPSensingElementOnFamily,String SPSensingElement_idSPSensingElement,
-                                    String SPFamilyTemplate_idSPFamilyTemplate,String name) {
+                                    String SPFamilyTemplate_idSPFamilyTemplate,String name, String SPFamily_idSPFamily,
+                                    String SPPort_idSPPort) {
         this.SPSensingElement_idSPSensingElement=new SimpleStringProperty(SPSensingElement_idSPSensingElement);
         this.SPFamilyTemplate_idSPFamilyTemplate=new SimpleStringProperty(SPFamilyTemplate_idSPFamilyTemplate);
         this.name = new SimpleStringProperty(name);
+        this.SPFamily_idSPFamily=new SimpleStringProperty(SPFamily_idSPFamily);
+        this.SPPort_idSPPort=new SimpleStringProperty(SPPort_idSPPort);
 
         if ( idSPSensingElementOnFamily != null){
             this.idSPSensingElementOnFamily = new SimpleStringProperty(idSPSensingElementOnFamily);
@@ -32,27 +37,17 @@ public class SPSensingelementOnFamily {
             this.idSPSensingElementOnFamily = null;
         }
 
-    }
-
-
-    public SPSensingelementOnFamily (String idSPSensingElementOnFamily){
-        this.idSPSensingElementOnFamily= new SimpleStringProperty(idSPSensingElementOnFamily);
-        this.SPSensingElement_idSPSensingElement = new SimpleStringProperty("");
-        this.SPFamilyTemplate_idSPFamilyTemplate = new SimpleStringProperty("");
-        this.name = new SimpleStringProperty("");
 
     }
 
 
     public SPSensingelementOnFamily() {
-        this(null,null,null,null);
+        this("","","","","","");
     }
 
-    public SPSensingelementOnFamily(String idSPSensingElementOnFamily, String name) {
-        this.idSPSensingElementOnFamily = new SimpleStringProperty(idSPSensingElementOnFamily);
-        this.name=new SimpleStringProperty(name);
-
+    public SPSensingelementOnFamily(String spSensingElement_idSPSensingElement, String spFamily_idSPFamily, String spPort_idSPPort, String name) {
     }
+
 
     public StringProperty idSPSensingElementOnFamilyProperty() {
         return idSPSensingElementOnFamily;
@@ -110,9 +105,33 @@ public class SPSensingelementOnFamily {
         this.name.set(name);
     }
 
+    public String getSPFamily_idSPFamily() {
+        return SPFamily_idSPFamily.get();
+    }
+
+    public StringProperty SPFamily_idSPFamilyProperty() {
+        return SPFamily_idSPFamily;
+    }
+
+    public void setSPFamily_idSPFamily(String SPFamily_idSPFamily) {
+        this.SPFamily_idSPFamily.set(SPFamily_idSPFamily);
+    }
+
+    public String getSPPort_idSPPort() {
+        return SPPort_idSPPort.get();
+    }
+
+    public StringProperty SPPort_idSPPortProperty() {
+        return SPPort_idSPPort;
+    }
+
+    public void setSPPort_idSPPort(String SPPort_idSPPort) {
+        this.SPPort_idSPPort.set(SPPort_idSPPort);
+    }
+
     public String toString(){
         return name.getValue()+", " +SPSensingElement_idSPSensingElement.getValue()+", "+ SPFamilyTemplate_idSPFamilyTemplate.getValue()+", "+
-                idSPSensingElementOnFamily.getValue();
+                idSPSensingElementOnFamily.getValue()+", "+SPFamily_idSPFamily.getValue()+", "+SPPort_idSPPort.getValue();
     }
 
 

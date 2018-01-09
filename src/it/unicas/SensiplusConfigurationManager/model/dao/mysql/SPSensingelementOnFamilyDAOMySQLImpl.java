@@ -36,14 +36,7 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
         }
 
 
-        SPSensingelementOnFamily toDelete = new SPSensingelementOnFamily();
-        toDelete.setName("");
-        toDelete.setSPFamilyTemplate_idSPFamilyTemplate("");
-        toDelete.setSPSensingElement_idSPSensingElement("");
-        toDelete.setidSPSensingElementOnFamily("");
-        s.delete(toDelete);
-
-        list = s.select((SPSensingelementOnFamily) null);
+       list = s.select((SPSensingelementOnFamily) null);
 
         for(int i = 0; i < list.size(); i++){
             System.out.println(list.get(i));
@@ -56,16 +49,16 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public List<SPSensingelementOnFamily> select(SPSensingelementOnFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingelementOnFamily(null,null,null,null);
+            a=new SPSensingelementOnFamily(null,"",null,"","","");
         }
 
         ArrayList<SPSensingelementOnFamily> lista = new ArrayList<SPSensingelementOnFamily>();
         try{
 
             if (a == null || a.getName() == null
-                    || a.getSPFamilyTemplate_idSPFamilyTemplate() == null
                     || a.getSPSensingElement_idSPSensingElement() == null
-                    || a.getidSPSensingElementOnFamily() == null
+                    || a.getSPFamily_idSPFamily()==null
+                    || a.getSPPort_idSPPort()==null
                     )
             {
                 throw new DAOException("In select: any field can be null");
@@ -73,17 +66,19 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
             Statement st = DAOMySQLSettings.getStatement();
 
-            String sql = "select * from spsensingelementonfamily where idSPSensingElementOnFamily like '";
-            sql += a.getidSPSensingElementOnFamily() + "%' and SPSensingElement_idSPSensingElement  like '"+a.getSPSensingElement_idSPSensingElement();
-            sql += "%' and  SPFamilyTemplate_idSPFamilyTemplate like '" + a.getSPFamilyTemplate_idSPFamilyTemplate() + "%'";
-            sql += " and  Name like '" + a.getName() + "%'";
+            String sql = "SELECT s.SPSensingElement_idSPSensingElement,f.SPFamily_idSPFamily,f.SPPort_idSPPort,s.name " +
+                    "FROM sensidb.spsensingelementonfamily s inner join spfamilytemplate f on s.SPFamilyTemplate_idSPFamilyTemplate=f.idSPFamilyTemplate " +
+                    " where s.SPSensingElement_idSPSensingElement like'";
+            sql += a.getSPSensingElement_idSPSensingElement() + "%' and f.SPFamily_idSPFamily  ="+a.getSPFamily_idSPFamily();
+            sql += " and f.SPPort_idSPPort =" + a.getSPPort_idSPPort() + "";
+            sql += " and  name like '" + a.getName() + "%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPSensingelementOnFamily(rs.getString("idSPSensingElementOnFamily"),rs.getString("SPSensingElement_idSPSensingElement"),
-                        rs.getString("SPFamilyTemplate_idSPFamilyTemplate"),rs.getString("Name")));
+                lista.add(new SPSensingelementOnFamily(rs.getString("SPSensingElement_idSPSensingElement"),rs.getString("SPFamily_idSPFamily"),
+                        rs.getString("SPPort_idSPPort"),rs.getString("Name")));
             }
             DAOMySQLSettings.closeStatement(st);
 
@@ -95,51 +90,31 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
 
     @Override
-    public void delete(SPSensingelementOnFamily a) throws DAOException {
-        if (a == null || a.getidSPSensingElementOnFamily() == ""
-                || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
-                || a.getName() == "")
-        {
-            throw new DAOException("In delete: any field can be null");
-        }
-        String query = "DELETE  FROM spsensingelementonfamily WHERE idSPSensingElementOnFamily='" + a.getidSPSensingElementOnFamily() + "';";
-        logger.info("SQL: " + query);
-
-        Statement st = null;
-        try {
-            st = DAOMySQLSettings.getStatement();
-            int n = st.executeUpdate(query);
-
-            DAOMySQLSettings.closeStatement(st);
-
-        } catch (SQLException e) {
-            throw new DAOException("In delete(): " + e.getMessage());
-        }
-    }
-
-
-    @Override
     public void insert(SPSensingelementOnFamily a) throws DAOException {
 
 
-        if (a == null || a.getidSPSensingElementOnFamily() == ""
-                || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
-                || a.getName() == "")
+        if (a == null || a.getSPSensingElement_idSPSensingElement() == null
+                || a.getSPFamily_idSPFamily() == null
+                || a.getSPPort_idSPPort() == null
+                || a.getName() == null)
         {  throw new DAOException("In select: any field can be null");
         }
 
+        String query1="insert into spfamilytemplate (SPFamily_idSPFamily,SPPort_idSPPort) value ('"+a.getSPFamily_idSPFamily()
+                +"', '"+a.getSPPort_idSPPort()+"')";
+        String query2="(select idSPFamilyTemplate from spfamilytemplate where SPFamily_idSPFamily ="+a.getSPFamily_idSPFamily()
+                +" and SPPort_idSPPort="+a.getSPPort_idSPPort()+")";
+        String query3 ="INSERT INTO spsensingelementonfamily (SPSensingElement_idSPSensingElement,SPFamilyTemplate_idSPFamilyTemplate,Name)" +
+                " VALUES('" + a.getSPSensingElement_idSPSensingElement()+ "', " +query2
+                + ", '" +a.getName()+"')";
 
-        String query ="INSERT INTO spsensingelementonfamily (idSPSensingElementOnFamily,SPSensingElement_idSPSensingElement,SPFamilyTemplate_idSPFamilyTemplate,Name)" +
-                " VALUES " +" ('" + a.getidSPSensingElementOnFamily()+ "', '" +a.getSPSensingElement_idSPSensingElement()
-                + "', '" +a.getSPFamilyTemplate_idSPFamilyTemplate()+ "', '" +a.getName()+"')";
-
-        logger.info("SQL: " + query);
+        logger.info("SQL: " + query1);
+        logger.info("SQL: " + query3);
 
         try {
             Statement st = DAOMySQLSettings.getStatement();
-            int n = st.executeUpdate(query);
+            int n = st.executeUpdate(query1);
+            int m=st.executeUpdate(query3);
 
             DAOMySQLSettings.closeStatement(st);
 
@@ -149,30 +124,6 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     }
 
 
-    @Override
-    public void update(SPSensingelementOnFamily a) throws DAOException {
-        if (a == null || a.getidSPSensingElementOnFamily() == ""
-                || a.getSPSensingElement_idSPSensingElement() == ""
-                || a.getSPFamilyTemplate_idSPFamilyTemplate() == ""
-                || a.getName() == ""){
-            throw new DAOException("In select: any field can be null");
-        }
 
-        String query = "UPDATE spsensingelementonfamily s SET s.idSPSensingElementOnFamily = '" + a.getidSPSensingElementOnFamily() +
-                "', s.SPSensingElement_idSPSensingElement = '" + a.getSPSensingElement_idSPSensingElement() + "',  " +
-                "s.SPFamilyTemplate_idSPFamilyTemplate = '" + a.getSPFamilyTemplate_idSPFamilyTemplate() + "'," +
-                " s.Name = '"+ a.getName() + ";";
-        logger.info("SQL: " + query);
-
-        try {
-            Statement st = DAOMySQLSettings.getStatement();
-            int n = st.executeUpdate(query);
-
-            DAOMySQLSettings.closeStatement(st);
-
-        } catch (SQLException e) {
-            throw new DAOException("In update(): " + e.getMessage());
-        }
-    }
 
 }

@@ -175,35 +175,7 @@ public class SPSensingElementOnFamilyOverviewController {
 
 
 
-    /**
-     * Called when the user clicks the edit button. Opens a dialog to edit
-     * details for the selected SPSensingelementOnFamily.
-     */
-    @FXML
-    private void handleEditSPSensingelementOnFamily() {
-        SPSensingelementOnFamily selectedSPSensingelementOnFamily=spSensingelementOnFamilyTableView.getSelectionModel().getSelectedItem();
-        if (selectedSPSensingelementOnFamily != null) {
-            boolean okClicked = mainApp.showSPSensingelementOnFamilyEditDialog(selectedSPSensingelementOnFamily,true);
-            if (okClicked) {
-                try {
-                    SPSensingelementOnFamilyDAOMySQLImpl.getInstance().update(selectedSPSensingelementOnFamily);
-                    showSPSensingelementOnFamilyDetails(selectedSPSensingelementOnFamily);
-                } catch (DAOException e) {
-                    e.printStackTrace();
-                }
-            }
 
-        } else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No SPFamily Selected");
-            alert.setContentText("Please select a SPFamily in the table.");
-
-            alert.showAndWait();
-        }
-    }
 
 
 }

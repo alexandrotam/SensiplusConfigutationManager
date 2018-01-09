@@ -17,7 +17,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -380,6 +379,28 @@ public class MainApp extends Application {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public void showGenerateFamily() throws IOException {
+
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/GenerateFamily.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Generate Family");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+
+
     }
 
     public Stage getPrimaryStage() {

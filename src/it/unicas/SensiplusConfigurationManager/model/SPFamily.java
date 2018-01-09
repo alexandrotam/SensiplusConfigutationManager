@@ -33,18 +33,8 @@ public class SPFamily {
     }
 
 
-    public SPFamily (String idSPFamily){
-        this.idSPFamily= new SimpleStringProperty(idSPFamily);
-        this.name = new SimpleStringProperty("MEASURING_INSTRUMENT");
-        this.id = new SimpleStringProperty("0x01");
-        this.hwVersion = new SimpleStringProperty("RUN4");
-        this.sysclock = new SimpleStringProperty("100000000");
-        this.osctrim=new SimpleStringProperty("0x06");
-    }
-
-
     public SPFamily() {
-        this(null,null,null,null,null,null);
+        this("","","","","","");
     }
 
     public SPFamily(String idSPFamily, String name) {

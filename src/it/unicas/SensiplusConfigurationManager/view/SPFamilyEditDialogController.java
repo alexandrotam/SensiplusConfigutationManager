@@ -11,8 +11,7 @@ import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditD
 
 public class SPFamilyEditDialogController {
 
-    @FXML
-    private TextField idSPFamilyField;
+
     @FXML
     private TextField nameField;
     @FXML
@@ -45,8 +44,6 @@ public class SPFamilyEditDialogController {
 
     public void setSPFamily(SPFamily Family) {
         this.Family = Family;
-
-        idSPFamilyField.setText(Family.getidSPFamily());
         nameField.setText(Family.getName());
         idField.setText(Family.getId());
         hwVersionField.setText(Family.getHwVersion());
@@ -65,7 +62,6 @@ public class SPFamilyEditDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid(verifyLen)) {
-            Family.setIdSPFamily(idSPFamilyField.getText());
             Family.setName(nameField.getText());
             Family.setId(idField.getText());
             Family.setHwVersion(hwVersionField.getText());
@@ -87,8 +83,6 @@ public class SPFamilyEditDialogController {
         String errorMessage = "";
         boolean intero;
 
-        if (intero=isInt(idSPFamilyField.getText())==false)
-            errorMessage += "No valid Id Sp Sensing Element!\n";
 
         if (errorMessage.length() == 0) {
             return true;

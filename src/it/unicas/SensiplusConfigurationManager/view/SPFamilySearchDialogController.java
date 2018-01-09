@@ -124,6 +124,7 @@ public class SPFamilySearchDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid(verifyLen)) {
+
             Family.setIdSPFamily(idSPFamilyField.getText());
             Family.setName(nameField.getText());
             Family.setId(idField.getText());

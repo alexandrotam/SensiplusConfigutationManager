@@ -82,11 +82,7 @@ public class SPSensingElement {
                 "","","","");
     }
 
-    public SPSensingElement(String idSPSensingElement, String name) {
-        this.idSPSensingElement = new SimpleStringProperty(idSPSensingElement);
-        this.name=new SimpleStringProperty(name);
 
-    }
 
 
     public String getIdSPSensingElement() {

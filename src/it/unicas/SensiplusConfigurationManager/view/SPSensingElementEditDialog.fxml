@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
+<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
    <children>
       <GridPane layoutX="14.0" layoutY="11.0" prefHeight="653.0" prefWidth="845.0">
         <columnConstraints>
@@ -179,5 +180,6 @@
                </font></Button>
         </buttons>
       </ButtonBar>
+      <ScrollBar layoutX="859.0" layoutY="-2.0" orientation="VERTICAL" prefHeight="736.0" prefWidth="24.0" />
    </children>
 </AnchorPane>
