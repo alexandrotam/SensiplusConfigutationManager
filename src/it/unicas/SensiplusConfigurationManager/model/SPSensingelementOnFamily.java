@@ -46,6 +46,12 @@ public class SPSensingelementOnFamily {
     }
 
     public SPSensingelementOnFamily(String spSensingElement_idSPSensingElement, String spFamily_idSPFamily, String spPort_idSPPort, String name) {
+        this.SPSensingElement_idSPSensingElement=new SimpleStringProperty(spSensingElement_idSPSensingElement);
+        this.name = new SimpleStringProperty(name);
+        this.SPFamily_idSPFamily=new SimpleStringProperty(spFamily_idSPFamily);
+        this.SPPort_idSPPort=new SimpleStringProperty(spPort_idSPPort);
+
+
     }
 
 
@@ -70,9 +76,6 @@ public class SPSensingelementOnFamily {
     }
 
     public String getSPSensingElement_idSPSensingElement() {
-        if (SPSensingElement_idSPSensingElement==null){
-            SPSensingElement_idSPSensingElement=new SimpleStringProperty("");
-        }
         return SPSensingElement_idSPSensingElement.get();
     }
 
@@ -97,9 +100,7 @@ public class SPSensingelementOnFamily {
     }
 
     public String getName() {
-        if (name==null){
-            name=new SimpleStringProperty("");
-        }
+
         return name.get();
     }
 
@@ -112,9 +113,7 @@ public class SPSensingelementOnFamily {
     }
 
     public String getSPFamily_idSPFamily() {
-        if (SPFamily_idSPFamily==null){
-            SPFamily_idSPFamily=new SimpleStringProperty("");
-        }
+
         return SPFamily_idSPFamily.get();
     }
 
@@ -127,9 +126,7 @@ public class SPSensingelementOnFamily {
     }
 
     public String getSPPort_idSPPort() {
-        if (SPPort_idSPPort==null){
-            SPPort_idSPPort=new SimpleStringProperty("");
-        }
+
         return SPPort_idSPPort.get();
     }
 
