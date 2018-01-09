@@ -49,7 +49,7 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public List<SPSensingelementOnFamily> select(SPSensingelementOnFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingelementOnFamily(null,"",null,"","","");
+            a=new SPSensingelementOnFamily("","","","","","");
         }
 
         ArrayList<SPSensingelementOnFamily> lista = new ArrayList<SPSensingelementOnFamily>();
@@ -69,9 +69,9 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
             String sql = "SELECT s.SPSensingElement_idSPSensingElement,f.SPFamily_idSPFamily,f.SPPort_idSPPort,s.name " +
                     "FROM sensidb.spsensingelementonfamily s inner join spfamilytemplate f on s.SPFamilyTemplate_idSPFamilyTemplate=f.idSPFamilyTemplate " +
                     " where s.SPSensingElement_idSPSensingElement like'";
-            sql += a.getSPSensingElement_idSPSensingElement() + "%' and f.SPFamily_idSPFamily  ="+a.getSPFamily_idSPFamily();
-            sql += " and f.SPPort_idSPPort =" + a.getSPPort_idSPPort() + "";
-            sql += " and  name like '" + a.getName() + "%'";
+            sql += a.getSPSensingElement_idSPSensingElement() + "%' and f.SPFamily_idSPFamily  like'"+a.getSPFamily_idSPFamily()+"%'";
+            sql += " and f.SPPort_idSPPort like'" + a.getSPPort_idSPPort()+"%'";
+            sql += " and  s.name like '" + a.getName() + "%'";
 
 
             logger.info("SQL: " + sql);

@@ -30,21 +30,21 @@
                         <Font name="Calibri Bold Italic" size="18.0" />
                     </font>
                 </Label>
-                <TextField fx:id="idSPSensingElementOnFamilyField" disable="true" GridPane.columnIndex="1" />
-                <TextField fx:id="SPSensingElement_idSPSensingElementField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <TextField fx:id="SPFamilyTemplate_idSPFamilyTemplateField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="idSPSensingElementField" disable="true" GridPane.columnIndex="1" />
+                <TextField fx:id="idSPFamilyField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="idSPPortField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="nameField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <CheckBox fx:id="idSPSensingElementOnFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPSensingElementOnFamily" text="IdSPSensingElementOnFamily">
+            <CheckBox fx:id="idSPSensingElementCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPSensingElement" text="Id Sensing Element">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="SPSensingElement_idSPSensingElementCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSPSensingElement_idSPSensingElement" text="SPSensingElement_idSPSensingElement" GridPane.rowIndex="1">
+            <CheckBox fx:id="idSPFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSPidSPFamily" text="Id Family" GridPane.rowIndex="1">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="SPFamilyTemplate_idSPFamilyTemplateCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSPFamilyTemplate_idSPFamilyTemplate" text="SPFamilyTemplate_idSPFamilyTemplate" GridPane.rowIndex="2">
+            <CheckBox fx:id="idSPPortCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPPort" text="Id Port" GridPane.rowIndex="2">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>

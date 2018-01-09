@@ -20,8 +20,8 @@
                <children>
                   <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="393.0" prefWidth="272.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-9.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idSPSensingElementOnFamilyColumn" prefWidth="121.3584852218628" text="idSPSensingElement" />
-                      <TableColumn fx:id="nameColumn" prefWidth="114.11323547363281" text="idSPFamily" />
+                      <TableColumn fx:id="idSPSensingElementColumn" prefWidth="121.3584852218628" text="idSPSensingElement" />
+                      <TableColumn fx:id="idSPFamilyColumn" prefWidth="114.11323547363281" text="idSPFamily" />
                     </columns>
                   </TableView>
                </children>
@@ -60,15 +60,15 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="SPSensingElement_idSPSensingElementLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="SPFamilyTemplate_idSPFamilyTemplateLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="idSPPortLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Id Sensing Element">
                            <font>
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="idSPSensingElementLabel" text="Label" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
                   <ButtonBar layoutX="211.0" layoutY="339.0" prefHeight="70.0" prefWidth="82.0">

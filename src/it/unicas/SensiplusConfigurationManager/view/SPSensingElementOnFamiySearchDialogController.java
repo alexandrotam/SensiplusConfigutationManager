@@ -14,19 +14,19 @@ public class SPSensingElementOnFamiySearchDialogController {
 
 
     @FXML
-    private TextField idSPSensingElementOnFamilyField;
+    private TextField idSPSensingElementField;
     @FXML
-    private TextField SPSensingElement_idSPSensingElementField;
+    private TextField idSPFamilyField;
     @FXML
-    private TextField SPFamilyTemplate_idSPFamilyTemplateField;
+    private TextField idSPPortField;
     @FXML
     private TextField nameField;
     @FXML
-    private CheckBox idSPSensingElementOnFamilyCheck;
+    private CheckBox idSPSensingElementCheck;
     @FXML
-    private CheckBox SPSensingElement_idSPSensingElementCheck;
+    private CheckBox idSPFamilyCheck;
     @FXML
-    private CheckBox SPFamilyTemplate_idSPFamilyTemplateCheck;
+    private CheckBox idSPPortCheck;
     @FXML
     private CheckBox nameCheck;
 
@@ -52,9 +52,9 @@ public class SPSensingElementOnFamiySearchDialogController {
     public void setSPSensingelementOnFamily(SPSensingelementOnFamily spSensingelementOnFamily) {
         this.SensingelementOnFamily = spSensingelementOnFamily;
 
-        idSPSensingElementOnFamilyField.setText(SensingelementOnFamily.getidSPSensingElementOnFamily());
-        SPSensingElement_idSPSensingElementField.setText(SensingelementOnFamily.getSPSensingElement_idSPSensingElement());
-        SPFamilyTemplate_idSPFamilyTemplateField.setText(SensingelementOnFamily.getSPFamilyTemplate_idSPFamilyTemplate());
+        idSPSensingElementField.setText(SensingelementOnFamily.getSPSensingElement_idSPSensingElement());
+        idSPFamilyField.setText(SensingelementOnFamily.getSPFamily_idSPFamily());
+        idSPPortField.setText(SensingelementOnFamily.getSPPort_idSPPort());
         nameField.setText(SensingelementOnFamily.getName());
     }
 
@@ -67,9 +67,9 @@ public class SPSensingElementOnFamiySearchDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid()) {
-            SensingelementOnFamily.setidSPSensingElementOnFamily(idSPSensingElementOnFamilyField.getText());
-            SensingelementOnFamily.setSPSensingElement_idSPSensingElement(nameField.getText());
-            SensingelementOnFamily.setSPFamilyTemplate_idSPFamilyTemplate(SPFamilyTemplate_idSPFamilyTemplateField.getText());
+            SensingelementOnFamily.setSPSensingElement_idSPSensingElement(idSPSensingElementField.getText());
+            SensingelementOnFamily.setSPFamily_idSPFamily(idSPFamilyField.getText());
+            SensingelementOnFamily.setSPPort_idSPPort(idSPPortField.getText());
             SensingelementOnFamily.setName(nameField.getText());
 
             okClicked = true;
@@ -82,11 +82,11 @@ public class SPSensingElementOnFamiySearchDialogController {
         dialogStage.close();
     }
 
-    public void disableTextboxidSPSensingElementOnFamily(){
-        if (idSPSensingElementOnFamilyCheck.isSelected())
-            idSPSensingElementOnFamilyField.setDisable(false);
+    public void disableTextboxidSPSensingElement(){
+        if (idSPSensingElementCheck.isSelected())
+            idSPSensingElementField.setDisable(false);
         else
-            idSPSensingElementOnFamilyField.setDisable(true);
+            idSPSensingElementField.setDisable(true);
 
     }
 
@@ -98,19 +98,19 @@ public class SPSensingElementOnFamiySearchDialogController {
 
     }
 
-    public void disableTextboxSPSensingElement_idSPSensingElement(){
-        if (SPSensingElement_idSPSensingElementCheck.isSelected())
-            SPSensingElement_idSPSensingElementField.setDisable(false);
+    public void disableTextboxSPidSPFamily(){
+        if (idSPFamilyCheck.isSelected())
+            idSPFamilyField.setDisable(false);
         else
-            SPSensingElement_idSPSensingElementField.setDisable(true);
+            idSPFamilyField.setDisable(true);
 
     }
 
-    public void disableTextboxSPFamilyTemplate_idSPFamilyTemplate(){
-        if (SPFamilyTemplate_idSPFamilyTemplateCheck.isSelected())
-            SPFamilyTemplate_idSPFamilyTemplateField.setDisable(false);
+    public void disableTextboxidSPPort(){
+        if (idSPPortCheck.isSelected())
+            idSPPortField.setDisable(false);
         else
-            SPFamilyTemplate_idSPFamilyTemplateField.setDisable(true);
+            idSPPortField.setDisable(true);
 
     }
 

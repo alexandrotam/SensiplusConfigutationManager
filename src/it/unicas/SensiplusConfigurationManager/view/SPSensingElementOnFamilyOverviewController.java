@@ -19,22 +19,16 @@ public class SPSensingElementOnFamilyOverviewController {
     @FXML
     private TableView<SPSensingelementOnFamily> spSensingelementOnFamilyTableView;
     @FXML
-    private TableColumn<SPSensingelementOnFamily, String> idSPSensingElementOnFamilyColumn;
+    private TableColumn<SPSensingelementOnFamily, String> idSPSensingElementColumn;
     @FXML
-    private TableColumn<SPSensingelementOnFamily, String> SPSensingElement_idSPSensingElementColumn;
-    @FXML
-    private TableColumn<SPSensingelementOnFamily, String> SPFamilyTemplate_idSPFamilyTemplateColumn;
-    @FXML
-    private TableColumn<SPSensingelementOnFamily, String> nameColumn;
+    private TableColumn<SPSensingelementOnFamily, String> idSPFamilyColumn;
 
     @FXML
-    private Label idSPSensingElementOnFamilyLabel;
+    private Label idSPSensingElementLabel;
     @FXML
-    private Label SPSensingElement_idSPSensingElementLabel;
+    private Label idSPFamilyLabel;
     @FXML
-    private Label SPFamilyTemplate_idSPFamilyTemplateLabel;
-    @FXML
-    private Label hwVersionLabel;
+    private Label idSPPortLabel;
     @FXML
     private Label nameLabel;
 
@@ -50,9 +44,9 @@ public class SPSensingElementOnFamilyOverviewController {
     @FXML
     private void initialize() {
 
-        idSPSensingElementOnFamilyColumn.setCellValueFactory(cellData->cellData.getValue().idSPSensingElementOnFamilyProperty());
+        idSPSensingElementColumn.setCellValueFactory(cellData->cellData.getValue().SPSensingElement_idSPSensingElementProperty());
 
-        nameColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
+        idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().SPFamily_idSPFamilyProperty());
         showSPSensingelementOnFamilyDetails(null);
 
         spSensingelementOnFamilyTableView.getSelectionModel().selectedItemProperty().addListener(
@@ -77,82 +71,25 @@ public class SPSensingElementOnFamilyOverviewController {
     private void showSPSensingelementOnFamilyDetails(SPSensingelementOnFamily spSensingelementOnFamily) {
         if (spSensingelementOnFamily != null) {
             // Fill the labels with info from the spSensingelementOnFamily object.
-            idSPSensingElementOnFamilyLabel.setText(spSensingelementOnFamily.getidSPSensingElementOnFamily());
-            SPSensingElement_idSPSensingElementLabel.setText(spSensingelementOnFamily.getSPSensingElement_idSPSensingElement());
-            SPFamilyTemplate_idSPFamilyTemplateLabel.setText(String.valueOf(spSensingelementOnFamily.getSPFamilyTemplate_idSPFamilyTemplate()));
+            idSPSensingElementLabel.setText(spSensingelementOnFamily.getSPSensingElement_idSPSensingElement());
+            idSPFamilyLabel.setText(spSensingelementOnFamily.getSPFamily_idSPFamily());
+            idSPPortLabel.setText(String.valueOf(spSensingelementOnFamily.getSPPort_idSPPort()));
             nameLabel.setText(String.valueOf(spSensingelementOnFamily.getName()));
            }
            else {
-            idSPSensingElementOnFamilyLabel.setText("");
-            SPSensingElement_idSPSensingElementLabel.setText("");
-            SPFamilyTemplate_idSPFamilyTemplateLabel.setText("");
+            idSPSensingElementLabel.setText("");
+            idSPFamilyLabel.setText("");
+            idSPPortLabel.setText("");
             nameLabel.setText("");
 
         }
     }
 
-    /**
-     * Called when the user clicks on the delete button.
-     */
-    @FXML
-    private void handleDeleteSPSensingelementOnFamily() {
-        int selectedIndex = spSensingelementOnFamilyTableView.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
 
-            SPSensingelementOnFamily spSensingelementOnFamily = spSensingelementOnFamilyTableView.getItems().get(selectedIndex);
-            try {
-                SPSensingElementDAOMySQLImpl.getInstance().delete(spSensingelementOnFamily);
-                spSensingelementOnFamilyTableView.getItems().remove(selectedIndex);
-            } catch (DAOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            // Nothing selected.
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.initOwner(mainApp.getPrimaryStage());
-            alert.setTitle("No Selection");
-            alert.setHeaderText("No SensingelementOnFamily Selected");
-            alert.setContentText("Please select a SensingelementOnFamily in the table.");
-
-            alert.showAndWait();
-        }
-    }
-
-
-
-    /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new SPSensingelementOnFamily.
-     */
-    @FXML
-    private void handleNewSPSensingelementOnFamily() {
-        SPSensingelementOnFamily tempSPSensingelementOnFamily = new SPSensingelementOnFamily("","","","");
-        boolean okClicked = mainApp.showSPSensingelementOnFamilyEditDialog(tempSPSensingelementOnFamily, true);
-        Stage dialog=new Stage();
-
-        if (okClicked) {
-            try {
-                SPSensingelementOnFamilyDAOMySQLImpl.getInstance().insert(tempSPSensingelementOnFamily);
-                mainApp.getSPSensingelementOnFamilyData().add(tempSPSensingelementOnFamily);
-            } catch (DAOException e) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.initOwner(mainApp.getPrimaryStage());
-                alert.setTitle("Error during DB interaction");
-                alert.setHeaderText("Error during insert ...");
-                alert.setContentText(e.getMessage());
-
-                alert.showAndWait();
-            }
-        }
-    }
-
-    /**
-     * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new SPSensingelementOnFamily.
-     */
     @FXML
     private void handleSearchSPSensingelementOnFamily() {
-        SPSensingelementOnFamily tempSPSensingelementOnFamily = new SPSensingelementOnFamily("","","","");
+        SPSensingelementOnFamily tempSPSensingelementOnFamily = new SPSensingelementOnFamily("",
+                "","","");
         boolean okClicked = mainApp.showSPSensingelementOnFamilySearchDialog(tempSPSensingelementOnFamily,false);
         if (okClicked) {
             try {
