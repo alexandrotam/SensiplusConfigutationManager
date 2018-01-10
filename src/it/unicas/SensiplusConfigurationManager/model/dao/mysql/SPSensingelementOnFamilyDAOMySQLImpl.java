@@ -49,7 +49,7 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public List<SPSensingelementOnFamily> select(SPSensingelementOnFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingelementOnFamily("","","","","","");
+            a=new SPSensingelementOnFamily("","","","","");
         }
 
         ArrayList<SPSensingelementOnFamily> lista = new ArrayList<SPSensingelementOnFamily>();

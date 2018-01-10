@@ -59,7 +59,7 @@ public class RootLayoutController {
     @FXML
     private void handleAbout() {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("About");
+        alert.setTitle("Information");
         alert.setHeaderText("Tarallo & Fusco");
         alert.setContentText("Author: Gruppo 7\nVersione 1.0");
 

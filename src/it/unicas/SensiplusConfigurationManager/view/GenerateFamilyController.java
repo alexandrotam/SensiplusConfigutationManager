@@ -17,8 +17,6 @@ public class GenerateFamilyController {
     private TextField idSPPortField;
     @FXML
     private TextField nameField;
-    @FXML
-    private TextField idSPFamilyTemplate;
 
 
 
@@ -46,7 +44,6 @@ public class GenerateFamilyController {
         idSPSensingElementField.setText(SensingElementOnFamily.getSPSensingElement_idSPSensingElement());
         idSPFamilyField.setText(SensingElementOnFamily.getSPFamily_idSPFamily());
         idSPPortField.setText(SensingElementOnFamily.getSPPort_idSPPort());
-        idSPFamilyTemplate.setText(SensingElementOnFamily.getSPFamilyTemplate_idSPFamilyTemplate());
 
 
     }
@@ -64,7 +61,6 @@ public class GenerateFamilyController {
             SensingElementOnFamily.setSPSensingElement_idSPSensingElement(idSPSensingElementField.getText());
             SensingElementOnFamily.setSPFamily_idSPFamily(idSPFamilyField.getText());
             SensingElementOnFamily.setSPPort_idSPPort(idSPPortField.getText());
-            SensingElementOnFamily.setSPFamilyTemplate_idSPFamilyTemplate(idSPFamilyTemplate.getText());
 
             okClicked = true;
             dialogStage.close();
