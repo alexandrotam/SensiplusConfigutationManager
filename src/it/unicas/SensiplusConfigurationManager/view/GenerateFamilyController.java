@@ -1,5 +1,6 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
+import com.mysql.cj.api.mysqla.result.Resultset;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.DAOMySQLSettings;
 import javafx.fxml.FXML;
@@ -59,11 +60,15 @@ public class GenerateFamilyController {
         ArrayList<String> lista3 = new ArrayList<>();
         String query3="select idSPPort from spport";
         ResultSet rs3 = st3.executeQuery(query3);
+
         while(rs3.next()){
             lista3.add(rs3.getString("idSPPort"));
         }
+
         DAOMySQLSettings.closeStatement(st3);
+
         idSPPortCombobox.getItems().addAll(lista3);
+        //SELECT SPPort_idSPPort FROM sensidb.spfamilytemplate inner join spsensingelementonfamily on idSPFamilyTemplate=SPFamilyTemplate_idSPFamilyTemplate order by SPPort_idSPPort;
 
     }
 
