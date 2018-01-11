@@ -20,8 +20,8 @@
                <children>
                   <TableView fx:id="spFamilyTableView" layoutX="10.0" layoutY="167.0" prefHeight="393.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idSPFamilyColumn" prefWidth="92.37738084793091" text="IdSPFamily" />
-                      <TableColumn fx:id="nameColumn" prefWidth="172.98116126761602" text="Name" />
+                      <TableColumn fx:id="nameColumn" prefWidth="92.37738084793091" text="Name" />
+                      <TableColumn fx:id="idColumn" prefWidth="172.98116126761602" text="Id" />
                     </columns>
                   </TableView>
                </children>

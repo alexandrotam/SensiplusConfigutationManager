@@ -6,16 +6,14 @@ import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementD
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingelementOnFamilyDAOMySQLImpl;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import it.unicas.SensiplusConfigurationManager.MainApp;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 public class SPSensingElementOverviewController {
 
@@ -177,14 +175,25 @@ public class SPSensingElementOverviewController {
     @FXML
     private void handleDeleteSPSensingELement() {
         int selectedIndex = spSensingElementTableView.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
 
-            SPSensingElement spSensingElement = spSensingElementTableView.getItems().get(selectedIndex);
-            try {
-                SPSensingElementDAOMySQLImpl.getInstance().delete(spSensingElement);
-                spSensingElementTableView.getItems().remove(selectedIndex);
-            } catch (DAOException e) {
-                e.printStackTrace();
+        if (selectedIndex >= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete");
+            alert.setContentText("Are you sure?");
+            ButtonType buttonTypeOne = new ButtonType("Yes");
+            ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == buttonTypeOne){
+                SPSensingElement spSensingElement = spSensingElementTableView.getItems().get(selectedIndex);
+                try {
+                    SPSensingElementDAOMySQLImpl.getInstance().delete(spSensingElement);
+                    spSensingElementTableView.getItems().remove(selectedIndex);
+                } catch (DAOException e) {
+                    e.printStackTrace();
+                }
             }
         } else {
             // Nothing selected.

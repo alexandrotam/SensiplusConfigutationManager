@@ -5,19 +5,17 @@ import it.unicas.SensiplusConfigurationManager.model.SPFamily;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.util.List;
+import java.util.Optional;
 
 public class SPFamilyOverviewController {
     @FXML
     private TableView<SPFamily> spFamilyTableView;
     @FXML
-    private TableColumn<SPFamily, String> idSPFamilyColumn;
+    private TableColumn<SPFamily, String> idColumn;
     @FXML
     private TableColumn<SPFamily, String> nameColumn;
 
@@ -46,10 +44,12 @@ public class SPFamilyOverviewController {
     @FXML
     private void initialize() {
 
-       idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().IdSPFamilyProperty());
 
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
+        idColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
+
         showSPFamilyDetails(null);
+
 
         spFamilyTableView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showSPFamilyDetails(newValue));
@@ -95,14 +95,25 @@ public class SPFamilyOverviewController {
     @FXML
     private void handleDeleteSPFamily() {
         int selectedIndex = spFamilyTableView.getSelectionModel().getSelectedIndex();
-        if (selectedIndex >= 0) {
 
-            SPFamily spFamily = spFamilyTableView.getItems().get(selectedIndex);
-            try {
-                SPFamilyDAOMySQLImpl.getInstance().delete(spFamily);
-                spFamilyTableView.getItems().remove(selectedIndex);
-            } catch (DAOException e) {
-                e.printStackTrace();
+        if (selectedIndex >= 0) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Delete");
+            alert.setContentText("Are you sure?");
+            ButtonType buttonTypeOne = new ButtonType("Yes");
+            ButtonType buttonTypeCancel = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            alert.getButtonTypes().setAll(buttonTypeOne, buttonTypeCancel);
+
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == buttonTypeOne){
+                SPFamily spFamily = spFamilyTableView.getItems().get(selectedIndex);
+                try {
+                    SPFamilyDAOMySQLImpl.getInstance().delete(spFamily);
+                    spFamilyTableView.getItems().remove(selectedIndex);
+                } catch (DAOException e) {
+                    e.printStackTrace();
+                }
             }
         } else {
             // Nothing selected.

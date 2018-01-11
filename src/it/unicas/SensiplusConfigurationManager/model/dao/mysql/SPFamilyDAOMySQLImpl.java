@@ -101,12 +101,12 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
 
     @Override
     public void delete(SPFamily a) throws DAOException {
-        if (a == null || a.getidSPFamily() == ""
-                || a.getSysclock() == ""
-                || a.getOsctrim() == ""
-                || a.getName() == ""
-                || a.getId() == ""
-                || a.getHwVersion() == "")
+        if (a == null || a.getidSPFamily() == null
+                || a.getSysclock() == null
+                || a.getOsctrim() == null
+                || a.getName() == null
+                || a.getId() == null
+                || a.getHwVersion() == null)
         {
             throw new DAOException("In delete: any field can be null");
         }

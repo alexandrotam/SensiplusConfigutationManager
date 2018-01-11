@@ -24,10 +24,6 @@
                   <MenuItem mnemonicParsing="false" text="Chip" />
                 <MenuItem mnemonicParsing="false" text="Cluster" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-              </items>
-            </Menu>
-            <Menu mnemonicParsing="false" text="Join">
-              <items>
                 <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnFamily" text="SPSensingElementOnFamily" />
               </items>
             </Menu>

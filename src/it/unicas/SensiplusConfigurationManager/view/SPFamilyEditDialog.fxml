@@ -26,7 +26,10 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="SysClock" GridPane.rowIndex="4" />
+            <Label text="SysClock" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font></Label>
             <Label text="HwVersion" GridPane.rowIndex="3">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
