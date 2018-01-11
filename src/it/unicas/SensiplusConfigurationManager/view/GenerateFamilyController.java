@@ -67,7 +67,20 @@ public class GenerateFamilyController {
 
         DAOMySQLSettings.closeStatement(st3);
 
+        Statement st4 = DAOMySQLSettings.getStatement();
+        ArrayList<String> lista4 = new ArrayList<>();
+        String query4="SELECT SPPort_idSPPort FROM sensidb.spfamilytemplate inner join spsensingelementonfamily on " +
+                "idSPFamilyTemplate=SPFamilyTemplate_idSPFamilyTemplate;";
+        ResultSet rs4 = st4.executeQuery(query4);
+
+        while(rs4.next()){
+            lista4.add(rs4.getString("SPPort_idSPPort"));
+        }
+
+        DAOMySQLSettings.closeStatement(st4);
+
         idSPPortCombobox.getItems().addAll(lista3);
+        idSPPortCombobox.getItems().removeAll(lista4);
         //SELECT SPPort_idSPPort FROM sensidb.spfamilytemplate inner join spsensingelementonfamily on idSPFamilyTemplate=SPFamilyTemplate_idSPFamilyTemplate order by SPPort_idSPPort;
 
     }
