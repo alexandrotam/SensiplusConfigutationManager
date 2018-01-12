@@ -1,5 +1,6 @@
 package it.unicas.SensiplusConfigurationManager;
 
+import it.unicas.SensiplusConfigurationManager.model.SPChip;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
 import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
@@ -33,7 +34,7 @@ public class MainApp extends Application {
     private ObservableList<SPSensingElement> SPSensigElementData = FXCollections.observableArrayList();
     private ObservableList<SPFamily> SPFamilyData = FXCollections.observableArrayList();
     private ObservableList<SPSensingelementOnFamily> SPSensingelementOnFamilyData = FXCollections.observableArrayList();
-
+    private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
 
 
     /**
@@ -54,6 +55,10 @@ public class MainApp extends Application {
 
     public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){
         return  SPSensingelementOnFamilyData;
+    }
+
+    public ObservableList<SPChip> getSPChipData() {
+        return SPChipData;
     }
 
     @Override
@@ -128,6 +133,25 @@ public class MainApp extends Application {
 
     }
 
+    public void showSPChipOverview() {
+        try {
+            // Load SPFamily overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPChipOverview.fxml"));
+            AnchorPane SPChipOverview = (AnchorPane) loader.load();
+
+            // Set SPFamily overview into the center of root layout.
+            rootLayout.setCenter(SPChipOverview);
+
+            // Give the controller access to the main app.
+            SPChipOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     public void initRootLayout() {
@@ -265,6 +289,35 @@ public class MainApp extends Application {
         }
     }
 
+   public boolean showSPChipEditDialog(SPChip spChip, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPChipEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPChip");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPChipEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPChip(spChip);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -341,6 +394,35 @@ public class MainApp extends Application {
             SPSensingElementOnFamiySearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPSensingelementOnFamily(spSensingelementOnFamily);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showSPChipSearchDialog(SPChip spChip, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPChipSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPChip");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPChipSearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPChip(spChip);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

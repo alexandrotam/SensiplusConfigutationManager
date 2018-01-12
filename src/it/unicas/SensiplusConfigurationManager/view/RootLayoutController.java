@@ -51,6 +51,9 @@ public class RootLayoutController {
         mainApp.showSPSensingelementOnFamilyOverview();
     }
 
+    public void handleSPChip(){
+        mainApp.showSPChipOverview();
+    }
 
 
     /**

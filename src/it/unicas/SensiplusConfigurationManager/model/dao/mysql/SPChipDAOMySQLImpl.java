@@ -68,7 +68,7 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
             Statement st = DAOMySQLSettings.getStatement();
 
             String sql = "select * from SPChip where idSPChip like '";
-            sql += a.getidSPChip() + "%' and SPFamily_idSPFamily  like '"+a.getSPFamily_idSPFamily();
+            sql += a.getidSPChip() + "%' and SPFamily_idSPFamily  like '"+a.getSPFamily_idSPFamily()+"%'";
 
 
             logger.info("SQL: " + sql);

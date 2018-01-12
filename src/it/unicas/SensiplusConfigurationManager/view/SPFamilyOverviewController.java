@@ -180,10 +180,6 @@ public class SPFamilyOverviewController {
         }
     }
 
-
-
-
-
     /**
      * Called when the user clicks the edit button. Opens a dialog to edit
      * details for the selected SPFamily.
