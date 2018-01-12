@@ -49,7 +49,7 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
     public List<SPSensingelementOnFamily> select(SPSensingelementOnFamily a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingelementOnFamily("","","","","");
+            a=new SPSensingelementOnFamily("","","","","","","");
         }
 
         ArrayList<SPSensingelementOnFamily> lista = new ArrayList<SPSensingelementOnFamily>();
@@ -66,8 +66,11 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
 
             Statement st = DAOMySQLSettings.getStatement();
 
-            String sql = "SELECT s.SPSensingElement_idSPSensingElement,f.SPFamily_idSPFamily,f.SPPort_idSPPort,s.name " +
-                    "FROM sensidb.spsensingelementonfamily s inner join spfamilytemplate f on s.SPFamilyTemplate_idSPFamilyTemplate=f.idSPFamilyTemplate " +
+
+            String sql = "SELECT s.SPSensingElement_idSPSensingElement,f.SPFamily_idSPFamily,f.SPPort_idSPPort,s.name,e.name,fa.name " +
+                    "FROM (sensidb.spsensingelementonfamily s inner join spfamilytemplate f on s.SPFamilyTemplate_idSPFamilyTemplate=f.idSPFamilyTemplate) " +
+                    "inner join spsensingelement e on e.idSPSensingElement=s.SPSensingElement_idSPSensingElement inner join spfamily fa ON " +
+                    "fa.idSPFamily=f.SPFamily_idSPFamily" +
                     " where s.SPSensingElement_idSPSensingElement like'";
             sql += a.getSPSensingElement_idSPSensingElement() + "%' and f.SPFamily_idSPFamily  like'"+a.getSPFamily_idSPFamily()+"%'";
             sql += " and f.SPPort_idSPPort like'" + a.getSPPort_idSPPort()+"%'";
@@ -78,7 +81,8 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
                 lista.add(new SPSensingelementOnFamily(rs.getString("SPSensingElement_idSPSensingElement"),rs.getString("SPFamily_idSPFamily"),
-                        rs.getString("SPPort_idSPPort"),rs.getString("Name")));
+                        rs.getString("SPPort_idSPPort"),rs.getString("Name"),rs.getString("e.name"),
+                rs.getString("fa.name")));
             }
             DAOMySQLSettings.closeStatement(st);
 

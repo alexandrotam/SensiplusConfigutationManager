@@ -19,9 +19,9 @@ public class SPSensingElementOnFamilyOverviewController {
     @FXML
     private TableView<SPSensingelementOnFamily> spSensingelementOnFamilyTableView;
     @FXML
-    private TableColumn<SPSensingelementOnFamily, String> idSPSensingElementColumn;
+    private TableColumn<SPSensingelementOnFamily, String> NameSPSensingElementColumn;
     @FXML
-    private TableColumn<SPSensingelementOnFamily, String> idSPFamilyColumn;
+    private TableColumn<SPSensingelementOnFamily, String> NameSPFamilyColumn;
 
     @FXML
     private Label idSPSensingElementLabel;
@@ -44,9 +44,9 @@ public class SPSensingElementOnFamilyOverviewController {
     @FXML
     private void initialize() {
 
-        idSPSensingElementColumn.setCellValueFactory(cellData->cellData.getValue().SPSensingElement_idSPSensingElementProperty());
+        NameSPSensingElementColumn.setCellValueFactory(cellData->cellData.getValue().name_SPSensingElementProperty());
 
-        idSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().SPFamily_idSPFamilyProperty());
+        NameSPFamilyColumn.setCellValueFactory(cellData->cellData.getValue().name_SPFamilyProperty());
         showSPSensingelementOnFamilyDetails(null);
 
         spSensingelementOnFamilyTableView.getSelectionModel().selectedItemProperty().addListener(
@@ -89,7 +89,7 @@ public class SPSensingElementOnFamilyOverviewController {
     @FXML
     private void handleSearchSPSensingelementOnFamily() {
         SPSensingelementOnFamily tempSPSensingelementOnFamily = new SPSensingelementOnFamily("",
-                "","","");
+                "","","","","");
         boolean okClicked = mainApp.showSPSensingelementOnFamilySearchDialog(tempSPSensingelementOnFamily,false);
         if (okClicked) {
             try {
