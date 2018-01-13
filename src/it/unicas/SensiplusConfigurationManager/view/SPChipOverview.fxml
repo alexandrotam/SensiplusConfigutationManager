@@ -12,20 +12,20 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="395.0" prefWidth="749.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPChipOverviewController">
+<AnchorPane prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPChipOverviewController">
    <children>
-      <SplitPane dividerPositions="0.2827140549273021" layoutX="-14.0" prefHeight="395.0" prefWidth="767.0">
+      <SplitPane dividerPositions="0.2827140549273021" layoutX="-14.0" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="114.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="spChipTableView" layoutX="13.0" layoutY="-3.0" prefHeight="452.0" prefWidth="203.0">
+                  <TableView fx:id="spChipTableView" layoutX="13.0" layoutY="-3.0" prefHeight="393.0" prefWidth="219.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="idSPChipColumn" prefWidth="202.0" text="Id Chip" />
+                      <TableColumn fx:id="idSPChipColumn" prefWidth="208.30189240050962" text="Id Chip" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="367.0" prefWidth="515.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="417.0" prefWidth="521.0">
                <children>
                   <ButtonBar layoutX="-14.0" layoutY="324.0" prefHeight="69.0" prefWidth="461.0">
                      <buttons>
