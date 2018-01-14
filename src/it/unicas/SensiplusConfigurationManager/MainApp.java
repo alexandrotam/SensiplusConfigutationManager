@@ -1,9 +1,6 @@
 package it.unicas.SensiplusConfigurationManager;
 
-import it.unicas.SensiplusConfigurationManager.model.SPChip;
-import it.unicas.SensiplusConfigurationManager.model.SPFamily;
-import it.unicas.SensiplusConfigurationManager.model.SPSensingElement;
-import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
+import it.unicas.SensiplusConfigurationManager.model.*;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.DAOMySQLSettings;
 import it.unicas.SensiplusConfigurationManager.view.*;
 import javafx.application.Application;
@@ -35,6 +32,7 @@ public class MainApp extends Application {
     private ObservableList<SPFamily> SPFamilyData = FXCollections.observableArrayList();
     private ObservableList<SPSensingelementOnFamily> SPSensingelementOnFamilyData = FXCollections.observableArrayList();
     private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
+    private ObservableList<SPSensingElementOnChip> SPSensingElementOnChipData = FXCollections.observableArrayList();
 
 
     /**
@@ -52,15 +50,15 @@ public class MainApp extends Application {
     public ObservableList<SPFamily> getSPFamilyData() {
         return SPFamilyData;
     }
-
     public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){
         return  SPSensingelementOnFamilyData;
     }
-
     public ObservableList<SPChip> getSPChipData() {
         return SPChipData;
     }
-
+    public ObservableList<SPSensingElementOnChip> getSPSensingElementOnChipData() {
+        return SPSensingElementOnChipData;
+    }
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage=primaryStage;
@@ -151,6 +149,25 @@ public class MainApp extends Application {
             e.printStackTrace();
         }
 
+    }
+
+    public void showSPSensingElementOnChipOverview() {
+        try {
+            // Load SPSensingElementOnChip overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingElementOnChipOverview.fxml"));
+            AnchorPane SPSensingElementOnChipOverview = (AnchorPane) loader.load();
+
+            // Set SPSensingElementOnChip overview into the center of root layout.
+            rootLayout.setCenter(SPSensingElementOnChipOverview);
+
+            // Give the controller access to the main app.
+            SPSensingElementOnChipOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -434,6 +451,36 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPSensingElementOnChipSearchDialog(SPSensingElementOnChip spSensingElementOnChip, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingElementOnChipSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPSensingElementOnChip");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPSensingElementOnChipSearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingElementOnChip(spSensingElementOnChip);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
     public boolean showGenerateFamily(SPSensingelementOnFamily spSensingelementOnFamily,boolean verifyLen)  {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -465,6 +512,8 @@ public class MainApp extends Application {
 
     }
 
+
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -473,6 +522,8 @@ public class MainApp extends Application {
         launch(args);
 
     }
+
+
 
 }
 

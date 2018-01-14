@@ -50,7 +50,8 @@ public class SPSensingElementOnChipDAOMySQLImpl implements DAOSPSensingElementOn
     public List<SPSensingElementOnChip> select(SPSensingElementOnChip a) throws DAOException {
 
         if (a == null){
-            a=new SPSensingElementOnChip("","","","","");
+            a=new SPSensingElementOnChip("","","","",
+                    "");
         }
 
         ArrayList<SPSensingElementOnChip> lista = new ArrayList<SPSensingElementOnChip>();
@@ -59,8 +60,8 @@ public class SPSensingElementOnChipDAOMySQLImpl implements DAOSPSensingElementOn
             if (a == null || a.getSPChip_idSPChip() == null
                     || a.getM() == null
                     || a.getN()==null
-                    || a.getSPSensingElementOnFamily_idSPSensingElementOnFamily()==null
-                    || a.getSPCalibration_idSPCalibration()==null
+                    || a.getSPSensingElementOnFamily_Name() == null
+                    || a.getSPCalibration_Name() == null
                     )
             {
                 throw new DAOException("In select: any field can be null");
@@ -69,21 +70,22 @@ public class SPSensingElementOnChipDAOMySQLImpl implements DAOSPSensingElementOn
             Statement st = DAOMySQLSettings.getStatement();
 
 
-            String sql = "SELECT SPChip_idSPChip,m,n,SPSensingElementOnFamily_idSPSensingElementOnFamily,SPCalibration_idSPCalibration " +
-                    "FROM SPSensingElementOnChip " +
-                    " where s.SPChip_idSPChip like'";
-            sql += a.getSPChip_idSPChip() + "%' and m  like'"+a.getM()+"%'";
-            sql += " and n like'" + a.getN()+"%'";
-            sql += " and  SPSensingElementOnFamily_idSPSensingElementOnFamily like '" + a.getSPSensingElementOnFamily_idSPSensingElementOnFamily() + "%'";
-            sql +=" and SPCalibration_idSPCalibration like '"+a.getSPCalibration_idSPCalibration()+"%'";
+            String sql = "SELECT sc.SPChip_idSPChip,sc.m,sc.n,sf.name,ca.name From SPSensingElementOnChip sc INNER JOIN" +
+                    " SPSensingElementOnFamily sf on sc.spsensingelementonfamily_idspsensingelementonfamily=sf.idspsensingelementonfamily" +
+                    " inner join spcalibration ca on sc.spcalibration_idspcalibration=ca.idSPCalibration where " +
+                    "sc.SPChip_idSPChip like'";
+            sql += a.getSPChip_idSPChip() + "%' and sc.m like'"+a.getM()+"%'";
+            sql += " and sc.n like'" + a.getN()+"%'";
+            sql += " and  sf.name like '" + a.getSPSensingElementOnFamily_Name() + "%'";
+            sql +=" and ca.name like '"+a.getSPCalibration_Name()+"%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
                 lista.add(new SPSensingElementOnChip(rs.getString("SPChip_idSPChip"),rs.getString("m"),
-                        rs.getString("n"),rs.getString("SPSensingElementOnFamily_idSPSensingElementOnFamily"),
-                        rs.getString("SPCalibration_idSPCalibration")));
+                        rs.getString("n"),rs.getString("sf.name"),
+                        rs.getString("ca.name")));
             }
             DAOMySQLSettings.closeStatement(st);
 
@@ -101,17 +103,13 @@ public class SPSensingElementOnChipDAOMySQLImpl implements DAOSPSensingElementOn
         if (a == null || a.getSPChip_idSPChip() == null
                 || a.getM() == null
                 || a.getN()==null
-                || a.getSPSensingElementOnFamily_idSPSensingElementOnFamily()==null
-                || a.getSPCalibration_idSPCalibration()==null
                 )
         {  throw new DAOException("In select: any field can be null");
         }
 
         String query ="INSERT INTO SPSensingElementOnChip (SPChip_idSPChip,m,n,SPSensingElementOnFamily_idSPSensingElementOnFamily" +
                 ",SPCalibration_idSPCalibration)" +
-                " VALUES('" + a.getSPChip_idSPChip()+ "', '" +a.getM()+"', '"+a.getN()
-                + "', '" +a.getSPSensingElementOnFamily_idSPSensingElementOnFamily()
-                +"', '"+a.getSPCalibration_idSPCalibration()+ "')";
+                " VALUES('" + a.getSPChip_idSPChip()+ "', '" +a.getM()+"', '"+a.getN() +"')";
 
         logger.info("SQL: " + query);
 

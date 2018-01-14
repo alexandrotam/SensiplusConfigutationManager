@@ -64,6 +64,7 @@
                     <rowConstraints>
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Id Chip">
@@ -82,6 +83,12 @@
                            </font>
                         </Label>
                         <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="15.0" prefWidth="96.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Sensing Element On Chip" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
                            </font>

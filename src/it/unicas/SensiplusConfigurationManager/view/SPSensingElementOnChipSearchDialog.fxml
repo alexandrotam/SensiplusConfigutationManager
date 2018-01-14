@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnChipSearchDialogController">
+   <children>
+      <GridPane layoutX="7.0" layoutY="2.0" prefHeight="339.0" prefWidth="587.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="2.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <CheckBox fx:id="idChipCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidChip" text="Id Chip">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="mCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxM" text="m" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="nCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxN" text="n" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="nameSensingElementOnFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxNameSensingElementOnFamily" text="Sensing Element On Family" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="nameCalibrationCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxNameCalibration" text="Calibration" GridPane.rowIndex="4">
+               <font>
+                  <Font name="Calibri Bold Italic" size="18.0" />
+               </font>
+            </CheckBox>
+            <TextField fx:id="idChipField" disable="true" GridPane.columnIndex="1" />
+            <TextField fx:id="mField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="nField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="nameSensingElementOnFamilyField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="nameCalibrationField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+      <ButtonBar layoutX="132.0" layoutY="341.0" prefHeight="57.0" prefWidth="337.0" AnchorPane.bottomAnchor="2.0">
+         <buttons>
+            <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="44.0" prefWidth="161.0" text="Cancel">
+               <font>
+                  <Font name="Calibri Bold Italic" size="24.0" />
+               </font>
+            </Button>
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>

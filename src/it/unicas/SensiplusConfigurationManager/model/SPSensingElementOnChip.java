@@ -15,24 +15,25 @@ public class SPSensingElementOnChip {
     private StringProperty SPChip_idSPChip;
     private StringProperty m;
     private StringProperty n;
-    private StringProperty SPSensingElementOnFamily_idSPSensingElementOnFamily;
-    private StringProperty SPCalibration_idSPCalibration;
+    private StringProperty SPSensingElementOnFamily_Name;
+    private StringProperty SPCalibration_Name;
 
 
     public SPSensingElementOnChip(String SPChip_idSPChip,String m,String n,
-                                  String SPSensingElementOnFamily_idSPSensingElementOnFamily,
-                                  String SPCalibration_idSPCalibration){
+                                   String SPSensingElementOnFamily_Name,
+                                  String SPCalibration_Name){
         this.m = new SimpleStringProperty(m);
         this.n = new SimpleStringProperty(n);
-        this.SPSensingElementOnFamily_idSPSensingElementOnFamily = new SimpleStringProperty(SPSensingElementOnFamily_idSPSensingElementOnFamily);
-        this.SPCalibration_idSPCalibration = new SimpleStringProperty(SPCalibration_idSPCalibration);
-        this.SPChip_idSPChip = new SimpleStringProperty(SPChip_idSPChip);
 
+        this.SPChip_idSPChip = new SimpleStringProperty(SPChip_idSPChip);
+        this.SPSensingElementOnFamily_Name = new SimpleStringProperty(SPSensingElementOnFamily_Name);
+        this.SPCalibration_Name = new SimpleStringProperty(SPCalibration_Name);
 
     }
 
 
-    public SPSensingElementOnChip(){ this("","","","","");
+    public SPSensingElementOnChip(){ this("","","","",
+            "");
     }
 
     public String getSPChip_idSPChip() {
@@ -71,34 +72,34 @@ public class SPSensingElementOnChip {
         this.n.set(n);
     }
 
-    public String getSPSensingElementOnFamily_idSPSensingElementOnFamily() {
-        return SPSensingElementOnFamily_idSPSensingElementOnFamily.get();
+    public String getSPSensingElementOnFamily_Name() {
+        return SPSensingElementOnFamily_Name.get();
     }
 
-    public StringProperty SPSensingElementOnFamily_idSPSensingElementOnFamilyProperty() {
-        return SPSensingElementOnFamily_idSPSensingElementOnFamily;
+    public StringProperty SPSensingElementOnFamily_NameProperty() {
+        return SPSensingElementOnFamily_Name;
     }
 
-    public void setSPSensingElementOnFamily_idSPSensingElementOnFamily(String SPSensingElementOnFamily_idSPSensingElementOnFamily) {
-        this.SPSensingElementOnFamily_idSPSensingElementOnFamily.set(SPSensingElementOnFamily_idSPSensingElementOnFamily);
+    public void setSPSensingElementOnFamily_Name(String SPSensingElementOnFamily_Name) {
+        this.SPSensingElementOnFamily_Name.set(SPSensingElementOnFamily_Name);
     }
 
-    public String getSPCalibration_idSPCalibration() {
-        return SPCalibration_idSPCalibration.get();
+    public String getSPCalibration_Name() {
+        return SPCalibration_Name.get();
     }
 
-    public StringProperty SPCalibration_idSPCalibrationProperty() {
-        return SPCalibration_idSPCalibration;
+    public StringProperty SPCalibration_NameProperty() {
+        return SPCalibration_Name;
     }
 
-    public void setSPCalibration_idSPCalibration(String SPCalibration_idSPCalibration) {
-        this.SPCalibration_idSPCalibration.set(SPCalibration_idSPCalibration);
+    public void setSPCalibration_Name(String SPCalibration_Name) {
+        this.SPCalibration_Name.set(SPCalibration_Name);
     }
 
     public String toString(){
         return SPChip_idSPChip.getValue()+", " +m.getValue()+", "+n.getValue()+
-                ", "+SPSensingElementOnFamily_idSPSensingElementOnFamily.getValue()+
-                ", "+SPCalibration_idSPCalibration.getValue();
+                ", "+SPSensingElementOnFamily_Name.getValue()+
+                ", "+SPCalibration_Name.getValue();
     }
 
 
