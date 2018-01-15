@@ -2,8 +2,10 @@ package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.SPChip;
+import it.unicas.SensiplusConfigurationManager.model.SPSensingElementOnChip;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPChipDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementOnChipDAOMySQLImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -171,6 +173,28 @@ public class SPChipOverviewController {
             alert.setContentText("Please select a SPChip in the table.");
 
             alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void handleNewSPSensingElementOnChip() {
+        SPSensingElementOnChip tempSPSensingElementOnChip = new SPSensingElementOnChip("","","","","");
+        boolean okClicked = mainApp.showSPSensingElementOnChipEditDialog(tempSPSensingElementOnChip, true);
+        Stage dialog=new Stage();
+
+        if (okClicked) {
+            try {
+                SPSensingElementOnChipDAOMySQLImpl.getInstance().insert(tempSPSensingElementOnChip);
+                mainApp.getSPSensingElementOnChipData().add(tempSPSensingElementOnChip);
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during insert ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+            }
         }
     }
 

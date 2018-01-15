@@ -351,6 +351,35 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPSensingElementOnChipEditDialog(SPSensingElementOnChip spSensingElementOnChip, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPSensingElementOnChipEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPSensingElementOnChip");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPSensingElementOnChipEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPSensingElementOnChip(spSensingElementOnChip);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.

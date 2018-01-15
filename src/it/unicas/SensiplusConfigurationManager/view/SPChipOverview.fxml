@@ -87,7 +87,7 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="15.0" prefWidth="96.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleNewSPSensingElementOnChip" prefHeight="15.0" prefWidth="96.0" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="Sensing Element On Chip" GridPane.rowIndex="2">
                            <font>
                               <Font size="14.0" />
