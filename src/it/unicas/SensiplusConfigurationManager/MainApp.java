@@ -33,6 +33,7 @@ public class MainApp extends Application {
     private ObservableList<SPSensingelementOnFamily> SPSensingelementOnFamilyData = FXCollections.observableArrayList();
     private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
     private ObservableList<SPSensingElementOnChip> SPSensingElementOnChipData = FXCollections.observableArrayList();
+    public  ObservableList<SPFamily_has_SPMeasureType> SPFamily_has_SPMeasureTypeData=FXCollections.observableArrayList();
 
 
     /**
@@ -47,18 +48,16 @@ public class MainApp extends Application {
    public ObservableList<SPSensingElement> getSPSensingElementData() {
         return SPSensigElementData;
     }
-    public ObservableList<SPFamily> getSPFamilyData() {
-        return SPFamilyData;
-    }
-    public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){
-        return  SPSensingelementOnFamilyData;
-    }
+    public ObservableList<SPFamily> getSPFamilyData() {return SPFamilyData;}
+    public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){return  SPSensingelementOnFamilyData;}
     public ObservableList<SPChip> getSPChipData() {
         return SPChipData;
     }
     public ObservableList<SPSensingElementOnChip> getSPSensingElementOnChipData() {
         return SPSensingElementOnChipData;
     }
+    public ObservableList<SPFamily_has_SPMeasureType> getSPFamily_has_SPMeasureTypeData(){return SPFamily_has_SPMeasureTypeData;}
+
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage=primaryStage;
@@ -123,6 +122,23 @@ public class MainApp extends Application {
 
             // Give the controller access to the main app.
             SPSensingElementOnFamilyOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void showSPFamily_has_SPMeasureTypeOverview() {
+        try {FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPFamily_has_SPMeasureTypeOverview.fxml"));
+            AnchorPane SPFamily_has_SPMeasureTypeOverview = (AnchorPane) loader.load();
+
+            rootLayout.setCenter(SPFamily_has_SPMeasureTypeOverview);
+
+            // Give the controller access to the main app.
+            SPFamily_has_SPMeasureTypeOverviewController controller = loader.getController();
             controller.setMainApp(this);
 
         } catch (IOException e) {
@@ -422,6 +438,35 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPFamily_has_SPMeasureTypeSearchDialog(SPFamily_has_SPMeasureType spFamily_has_SPMeasureType, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPFamily_has_SPMeasureTypeSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPFamily_has_SPMeasureType");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            SPFamily_has_SPMeasureTypeSearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPFamily_has_SPMeasureType(spFamily_has_SPMeasureType);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPChipSearchDialog(SPChip spChip, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -500,6 +545,37 @@ public class MainApp extends Application {
             GenerateFamilyController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPSensingElementOnFamily(spSensingelementOnFamily);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+
+    }
+
+    public boolean showSPFamily_has_SPMeasureType(SPFamily_has_SPMeasureType spFamily_has_spMeasureType,boolean verifyLen)  {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/Measure.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Measure Family");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
+
+            MeasureController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPFamily_has_SPMeasureType(spFamily_has_spMeasureType);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

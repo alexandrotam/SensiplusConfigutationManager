@@ -2,8 +2,10 @@ package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
+import it.unicas.SensiplusConfigurationManager.model.SPFamily_has_SPMeasureType;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamily_has_SPMeasureTypeDAOMySQLImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -32,6 +34,7 @@ public class SPFamilyOverviewController {
     @FXML
     private Label osctrimLabel;
 
+
     public MainApp mainApp;
 
     public SPFamilyOverviewController() {
@@ -53,6 +56,9 @@ public class SPFamilyOverviewController {
 
         spFamilyTableView.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showSPFamilyDetails(newValue));
+
+
+
     }
 
     /**
@@ -65,6 +71,8 @@ public class SPFamilyOverviewController {
 
         // Add observable list data to the table
         spFamilyTableView.setItems(mainApp.getSPFamilyData());
+
+
     }
 
     /**
@@ -209,6 +217,44 @@ public class SPFamilyOverviewController {
             alert.showAndWait();
         }
    }
+
+    @FXML
+    private void handleMeasureSPFamily() {
+        SPFamily_has_SPMeasureType tempSPFamily_has_SPMeasureType= new SPFamily_has_SPMeasureType();
+        boolean okClicked = mainApp.showSPFamily_has_SPMeasureType(tempSPFamily_has_SPMeasureType, true);
+        Stage dialog=new Stage();
+        boolean error=false;
+        if (okClicked) {
+            try {
+                SPFamily_has_SPMeasureTypeDAOMySQLImpl.getInstance().insert(tempSPFamily_has_SPMeasureType);
+                mainApp.getSPFamily_has_SPMeasureTypeData().add(tempSPFamily_has_SPMeasureType);
+
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during insert ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+                error=true;
+            }
+            if (error==false){
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Success");
+                alert.setHeaderText("Measure Completed");
+                alert.showAndWait();
+            }
+
+        }
+    }
+
+    @FXML
+    private void handleSPMeasureOverview() {
+       mainApp.showSPFamily_has_SPMeasureTypeOverview();
+    }
+
+
 
 
 }
