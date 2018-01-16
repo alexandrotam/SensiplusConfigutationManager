@@ -124,8 +124,8 @@ public class SPFamily_has_SPMeasureTypeDAOMySQLImpl implements DAOSPFamily_has_S
         String query1="select idSPFamily from spfamily where name='"+a.getName_Family()+"';";
         String query2="SELECT idSPMeasureType FROM spmeasuretechniques where type='"+a.getName_Measure_Type()+"';";
 
-        String query ="INSERT INTO SPFamily_has_SPMeasureType (SPMeasureType_idSPMeasureType,SPFamily_idSPFamily) VALUES " +" ('" +query2
-                + "', '" +query1+ "')";
+        String query ="INSERT INTO SPFamily_has_SPMeasureType (SPMeasureType_idSPMeasureType,SPFamily_idSPFamily) VALUES " +" ((" +query2
+                + "),( " +query1+ "))";
 
         logger.info("SQL: " + query);
 
