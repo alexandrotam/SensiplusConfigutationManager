@@ -11,14 +11,13 @@ import java.util.List;
 
 public class SPFamily_has_SPMeasureType {
 
-
-    private StringProperty SPMeasureType_idSPMeasureType;
     private StringProperty SPFamily_idSPFamily;
-    private StringProperty Name_Family;
+      private StringProperty Name_Family;
+    private StringProperty SPMeasureType_idSPMeasureType;
     private StringProperty Name_Measure_Type;
 
-    public SPFamily_has_SPMeasureType(String SPMeasureType_idSPMeasureType,String SPFamily_idSPFamily,String Name_Family,
-                                      String Name_Measure_Type){
+    public SPFamily_has_SPMeasureType(String SPMeasureType_idSPMeasureType,String Name_Measure_Type,String SPFamily_idSPFamily,
+                                      String Name_Family     ){
         this.SPFamily_idSPFamily = new SimpleStringProperty(SPFamily_idSPFamily);
         this.SPMeasureType_idSPMeasureType=new SimpleStringProperty(SPMeasureType_idSPMeasureType);
         this.Name_Family=new SimpleStringProperty(Name_Family);

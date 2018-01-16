@@ -67,10 +67,17 @@ public class SPFamily_has_SPMeasureTypeDAOMySQLImpl implements DAOSPFamily_has_S
 
             Statement st = DAOMySQLSettings.getStatement();
 
+<<<<<<< HEAD
             String sql = "select fm.SPMeasureType_idSPMeasureType,m.type,fm.SPFamily_idSPFamily,f.name from SPFamily_has_SPMeasureType fm " +
                     "inner join SPMeasureTechniques m on fm.SPMeasureType_idSPMeasureType=m.idSPMeasureType inner join spfamily f ON " +
                     "f.idSPFamily=fm.SPFamily_idSPFamily where fm.SPMeasureType_idSPMeasureType like '";
             sql += a.getSPMeasureType_idSPMeasureType() + "%' and fm.SPFamily_idSPFamily like '"+a.getSPFamily_idSPFamily()+"%'";
+=======
+            String sql = "select SPMeasureType_idSPMeasureType,m.type,SPFamily_idSPFamily,f.name from SPFamily_has_SPMeasureType  " +
+                    "inner join SPMeasureTechniques m on SPMeasureType_idSPMeasureType=m.idSPMeasureType inner join spfamily f ON " +
+                    "f.idSPFamily=SPFamily_idSPFamily where SPMeasureType_idSPMeasureType like '";
+            sql += a.getSPMeasureType_idSPMeasureType() + "%' and SPFamily_idSPFamily like '"+a.getSPFamily_idSPFamily()+"%'";
+>>>>>>> origin/master
 
 
             logger.info("SQL: " + sql);
