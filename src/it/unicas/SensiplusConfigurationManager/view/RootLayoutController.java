@@ -1,12 +1,9 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
-import it.unicas.SensiplusConfigurationManager.model.SPSensingElementOnChip;
-import it.unicas.SensiplusConfigurationManager.model.SPSensingelementOnFamily;
+import it.unicas.SensiplusConfigurationManager.model.*;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.DAOMySQLSettings;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementOnChipDAOMySQLImpl;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingelementOnFamilyDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Menu;
@@ -48,10 +45,40 @@ public class RootLayoutController {
 
     public void handleSPSensingElement(){
         mainApp.showSPSensingElementOverview();
+        SPSensingElement tempSPSensingElement = new SPSensingElement("","","","","",
+                "","","","","","","","","",
+                "","","","","","","","","","");
+            try {
+                List<SPSensingElement> list = SPSensingElementDAOMySQLImpl.getInstance().select(tempSPSensingElement);
+                mainApp.getSPSensingElementData().clear();
+                mainApp.getSPSensingElementData().addAll(list);
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during search ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+            }
     }
 
     public void handleSPFamily(){
         mainApp.showSPFamilyOverview();
+        SPFamily tempSPFamily = new SPFamily("","","","","","");
+            try {
+                List<SPFamily> list = SPFamilyDAOMySQLImpl.getInstance().select(tempSPFamily);
+                mainApp.getSPFamilyData().clear();
+                mainApp.getSPFamilyData().addAll(list);
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during search ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+            }
     }
 
     public void handleSPSensingElementOnFamily()
@@ -76,6 +103,20 @@ public class RootLayoutController {
 
     public void handleSPChip(){
         mainApp.showSPChipOverview();
+        SPChip tempSPChip = new SPChip("","");
+            try {
+                List<SPChip> list = SPChipDAOMySQLImpl.getInstance().select(tempSPChip);
+                mainApp.getSPChipData().clear();
+                mainApp.getSPChipData().addAll(list);
+            } catch (DAOException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.initOwner(mainApp.getPrimaryStage());
+                alert.setTitle("Error during DB interaction");
+                alert.setHeaderText("Error during search ...");
+                alert.setContentText(e.getMessage());
+
+                alert.showAndWait();
+            }
     }
 
     public void handleSPSensingElementOnChip() {
