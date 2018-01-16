@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="395.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.HomePageController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="760.0" pickOnBounds="true" smooth="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="https://edge.alluremedia.com.au/m/g/2016/03/Quantum-Computing-Chip.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="20.0" layoutY="33.0" prefHeight="342.0" prefWidth="415.0" text="&#10;Per Cominciare...&#10;&#10;Main: in questa sezione è possibile configuare &#10;          i parametri per l'accesso al database&#10;&#10;Select: in questa sezione è possibile visualizzare &#10;           e operare sugli elementi del programma&#10;&#10;About: in questa sezione vi sono informazioni &#10;            rigurado Versione e Produzione del programma" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="205.0" layoutY="14.0" prefHeight="59.0" prefWidth="337.0" text="Benvenuto in SensiChipPlus" textFill="#edecec">
+         <font>
+            <Font name="Freestyle Script" size="48.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -45,9 +45,7 @@ public class MainApp extends Application {
 
 
 
-   public ObservableList<SPSensingElement> getSPSensingElementData() {
-        return SPSensigElementData;
-    }
+   public ObservableList<SPSensingElement> getSPSensingElementData() {return SPSensigElementData;}
     public ObservableList<SPFamily> getSPFamilyData() {return SPFamilyData;}
     public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){return  SPSensingelementOnFamilyData;}
     public ObservableList<SPChip> getSPChipData() {
@@ -61,15 +59,36 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
 
+
+
         this.primaryStage=primaryStage;
         this.primaryStage.setTitle("Sensiplus Configuration Manager");
 
         this.primaryStage.getIcons().add(new Image("https://previews.123rf.com/images/hedgehogvector/hedgehogvector1603/hedgehogvector160302981/54703708-icona-del-sensore-del-carburante-Archivio-Fotografico.jpg"));
 
         initRootLayout();
-       showSPSensingElementOverview();
+        showHomepageOverview();
 
         this.primaryStage.show();
+    }
+
+    public void showHomepageOverview() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/HomePage.fxml"));
+            AnchorPane HomePageOverview = (AnchorPane) loader.load();
+
+            rootLayout.setCenter(HomePageOverview);
+
+            // Give the controller access to the main app.
+            HomePageController controller = loader.getController();
+            controller.setMainApp(this);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void showSPSensingElementOverview() {
@@ -152,12 +171,12 @@ public class MainApp extends Application {
 
     public void showSPChipOverview() {
         try {
-            // Load SPFamily overview.
+            // Load SPCHip overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/SPChipOverview.fxml"));
             AnchorPane SPChipOverview = (AnchorPane) loader.load();
 
-            // Set SPFamily overview into the center of root layout.
+            // Set SPChip overview into the center of root layout.
             rootLayout.setCenter(SPChipOverview);
 
             // Give the controller access to the main app.
