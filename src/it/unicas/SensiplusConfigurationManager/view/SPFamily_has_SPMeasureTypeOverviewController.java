@@ -71,13 +71,13 @@ public class SPFamily_has_SPMeasureTypeOverviewController {
             idSPFamilyLabel.setText(spFamily_has_SPMeasureType.getSPFamily_idSPFamily());
             Name_FamilyLabel.setText(spFamily_has_SPMeasureType.getName_Family());
             idSPMeasuretypeLabel.setText(String.valueOf(spFamily_has_SPMeasureType.getSPMeasureType_idSPMeasureType()));
-            Name_FamilyLabel.setText(String.valueOf(spFamily_has_SPMeasureType.getName_Measure_Type()));
+            Name_TypeLabel.setText(String.valueOf(spFamily_has_SPMeasureType.getName_Measure_Type()));
         }
         else {
             idSPFamilyLabel.setText("");
             Name_FamilyLabel.setText("");
             idSPMeasuretypeLabel.setText("");
-            Name_FamilyLabel.setText("");
+            Name_TypeLabel.setText("");
 
         }
     }
