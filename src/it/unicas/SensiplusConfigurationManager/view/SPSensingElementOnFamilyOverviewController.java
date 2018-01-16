@@ -87,7 +87,7 @@ public class SPSensingElementOnFamilyOverviewController {
 
 
     @FXML
-    private void handleSearchSPSensingelementOnFamily() {
+    public void handleSearchSPSensingelementOnFamily() {
         SPSensingelementOnFamily tempSPSensingelementOnFamily = new SPSensingelementOnFamily("",
                 "","","","","");
         boolean okClicked = mainApp.showSPSensingelementOnFamilySearchDialog(tempSPSensingelementOnFamily,false);
