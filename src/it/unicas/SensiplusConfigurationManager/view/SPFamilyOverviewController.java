@@ -252,6 +252,21 @@ public class SPFamilyOverviewController {
     @FXML
     private void handleSPMeasureOverview() {
        mainApp.showSPFamily_has_SPMeasureTypeOverview();
+        SPFamily_has_SPMeasureType tempSPFamily_has_SPMeasureType = new SPFamily_has_SPMeasureType("",
+                "","","");
+        try {
+            List<SPFamily_has_SPMeasureType> list = SPFamily_has_SPMeasureTypeDAOMySQLImpl.getInstance().select(tempSPFamily_has_SPMeasureType);
+            mainApp.getSPFamily_has_SPMeasureTypeData().clear();
+            mainApp.getSPFamily_has_SPMeasureTypeData().addAll(list);
+        } catch (DAOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("Error during DB interaction");
+            alert.setHeaderText("Error during search ...");
+            alert.setContentText(e.getMessage());
+
+            alert.showAndWait();
+        }
     }
 
 
