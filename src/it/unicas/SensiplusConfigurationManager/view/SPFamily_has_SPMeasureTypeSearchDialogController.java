@@ -52,8 +52,8 @@ public class SPFamily_has_SPMeasureTypeSearchDialogController {
         this.Family_has_SPMeasureType = spFamily_has_SPMeasureType;
 
         idSPFamilyField.setText(Family_has_SPMeasureType.getSPFamily_idSPFamily());
-        idSPMeasureTypeField.setText(Family_has_SPMeasureType.getName_Family());
-        Name_FamilyField.setText(Family_has_SPMeasureType.getSPMeasureType_idSPMeasureType());
+        idSPMeasureTypeField.setText(Family_has_SPMeasureType.getSPMeasureType_idSPMeasureType());
+        Name_FamilyField.setText(Family_has_SPMeasureType.getName_Family());
         Name_TypeField.setText(Family_has_SPMeasureType.getName_Measure_Type());
     }
 
