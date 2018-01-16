@@ -115,8 +115,8 @@ public class SPFamily_has_SPMeasureTypeDAOMySQLImpl implements DAOSPFamily_has_S
     public void insert(SPFamily_has_SPMeasureType a) throws DAOException {
 
 
-        if (a == null || a.getSPMeasureType_idSPMeasureType() == ""
-                || a.getSPFamily_idSPFamily() == "")
+        if (a == null || a.getSPMeasureType_idSPMeasureType() == null
+                || a.getSPFamily_idSPFamily() == null)
         {
             throw new DAOException("In select: any field can be null");
         }

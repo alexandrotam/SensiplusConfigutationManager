@@ -13,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController.isInt;
+
 public class SPSensingElementOnChipEditDialogController {
 
     @FXML
@@ -109,6 +111,16 @@ public class SPSensingElementOnChipEditDialogController {
 
     private boolean isInputValid(boolean verifyLen) {
         String errorMessage = "";
+        boolean intero;
+
+        if(!mField.getText().equals("DIRECT"))
+            if( intero=isInt(mField.getText())==false ||(Double.parseDouble(mField.getText()) < 0.0 || (Double.parseDouble(mField.getText()) > 5000000.0))) {
+                errorMessage += "No valid m!\n";
+            }
+        if(!nField.getText().equals("DIRECT"))
+            if( intero=isInt(nField.getText())==false ||(Double.parseDouble(nField.getText()) < 0.0 || (Double.parseDouble(nField.getText()) > 5000000.0))) {
+                errorMessage += "No valid n!\n";
+            }
 
 
         if (errorMessage.length() == 0) {
