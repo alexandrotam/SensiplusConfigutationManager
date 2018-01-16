@@ -60,13 +60,15 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         this.primaryStage=primaryStage;
         this.primaryStage.setTitle("Sensiplus Configuration Manager");
 
         this.primaryStage.getIcons().add(new Image("https://previews.123rf.com/images/hedgehogvector/hedgehogvector1603/hedgehogvector160302981/54703708-icona-del-sensore-del-carburante-Archivio-Fotografico.jpg"));
 
         initRootLayout();
-        showSPSensingElementOverview();
+       showSPSensingElementOverview();
+
         this.primaryStage.show();
     }
 
@@ -83,6 +85,7 @@ public class MainApp extends Application {
             // Give the controller access to the main app.
             SPSensingElementOverviewController controller = loader.getController();
             controller.setMainApp(this);
+
 
         } catch (IOException e) {
             e.printStackTrace();

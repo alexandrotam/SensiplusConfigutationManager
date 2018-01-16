@@ -22,6 +22,7 @@ import static it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditD
  */
 public class SPSensingElementSearchDialogController {
 
+
     @FXML
     private TextField idSPSensingElementField;
     @FXML
@@ -124,6 +125,8 @@ public class SPSensingElementSearchDialogController {
     private SPSensingElement SensingElement;
     private boolean okClicked = false;
     private boolean verifyLen = true;
+
+
 
 
     @FXML
@@ -385,7 +388,7 @@ public class SPSensingElementSearchDialogController {
     }
 
     @FXML
-    private void handleOk() {
+    public   void handleOk() {
         if (isInputValid()) {
             SensingElement.setIdSPSensingElement(idSPSensingElementField.getText());
             SensingElement.setrSense(rSenseField.getValue().toString());
@@ -424,7 +427,7 @@ public class SPSensingElementSearchDialogController {
     }
 
 
-    private boolean isInputValid() {
+    public boolean isInputValid() {
         String errorMessage = "";
         boolean intero;
         boolean dble;
@@ -444,4 +447,6 @@ public class SPSensingElementSearchDialogController {
             return false;
         }
     }
+
+
 }
