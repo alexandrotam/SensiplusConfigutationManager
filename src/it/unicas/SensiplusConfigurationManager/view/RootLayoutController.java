@@ -151,6 +151,10 @@ public class RootLayoutController {
         alert.showAndWait();
     }
 
+    public void handleHome(){
+        mainApp.showHomepageOverview();
+    }
+
     /**
      * Closes the application.
      */

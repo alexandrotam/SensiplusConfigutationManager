@@ -12,6 +12,7 @@
         <menus>
           <Menu mnemonicParsing="false" text="Main">
             <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleHome" text="Home" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Settings..." />
                   <SeparatorMenuItem mnemonicParsing="false" />
               <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
