@@ -7,13 +7,13 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="395.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.HomePageController">
    <children>
-      <Region accessibleRole="IMAGE_VIEW" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="395.0" prefWidth="760.0" style="-fx-background-image: url(&quot;https://edge.alluremedia.com.au/m/g/2016/03/Quantum-Computing-Chip.jpg&quot;);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Label layoutX="20.0" layoutY="33.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="342.0" prefWidth="415.0" text="&#10;Per Cominciare...&#10;&#10;Main: in questa sezione è possibile configuare &#10;          i parametri per l'accesso al database&#10;&#10;Select: in questa sezione è possibile visualizzare &#10;           e operare sugli elementi del programma&#10;&#10;About: in questa sezione vi sono informazioni &#10;            rigurado Versione e Produzione del programma" textFill="WHITE">
+      <Region accessibleRole="IMAGE_VIEW" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="395.0" prefWidth="760.0" style="-fx-background-image: url(&quot;https://iworm.com.ua/wp-content/uploads/2016/08/01-53.jpg&quot;); -fx-background-repeat: no-repeat; -fx-background-size: cover;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="3.0" layoutY="75.0" prefHeight="257.0" prefWidth="373.0" style="-fx-font-size: 120%;" text="&#10;Per Cominciare...&#10;&#10;Main: in questa sezione è possibile configuare &#10;          i parametri per l'accesso al database&#10;&#10;Select: in questa sezione è possibile visualizzare &#10;           e operare sugli elementi del programma&#10;&#10;About: in questa sezione vi sono informazioni &#10;            rigurado Versione e Produzione del programma" textFill="WHITE" AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="384.0" AnchorPane.topAnchor="75.0">
          <font>
-            <Font name="Calibri Bold Italic" size="18.0" />
+            <Font name="Calibri Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="205.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="337.0" text="Benvenuto in SensiChipPlus" textFill="#edecec">
+      <Label alignment="CENTER" layoutX="197.0" layoutY="14.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="59.0" prefWidth="337.0" text="Benvenuto in SensiChipPlus" textFill="#edecec" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="212.0">
          <font>
             <Font name="Freestyle Script" size="48.0" />
          </font>
