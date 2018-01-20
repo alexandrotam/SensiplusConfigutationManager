@@ -90,7 +90,6 @@ import java.awt.*;
             multiplierField.getItems().addAll("-21","-18","-15","-14","-13","-12","-11","-10","-9","-8","-7","-6","-5","-4","-3","-2","-1","0","3","6","7","8","9","10","11","12","13","14","15","16","17","18","21");
             measureUnitField.getItems().addAll("O","F","H","C","%","V","A","L","t");
             measureTechniqueField.getItems().addAll("DIRECT","EIS","POT","ENERGY SPECTROSCOPY","ULTRASOUND");
-
         }
 
         public void setDialogStage(Stage dialogStage, boolean verifyLen) {

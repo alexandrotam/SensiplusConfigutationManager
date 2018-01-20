@@ -18,11 +18,14 @@
          <items>
             <AnchorPane prefHeight="392.0" prefWidth="248.0" SplitPane.resizableWithParent="false">
                <children>
-                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="392.0" prefWidth="247.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="392.0" prefWidth="247.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
-                      <TableColumn fx:id="NameSPSensingElementColumn" prefWidth="143.0" text="Name SPSensingElement" />
-                      <TableColumn fx:id="NameSPFamilyColumn" prefWidth="101.0" text="Name SPFamily" />
+                      <TableColumn fx:id="NameSPSensingElementColumn" prefWidth="123.0" text="Name SPSensingElement" />
+                      <TableColumn fx:id="NameSPFamilyColumn" prefWidth="123.0" text="Name SPFamily" />
                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
                   </TableView>
                </children>
             </AnchorPane>

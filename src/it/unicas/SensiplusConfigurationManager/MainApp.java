@@ -70,6 +70,11 @@ public class MainApp extends Application {
         showHomepageOverview();
 
         this.primaryStage.show();
+        this.primaryStage.setMaximized(true);
+        this.primaryStage.setResizable(true);
+        this.primaryStage.setMinHeight(480);
+        this.primaryStage.setMinWidth(760);
+
     }
 
     public void showHomepageOverview() {
@@ -300,6 +305,8 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
+            dialogStage.setFullScreen(true);
+
 
             SPSensingElementEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
