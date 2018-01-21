@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="736.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
+<AnchorPane prefHeight="724.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementEditDialogController">
    <children>
-      <GridPane layoutX="14.0" layoutY="11.0" prefHeight="653.0" prefWidth="845.0" AnchorPane.bottomAnchor="72.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="11.0">
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="635.0" prefWidth="845.0" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -47,159 +47,245 @@
          <children>
             <Label text="Id SP Sensing Element">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="25.0" />
                </font>
             </Label>
             <Label layoutX="310.0" layoutY="55.0" text="rSense" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="In Gain" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Out Gain" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Contacts" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Mode VI" GridPane.rowIndex="8">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Harmonic" GridPane.rowIndex="6">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Frequency" GridPane.rowIndex="5">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="DC Bias" GridPane.rowIndex="7">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Measure Technique" GridPane.rowIndex="9">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Measure Type" GridPane.rowIndex="10">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Filter" GridPane.rowIndex="11">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Phase Shift Mode" GridPane.rowIndex="12">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Phase Shift" GridPane.rowIndex="13">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="IQ" GridPane.rowIndex="14">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Conversion Rate" GridPane.rowIndex="15">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Name" GridPane.rowIndex="18">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Range Min" GridPane.rowIndex="19">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="nData" GridPane.rowIndex="17">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="In Port ADC" GridPane.rowIndex="16">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <Label text="Measure Unit" GridPane.rowIndex="23">
+            <Label style=": ;" text="Measure Unit" GridPane.rowIndex="23">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Multiplier" GridPane.rowIndex="22">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <Label text="Default Alarm Threashold" GridPane.rowIndex="21">
+            <Label prefHeight="29.0" prefWidth="417.0" text="Default Alarm Threashold" GridPane.rowIndex="21">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Range Max" GridPane.rowIndex="20">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" />
-            <TextField fx:id="frequencyField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField fx:id="DCBiasField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <TextField fx:id="filterField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-            <TextField fx:id="phaseShiftField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="13" />
-            <TextField fx:id="conversionRateField" GridPane.columnIndex="1" GridPane.rowIndex="15" />
-            <TextField fx:id="nameField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="18" />
-            <TextField fx:id="rangeMinField" GridPane.columnIndex="1" GridPane.rowIndex="19" />
-            <TextField fx:id="rangeMaxField" GridPane.columnIndex="1" GridPane.rowIndex="20" />
-            <TextField fx:id="defaultAlarmThresholdField" GridPane.columnIndex="1" GridPane.rowIndex="21" />
-            <ComboBox fx:id="rSenseField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="inGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox fx:id="outGainField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="contactsField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="multiplierField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
-            <ComboBox fx:id="measureUnitField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="23" />
-            <ComboBox fx:id="harmonicField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ComboBox fx:id="modeVIField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <ComboBox fx:id="measureTechniqueField" onAction="#disableParameter" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <ComboBox fx:id="measureTypeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <ComboBox fx:id="phaseShiftModeField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <ComboBox fx:id="IQField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <ComboBox fx:id="inPortADCField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-            <ComboBox fx:id="nDataField" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <TextField fx:id="idSPSensingElementField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="frequencyField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="DCBiasField" onAction="#disableParameter" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="filterField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="phaseShiftField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="conversionRateField" GridPane.columnIndex="1" GridPane.rowIndex="15">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="nameField" prefHeight="0.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="18">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="rangeMinField" GridPane.columnIndex="1" GridPane.rowIndex="19">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="rangeMaxField" GridPane.columnIndex="1" GridPane.rowIndex="20">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <TextField fx:id="defaultAlarmThresholdField" GridPane.columnIndex="1" GridPane.rowIndex="21">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="rSenseField" prefHeight="25.0" prefWidth="460.0" style="-fx-pref-height: 200%;" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ComboBox fx:id="inGainField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="outGainField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <ComboBox fx:id="contactsField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="22">
+               <children>
+                  <ComboBox fx:id="multiplierField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="23">
+               <children>
+                  <ComboBox fx:id="measureUnitField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <ComboBox fx:id="harmonicField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <ComboBox fx:id="modeVIField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <children>
+                  <ComboBox fx:id="measureTechniqueField" onAction="#disableParameter" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <children>
+                  <ComboBox fx:id="measureTypeField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="12">
+               <children>
+                  <ComboBox fx:id="phaseShiftModeField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="14">
+               <children>
+                  <ComboBox fx:id="IQField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="16">
+               <children>
+                  <ComboBox fx:id="inPortADCField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="17">
+               <children>
+                  <ComboBox fx:id="nDataField" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
          </children>
       </GridPane>
-      <ButtonBar layoutX="251.0" layoutY="678.0" prefHeight="57.0" prefWidth="337.0" AnchorPane.bottomAnchor="1.0">
+      <ButtonBar layoutX="247.0" layoutY="672.0" prefHeight="0.0" prefWidth="284.0" AnchorPane.bottomAnchor="15.0">
         <buttons>
-          <Button mnemonicParsing="false" onAction="#handleOk" text="OK">
+          <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="30.0" text="OK">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="44.0" prefWidth="161.0" text="Cancel">
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="35.0" prefWidth="161.0" text="Cancel">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
+                  <Font name="Comic Sans MS Bold Italic" size="18.0" />
                </font></Button>
         </buttons>
       </ButtonBar>

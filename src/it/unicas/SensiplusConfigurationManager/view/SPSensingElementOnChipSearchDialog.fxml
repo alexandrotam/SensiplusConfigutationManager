@@ -27,27 +27,27 @@
          <children>
             <CheckBox fx:id="idChipCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidChip" text="Id Chip">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="mCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxM" text="m" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="nCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxN" text="n" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="nameSensingElementOnFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxNameSensingElementOnFamily" text="Sensing Element On Family" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="nameCalibrationCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxNameCalibration" text="Calibration" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <TextField fx:id="idChipField" disable="true" GridPane.columnIndex="1" />
@@ -57,16 +57,16 @@
             <TextField fx:id="nameCalibrationField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <ButtonBar layoutX="132.0" layoutY="341.0" prefHeight="57.0" prefWidth="337.0" AnchorPane.bottomAnchor="2.0">
+      <ButtonBar layoutX="131.0" layoutY="341.0" prefHeight="37.0" prefWidth="310.0" AnchorPane.bottomAnchor="15.0">
          <buttons>
             <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </Button>
             <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="44.0" prefWidth="161.0" text="Cancel">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </Button>
          </buttons>

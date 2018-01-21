@@ -55,10 +55,11 @@
     </GridPane>
     <ButtonBar layoutX="106.0" layoutY="288.0" AnchorPane.bottomAnchor="14.377356632785336" AnchorPane.rightAnchor="61.30187701465957">
         <buttons>
-            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOk" text="OK">
+            <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="147.0" text="OK">
                <font>
-                  <Font name="Comic Sans MS Bold Italic" size="24.0" />
-               </font></Button>
+                  <Font name="Comic Sans MS Bold" size="24.0" />
+               </font>
+            </Button>
             <Button mnemonicParsing="false" onAction="#handleCancel" prefWidth="120.0" text="Cancel">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="24.0" />

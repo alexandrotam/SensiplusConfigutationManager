@@ -15,8 +15,8 @@
    <children>
       <GridPane layoutX="7.0" layoutY="-1.0" prefHeight="327.0" prefWidth="588.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="-1.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="333.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="289.0" minWidth="10.0" prefWidth="255.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -28,42 +28,54 @@
          <children>
             <Label text="Id Chip">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
             <Label text="m" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
             <Label text="n" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Id Sensing Element On Family" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
             <Label text="Id Calibration" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <ComboBox fx:id="idSpChipCombobox" prefHeight="25.0" prefWidth="309.0" GridPane.columnIndex="1" />
-            <ComboBox fx:id="idSPSensingElementOnFamilyCombobox" prefHeight="25.0" prefWidth="324.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="idSPCalibrationCombobox" prefHeight="25.0" prefWidth="307.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <AnchorPane GridPane.columnIndex="1">
+               <children>
+                  <ComboBox fx:id="idSpChipCombobox" layoutY="21.0" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="idSPSensingElementOnFamilyCombobox" layoutY="20.0" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="65.0" prefWidth="246.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <ComboBox fx:id="idSPCalibrationCombobox" layoutY="20.0" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+               </children>
+            </AnchorPane>
             <TextField fx:id="mField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="nField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <ButtonBar layoutX="169.0" layoutY="342.0" prefHeight="65.0" prefWidth="254.0" AnchorPane.bottomAnchor="0.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="36.0" prefWidth="123.0" text="OK" textFill="#161bb7">
+            <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="36.0" prefWidth="123.0" text="OK">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="35.0" text="Cancel" textFill="#161bb7">
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="35.0" text="Cancel">
                <font>
                   <Font name="Calibri Bold Italic" size="18.0" />
                </font>

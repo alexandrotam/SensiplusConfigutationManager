@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnFamiySearchDialogController">
     <children>
-        <GridPane layoutX="14.0" layoutY="11.0" prefHeight="280.0" prefWidth="580.0" AnchorPane.bottomAnchor="109.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="11.0">
+        <GridPane layoutX="14.0" layoutY="11.0" prefHeight="303.0" prefWidth="580.0" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="11.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,22 +30,22 @@
                 <TextField fx:id="nameField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <CheckBox fx:id="idSPSensingElementCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPSensingElement" text="Id Sensing Element">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="idSPFamilyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxSPidSPFamily" text="Id Family" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="idSPPortCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPPort" text="Id Port" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="nameCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxName" text="Name" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
             </children>

@@ -271,8 +271,10 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
-
-
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(356);
+            dialogStage.setMinWidth(439);
+            dialogStage.setResizable(true);
 
             SettingsEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage);
@@ -305,7 +307,9 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
-            dialogStage.setFullScreen(true);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(724);
+            dialogStage.setMinWidth(880);
 
 
             SPSensingElementEditDialogController controller = loader.getController();
@@ -336,6 +340,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinWidth(600);
+            dialogStage.setMinHeight(400);
 
             SPFamilyEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -365,6 +372,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(407);
+            dialogStage.setMinWidth(609);
 
             SPChipEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -394,6 +404,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinWidth(600);
+            dialogStage.setMinHeight(400);
 
             SPSensingElementOnChipEditDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -423,6 +436,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             SPFamilySearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -452,6 +468,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(724);
+            dialogStage.setMinWidth(880);
 
             SPSensingElementSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -481,6 +500,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             SPSensingElementOnFamiySearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -510,6 +532,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             SPFamily_has_SPMeasureTypeSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -539,6 +564,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             SPChipSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -568,6 +596,9 @@ public class MainApp extends Application {
             dialogStage.initOwner(primaryStage);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             SPSensingElementOnChipSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -599,6 +630,9 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             GenerateFamilyController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
@@ -630,6 +664,9 @@ public class MainApp extends Application {
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
             dialogStage.getIcons().add(new Image("https://cdn6.aptoide.com/imgs/8/7/5/8756d66a353475d314ee779d6a3d87b7_icon.png?w=240"));
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
 
             MeasureController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);

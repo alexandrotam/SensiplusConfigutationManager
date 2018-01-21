@@ -12,7 +12,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPFamilyEditDialogController">
    <children>
-      <GridPane layoutX="53.0" layoutY="43.0" prefHeight="273.0" prefWidth="499.0">
+      <GridPane layoutX="6.0" layoutY="8.0" prefHeight="300.0" prefWidth="589.0" AnchorPane.bottomAnchor="92.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="8.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -20,40 +20,39 @@
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="SysClock" GridPane.rowIndex="4">
+            <Label text="SysClock" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
-            <Label text="HwVersion" GridPane.rowIndex="3">
+            <Label text="HwVersion" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
-            <Label text="Osctrim" GridPane.rowIndex="5">
+            <Label text="Osctrim" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
-            <Label text="Id" GridPane.rowIndex="2">
+            <Label text="Id" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
-            <Label text="Name" GridPane.rowIndex="1">
+            <Label text="Name">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="27.0" />
                </font></Label>
-            <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="hwVersionField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="sysclockField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="oscrtimField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="nameField" GridPane.columnIndex="1" />
+            <TextField fx:id="idField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="hwVersionField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="sysclockField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="oscrtimField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
-      <ButtonBar layoutX="178.0" layoutY="323.0" prefHeight="44.0" prefWidth="250.0">
+      <ButtonBar layoutX="185.0" layoutY="342.0" prefHeight="44.0" prefWidth="230.0" AnchorPane.bottomAnchor="14.0">
          <buttons>
           <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
                <font>

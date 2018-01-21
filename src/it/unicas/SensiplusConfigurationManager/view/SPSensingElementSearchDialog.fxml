@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="752.0" prefWidth="870.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementSearchDialogController">
+<AnchorPane prefHeight="724.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementSearchDialogController">
    <children>
-      <GridPane layoutX="24.0" layoutY="21.0" prefHeight="653.0" prefWidth="845.0">
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="653.0" prefWidth="845.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="14.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -55,127 +55,183 @@
             <TextField fx:id="rangeMinField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="19" />
             <TextField fx:id="rangeMaxField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="20" />
             <TextField fx:id="defaultAlarmThresholdField" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="21" />
-            <ComboBox fx:id="rSenseField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <ComboBox fx:id="inGainField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ComboBox fx:id="outGainField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="contactsField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="multiplierField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="22" />
-            <ComboBox fx:id="measureUnitField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="23" />
-            <ComboBox fx:id="harmonicField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ComboBox fx:id="modeVIField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-            <ComboBox fx:id="measureTechniqueField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-            <ComboBox fx:id="measureTypeField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-            <ComboBox fx:id="phaseShiftModeField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="12" />
-            <ComboBox fx:id="IQField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-            <ComboBox fx:id="inPortADCField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
-            <ComboBox fx:id="nDataField" disable="true" prefHeight="26.0" prefWidth="438.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-            <CheckBox fx:id="idSPSensingElementCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPSenginElement" text="Id SP Sensing Element">
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <ComboBox fx:id="rSenseField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <ComboBox fx:id="inGainField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <ComboBox fx:id="outGainField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <ComboBox fx:id="contactsField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="22">
+               <children>
+                  <ComboBox fx:id="multiplierField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="23">
+               <children>
+                  <ComboBox fx:id="measureUnitField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <ComboBox fx:id="harmonicField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+               <children>
+                  <ComboBox fx:id="modeVIField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+               <children>
+                  <ComboBox fx:id="measureTechniqueField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <children>
+                  <ComboBox fx:id="measureTypeField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="12">
+               <children>
+                  <ComboBox fx:id="phaseShiftModeField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="14">
+               <children>
+                  <ComboBox fx:id="IQField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="16">
+               <children>
+                  <ComboBox fx:id="inPortADCField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="17">
+               <children>
+                  <ComboBox fx:id="nDataField" disable="true" prefHeight="26.0" prefWidth="438.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+            <CheckBox fx:id="idSPSensingElementCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxidSPSenginElement" prefHeight="635.0" prefWidth="845.0" text="Id SP Sensing Element">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="rSenseCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxrSense" text="rSense" GridPane.rowIndex="1">
+            <CheckBox fx:id="rSenseCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxrSense" prefHeight="635.0" prefWidth="845.0" text="rSense" GridPane.rowIndex="1">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="inGainCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxinGain" text="In Gain" GridPane.rowIndex="2">
+            <CheckBox fx:id="inGainCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxinGain" prefHeight="635.0" prefWidth="845.0" text="In Gain" GridPane.rowIndex="2">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="outGainCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxoutGain" text="Out Gain" GridPane.rowIndex="3">
+            <CheckBox fx:id="outGainCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxoutGain" prefHeight="635.0" prefWidth="845.0" text="Out Gain" GridPane.rowIndex="3">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="contactsCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxContacts" text="Contacts" GridPane.rowIndex="4">
+            <CheckBox fx:id="contactsCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxContacts" prefHeight="635.0" prefWidth="845.0" text="Contacts" GridPane.rowIndex="4">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="frequencyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxfrequency" text="Frequency" GridPane.rowIndex="5">
+            <CheckBox fx:id="frequencyCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxfrequency" prefHeight="635.0" prefWidth="845.0" text="Frequency" GridPane.rowIndex="5">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="harmonicCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxHarmonic" text="Harmonic" GridPane.rowIndex="6">
+            <CheckBox fx:id="harmonicCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxHarmonic" prefHeight="635.0" prefWidth="845.0" text="Harmonic" GridPane.rowIndex="6">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="DCBiasCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxDCBias" text="DC Bias" GridPane.rowIndex="7">
+            <CheckBox fx:id="DCBiasCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxDCBias" prefHeight="635.0" prefWidth="845.0" text="DC Bias" GridPane.rowIndex="7">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="modeVICheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxModeVI" text="Mode VI" GridPane.rowIndex="8">
+            <CheckBox fx:id="modeVICheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxModeVI" prefHeight="635.0" prefWidth="845.0" text="Mode VI" GridPane.rowIndex="8">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="measureTechniqueCheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxMeasureTechnique" text="Measure Technique" GridPane.rowIndex="9">
+            <CheckBox fx:id="measureTechniqueCheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxMeasureTechnique" prefHeight="635.0" prefWidth="845.0" text="Measure Technique" GridPane.rowIndex="9">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="measureTypeCheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxMeasureType" text="Measure Type" GridPane.rowIndex="10">
+            <CheckBox fx:id="measureTypeCheck" mnemonicParsing="false" onMouseClicked="#disableTextBoxMeasureType" prefHeight="635.0" prefWidth="845.0" text="Measure Type" GridPane.rowIndex="10">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="filterCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxfilter" text="Filter" GridPane.rowIndex="11">
+            <CheckBox fx:id="filterCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxfilter" prefHeight="635.0" prefWidth="845.0" text="Filter" GridPane.rowIndex="11">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="phaseShiftModeCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxPhaseShiftMode" text="Phase Shift Mode" GridPane.rowIndex="12">
+            <CheckBox fx:id="phaseShiftModeCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxPhaseShiftMode" prefHeight="635.0" prefWidth="845.0" text="Phase Shift Mode" GridPane.rowIndex="12">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="phaseShiftCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxPhaseShift" text="Phase Shift" GridPane.rowIndex="13">
+            <CheckBox fx:id="phaseShiftCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxPhaseShift" prefHeight="635.0" prefWidth="845.0" text="Phase Shift" GridPane.rowIndex="13">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="IQCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxIQ" text="IQ" GridPane.rowIndex="14">
+            <CheckBox fx:id="IQCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxIQ" prefHeight="635.0" prefWidth="845.0" text="IQ" GridPane.rowIndex="14">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="conversionRate" mnemonicParsing="false" onMouseClicked="#disableTextboxConversionRate" text="Conversion Rate" GridPane.rowIndex="15">
+            <CheckBox fx:id="conversionRate" mnemonicParsing="false" onMouseClicked="#disableTextboxConversionRate" prefHeight="635.0" prefWidth="845.0" text="Conversion Rate" GridPane.rowIndex="15">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="inPortADC" mnemonicParsing="false" onMouseClicked="#disableTextboxinPortADC" text="In Port ADC" GridPane.rowIndex="16">
+            <CheckBox fx:id="inPortADC" mnemonicParsing="false" onMouseClicked="#disableTextboxinPortADC" prefHeight="635.0" prefWidth="845.0" text="In Port ADC" GridPane.rowIndex="16">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="nDataCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxnData" text="nData" GridPane.rowIndex="17">
+            <CheckBox fx:id="nDataCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxnData" prefHeight="635.0" prefWidth="845.0" text="nData" GridPane.rowIndex="17">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="nameCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxName" text="Name" GridPane.rowIndex="18">
+            <CheckBox fx:id="nameCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxName" prefHeight="635.0" prefWidth="845.0" text="Name" GridPane.rowIndex="18">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="rangeMinCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxRangeMin" text="Range Min" GridPane.rowIndex="19">
+            <CheckBox fx:id="rangeMinCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxRangeMin" prefHeight="635.0" prefWidth="845.0" text="Range Min" GridPane.rowIndex="19">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="rangeMaxCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxRangeMax" text=" Range Max" GridPane.rowIndex="20">
+            <CheckBox fx:id="rangeMaxCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxRangeMax" prefHeight="635.0" prefWidth="845.0" text=" Range Max" GridPane.rowIndex="20">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="defaultAlarmThreasholdCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxDefaultAlarmThreshold" text="Default Alarm Threashold" GridPane.rowIndex="21">
+            <CheckBox fx:id="defaultAlarmThreasholdCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxDefaultAlarmThreshold" prefHeight="635.0" prefWidth="845.0" text="Default Alarm Threashold" GridPane.rowIndex="21">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="multiplierCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxMultiplier" text="Multiplier" GridPane.rowIndex="22">
+            <CheckBox fx:id="multiplierCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxMultiplier" prefHeight="635.0" prefWidth="845.0" text="Multiplier" GridPane.rowIndex="22">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
-            <CheckBox fx:id="measureUnitCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxMeasureUnit" text="Measure Unit" GridPane.rowIndex="23">
+            <CheckBox fx:id="measureUnitCheck" mnemonicParsing="false" onMouseClicked="#disableTextboxMeasureUnit" prefHeight="635.0" prefWidth="845.0" text="Measure Unit" GridPane.rowIndex="23">
                <font>
-                  <Font name="Calibri Bold Italic" size="18.0" />
+                  <Font name="Calibri Italic" size="21.0" />
                </font></CheckBox>
          </children>
       </GridPane>
-      <ButtonBar layoutX="263.0" layoutY="694.0" prefHeight="57.0" prefWidth="224.0">
+      <ButtonBar layoutX="262.0" layoutY="674.0" prefHeight="57.0" prefWidth="224.0" AnchorPane.bottomAnchor="0.0">
          <buttons>
-            <Button mnemonicParsing="false" onAction="#handleOk" text="OK">
+            <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="30.0" prefWidth="161.0" text="OK">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font></Button>
-            <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+            <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="30.0" prefWidth="161.0" text="Cancel">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold Italic" size="18.0" />
                </font></Button>
          </buttons>
       </ButtonBar>
