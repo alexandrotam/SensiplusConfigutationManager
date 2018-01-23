@@ -17,8 +17,6 @@ public class SPConfigurationEditDialogController {
 
 
     @FXML
-    private TextField idSPConfigurationField;
-    @FXML
     private TextField driverField;
     @FXML
     private TextField hostControllerField;
@@ -59,7 +57,6 @@ public class SPConfigurationEditDialogController {
 
     public void setSPConfiguration(SPConfiguration SPConfiguration) {
         this.SPConfiguration = SPConfiguration;
-        idSPConfigurationField.setText(SPConfiguration.getidSPConfiguration());
         driverField.setText(SPConfiguration.getDriver());
         hostControllerField.setText(SPConfiguration.getHostController());
         apiOwnerField.setText(SPConfiguration.getApiOwner());
@@ -76,7 +73,6 @@ public class SPConfigurationEditDialogController {
     @FXML
     private void handleOk() {
         if (isInputValid(verifyLen)) {
-            SPConfiguration.setidSPConfiguration(idSPConfigurationField.getText());
             SPConfiguration.setDriver(driverField.getText());
             SPConfiguration.setHostController(hostControllerField.getText());
             SPConfiguration.setApiOwner(apiOwnerField.getText());
