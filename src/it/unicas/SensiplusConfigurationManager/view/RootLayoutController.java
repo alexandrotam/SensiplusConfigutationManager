@@ -119,6 +119,24 @@ public class RootLayoutController {
             }
     }
 
+    public void handleSPConfiguration(){
+        mainApp.showSPConfigurationOverview();
+        SPConfiguration tempSPConfiguration = new SPConfiguration("","","","","","","","");
+        try {
+            List<SPConfiguration> list = SPConfigurationDAOMySQLImpl.getInstance().select(tempSPConfiguration);
+            mainApp.getSPConfigurationData().clear();
+            mainApp.getSPConfigurationData().addAll(list);
+        } catch (DAOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("Error during DB interaction");
+            alert.setHeaderText("Error during search ...");
+            alert.setContentText(e.getMessage());
+
+            alert.showAndWait();
+        }
+    }
+
     public void handleSPSensingElementOnChip() {
         mainApp.showSPSensingElementOnChipOverview();
         SPSensingElementOnChip tempSPSensingElementOnChip = new SPSensingElementOnChip("","","",
