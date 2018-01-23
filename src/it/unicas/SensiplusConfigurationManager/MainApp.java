@@ -26,7 +26,7 @@ public class MainApp extends Application {
     private BorderPane rootLayout;
 
     /**
-     * The data as an observable list of spSensingElement.
+
      */
     private ObservableList<SPSensingElement> SPSensigElementData = FXCollections.observableArrayList();
     private ObservableList<SPFamily> SPFamilyData = FXCollections.observableArrayList();
@@ -34,6 +34,7 @@ public class MainApp extends Application {
     private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
     private ObservableList<SPSensingElementOnChip> SPSensingElementOnChipData = FXCollections.observableArrayList();
     public  ObservableList<SPFamily_has_SPMeasureType> SPFamily_has_SPMeasureTypeData=FXCollections.observableArrayList();
+    public  ObservableList<SPConfiguration> SPConfigurationData=FXCollections.observableArrayList();
 
 
     /**
@@ -55,6 +56,7 @@ public class MainApp extends Application {
         return SPSensingElementOnChipData;
     }
     public ObservableList<SPFamily_has_SPMeasureType> getSPFamily_has_SPMeasureTypeData(){return SPFamily_has_SPMeasureTypeData;}
+    public ObservableList<SPConfiguration> getSPConfigurationData(){return  SPConfigurationData;}
 
     @Override
     public void start(Stage primaryStage) {
@@ -206,6 +208,25 @@ public class MainApp extends Application {
 
             // Give the controller access to the main app.
             SPSensingElementOnChipOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showSPConfigurationOverview() {
+        try {
+            // Load SPConfiguration overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPConfigurationOverview.fxml"));
+            AnchorPane SPConfigurationOverview = (AnchorPane) loader.load();
+
+            // Set SPConfiguration overview into the center of root layout.
+            rootLayout.setCenter(SPConfigurationOverview);
+
+            // Give the controller access to the main app.
+            SPConfigurationOverviewController controller = loader.getController();
             controller.setMainApp(this);
 
         } catch (IOException e) {
@@ -422,6 +443,38 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPConfigurationEditDialog(SPConfiguration spConfiguration, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPConfigurationEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPConfiguration");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinWidth(600);
+            dialogStage.setMinHeight(400);
+
+            SPConfigurationEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPConfiguration(spConfiguration);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -443,6 +496,38 @@ public class MainApp extends Application {
             SPFamilySearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPFamily(spFamily);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showSPConfigurationSearchDialog(SPConfiguration spConfiguration, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPConfigurationSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPConfiguration");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
+
+            SPConfigurationSearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPConfiguration(spConfiguration);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

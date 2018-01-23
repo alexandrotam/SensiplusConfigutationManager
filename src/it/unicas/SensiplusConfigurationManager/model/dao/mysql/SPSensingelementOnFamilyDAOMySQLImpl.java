@@ -103,7 +103,6 @@ public class SPSensingelementOnFamilyDAOMySQLImpl implements DAOSPSensingelement
                 || a.getName() == null)
         {  throw new DAOException("In select: any field can be null");
         }
-
         String query1="insert into spfamilytemplate (SPFamily_idSPFamily,SPPort_idSPPort) value ('"+a.getSPFamily_idSPFamily()
                 +"', '"+a.getSPPort_idSPPort()+"')";
         String query2="(select idSPFamilyTemplate from spfamilytemplate where SPFamily_idSPFamily ="+a.getSPFamily_idSPFamily()
