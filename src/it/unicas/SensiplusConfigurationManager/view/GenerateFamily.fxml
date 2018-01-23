@@ -46,17 +46,17 @@
                </font>
             </Label>
             <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <AnchorPane GridPane.columnIndex="1">
+            <AnchorPane GridPane.columnIndex="1" maxHeight="26.0">
                <children>
                   <ComboBox fx:id="idSPSensingElementCombobox" layoutY="29.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
                </children>
             </AnchorPane>
-            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1" maxHeight="26.0">
                <children>
                   <ComboBox fx:id="idSPFamilyCombobox" layoutY="29.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
                </children>
             </AnchorPane>
-            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="2" maxHeight="26.0">
                <children>
                   <ComboBox fx:id="idSPPortCombobox" layoutY="29.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
                </children>

@@ -32,14 +32,14 @@
                   <Font name="Calibri Italic" size="21.0" />
                </font>
             </Label>
-            <AnchorPane GridPane.columnIndex="1">
+            <AnchorPane GridPane.columnIndex="1" maxHeight="26.0">
                <children>
-                  <ComboBox fx:id="Name_FamilyCombobox" layoutY="70.0" prefHeight="27.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
+                  <ComboBox fx:id="Name_FamilyCombobox" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
                </children>
             </AnchorPane>
-            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1" maxHeight="26.0">
                <children>
-                  <ComboBox fx:id="Name_Measure_TypeCombobox" layoutY="71.0" prefHeight="22.0" prefWidth="295.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
+                  <ComboBox fx:id="Name_Measure_TypeCombobox" layoutY="71.0" prefHeight="26.0" prefWidth="295.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="71.0" />
                </children>
             </AnchorPane>
          </children>

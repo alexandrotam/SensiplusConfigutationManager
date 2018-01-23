@@ -16,11 +16,11 @@
 
 <AnchorPane prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPFamilyOverviewController">
    <children>
-      <SplitPane dividerPositions="0.36193029490616624" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <SplitPane dividerPositions="0.6219839142091153" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane maxWidth="360.0" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TableView fx:id="spFamilyTableView" layoutX="10.0" layoutY="167.0" prefHeight="393.0" prefWidth="229.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="spFamilyTableView" layoutX="10.0" layoutY="167.0" prefHeight="347.0" prefWidth="472.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="nameColumn" prefWidth="140.0" text="Name" />
                       <TableColumn fx:id="idColumn" prefWidth="136.0" text="Id" />
@@ -29,6 +29,30 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <ButtonBar layoutY="353.0" prefHeight="34.0" prefWidth="317.0" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="0.0">
+                    <buttons>
+                        <Button minWidth="59.0" mnemonicParsing="false" onAction="#handleSearchSPFamily" prefHeight="34.0" text="Search">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button minWidth="60.0" mnemonicParsing="false" onAction="#handleNewSPFamily" prefHeight="34.0" text="New">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button minWidth="35.0" mnemonicParsing="false" onAction="#handleEditSPFamily" prefHeight="34.0" text="Edit">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button minWidth="24.0" mnemonicParsing="false" onAction="#handleDeleteSPFamily" prefHeight="34.0" text="Delete">
+                           <font>
+                              <Font name="Calibri Bold Italic" size="14.0" />
+                           </font>
+                        </Button>
+                    </buttons>
+                  </ButtonBar>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="417.0" prefWidth="521.0">
@@ -54,79 +78,55 @@
                      <children>
                         <Label text="Id SPFamily">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label text="Id" GridPane.rowIndex="2">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label text="Osctrim" GridPane.rowIndex="5">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label text="SysClock" GridPane.rowIndex="4">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label text="Name" GridPane.rowIndex="1">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label text="Hw Version" GridPane.rowIndex="3">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="17.0" />
                            </font></Label>
                         <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label fx:id="idLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label fx:id="hwVersionLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label fx:id="sysclockLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                         <Label fx:id="osctrimLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <font>
-                              <Font size="14.0" />
+                              <Font size="16.0" />
                            </font></Label>
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="-39.0" layoutY="321.0" prefHeight="72.0" prefWidth="474.0" AnchorPane.bottomAnchor="0.0">
-                    <buttons>
-                        <Button minWidth="59.0" mnemonicParsing="false" onAction="#handleSearchSPFamily" prefHeight="34.0" text="Search" textFill="#12109c">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button minWidth="60.0" mnemonicParsing="false" onAction="#handleNewSPFamily" prefHeight="34.0" text="New" textFill="#12109c">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button minWidth="35.0" mnemonicParsing="false" onAction="#handleEditSPFamily" prefHeight="34.0" text="Edit" textFill="#12109c">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                        <Button minWidth="24.0" mnemonicParsing="false" onAction="#handleDeleteSPFamily" prefHeight="34.0" text="Delete" textFill="#12109c">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                    </buttons>
-                  </ButtonBar>
-                  <MenuButton layoutX="333.0" layoutY="25.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="120.0" text="Measure" textFill="#2c11a5" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="25.0">
+                  <MenuButton layoutX="174.0" layoutY="24.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="98.0" text="Measure" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="24.0">
                     <items>
                       <MenuItem mnemonicParsing="false" onAction="#handleMeasureSPFamily" text="Add..." />
                       <MenuItem mnemonicParsing="false" onAction="#handleSPMeasureOverview" text="Show..." />

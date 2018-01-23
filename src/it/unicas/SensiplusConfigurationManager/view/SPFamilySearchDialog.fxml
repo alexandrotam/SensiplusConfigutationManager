@@ -58,15 +58,15 @@
                </font></CheckBox>
             </children>
         </GridPane>
-        <ButtonBar layoutX="163.0" layoutY="331.0" prefHeight="44.0" prefWidth="250.0" AnchorPane.bottomAnchor="25.0">
+        <ButtonBar layoutX="212.0" layoutY="335.0" prefHeight="51.0" prefWidth="172.0" AnchorPane.bottomAnchor="14.0">
             <buttons>
                 <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold" size="14.0" />
                </font></Button>
                 <Button mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
                <font>
-                  <Font name="Calibri Bold Italic" size="24.0" />
+                  <Font name="Calibri Bold" size="14.0" />
                </font></Button>
             </buttons>
         </ButtonBar>

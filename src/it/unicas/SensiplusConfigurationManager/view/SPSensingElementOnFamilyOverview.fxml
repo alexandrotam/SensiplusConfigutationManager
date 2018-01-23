@@ -14,11 +14,11 @@
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnFamilyOverviewController">
    <children>
-      <SplitPane dividerPositions="0.3351206434316354" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <SplitPane dividerPositions="0.599195710455764" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="748.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
          <items>
-            <AnchorPane prefHeight="392.0" prefWidth="248.0" SplitPane.resizableWithParent="false">
+            <AnchorPane maxWidth="444.0" prefHeight="392.0" prefWidth="248.0" SplitPane.resizableWithParent="false">
                <children>
-                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="392.0" prefWidth="247.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="spSensingelementOnFamilyTableView" layoutX="10.0" layoutY="103.0" prefHeight="351.0" prefWidth="444.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="NameSPSensingElementColumn" prefWidth="123.0" text="Name SPSensingElement" />
                       <TableColumn fx:id="NameSPFamilyColumn" prefWidth="123.0" text="Name SPFamily" />
@@ -27,6 +27,11 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                <Button layoutX="9.0" layoutY="359.0" mnemonicParsing="false" onAction="#handleSearchSPSensingelementOnFamily" prefHeight="27.0" prefWidth="74.0" text="Search" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="9.0">
+                     <font>
+                        <Font name="Calibri Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="417.0" prefWidth="497.0">
@@ -50,17 +55,17 @@
                      <children>
                         <Label text="Name" GridPane.rowIndex="3">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                         <Label text="Id Port" GridPane.rowIndex="2">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                         <Label text="Id Family" GridPane.rowIndex="1">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
@@ -68,21 +73,13 @@
                         <Label fx:id="nameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                         <Label text="Id Sensing Element">
                            <font>
-                              <Font size="14.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
                         <Label fx:id="idSPSensingElementLabel" text="Label" GridPane.columnIndex="1" />
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="211.0" layoutY="339.0" prefHeight="70.0" prefWidth="82.0" AnchorPane.bottomAnchor="0.0">
-                    <buttons>
-                      <Button mnemonicParsing="false" onAction="#handleSearchSPSensingelementOnFamily" text="Search" textFill="#161bb7">
-                           <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
-                           </font>
-                        </Button>
-                    </buttons>
-                  </ButtonBar>
+                  <ButtonBar layoutX="211.0" layoutY="339.0" prefHeight="70.0" prefWidth="82.0" AnchorPane.bottomAnchor="0.0" />
                </children>
             </AnchorPane>
          </items>

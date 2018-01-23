@@ -34,7 +34,7 @@
                </font>
             </Label>
             <TextField fx:id="idSPChipField" GridPane.columnIndex="1" />
-            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1" maxHeight="26.0">
                <children>
                   <ComboBox fx:id="idSPFamilyCombobox" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
                </children>

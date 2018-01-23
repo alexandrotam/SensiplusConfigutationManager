@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnFamiySearchDialogController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPSensingElementOnFamiySearchDialogController">
     <children>
         <GridPane layoutX="14.0" layoutY="11.0" prefHeight="303.0" prefWidth="580.0" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="11.0">
             <columnConstraints>
@@ -50,16 +50,16 @@
             </CheckBox>
             </children>
         </GridPane>
-        <ButtonBar layoutX="132.0" layoutY="329.0" prefHeight="57.0" prefWidth="337.0" AnchorPane.bottomAnchor="14.0">
+        <ButtonBar layoutX="205.0" layoutY="338.0" prefHeight="48.0" prefWidth="199.0" AnchorPane.bottomAnchor="14.0">
             <buttons>
-                <Button mnemonicParsing="false" onAction="#handleOk" text="Ok">
+                <Button mnemonicParsing="false" onAction="#handleOk" prefHeight="28.0" text="Ok">
                     <font>
-                        <Font name="Calibri Bold Italic" size="24.0" />
+                        <Font name="Calibri Bold Italic" size="14.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="44.0" prefWidth="161.0" text="Cancel">
+                <Button mnemonicParsing="false" onAction="#handleCancel" prefHeight="18.0" prefWidth="161.0" text="Cancel">
                     <font>
-                        <Font name="Calibri Bold Italic" size="24.0" />
+                        <Font name="Calibri Bold Italic" size="14.0" />
                     </font>
                 </Button>
             </buttons>

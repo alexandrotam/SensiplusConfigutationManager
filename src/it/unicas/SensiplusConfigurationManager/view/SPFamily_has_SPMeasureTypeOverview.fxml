@@ -14,11 +14,11 @@
 
 <AnchorPane prefHeight="395.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unicas.SensiplusConfigurationManager.view.SPFamily_has_SPMeasureTypeOverviewController">
    <children>
-      <SplitPane dividerPositions="0.38605898123324395" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="705.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <SplitPane dividerPositions="0.5201072386058981" layoutX="-1.0" layoutY="1.0" prefHeight="396.0" prefWidth="705.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
          <items>
-            <AnchorPane prefHeight="393.0" prefWidth="243.0" SplitPane.resizableWithParent="false">
+            <AnchorPane maxWidth="463.0" prefHeight="393.0" prefWidth="463.0" SplitPane.resizableWithParent="false">
                <children>
-                  <TableView fx:id="spFamily_has_SPMeasureTypeTableView" layoutX="10.0" layoutY="103.0" prefHeight="392.0" prefWidth="247.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="spFamily_has_SPMeasureTypeTableView" layoutX="10.0" layoutY="103.0" prefHeight="348.0" prefWidth="460.0" AnchorPane.bottomAnchor="44.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="NameFamilyColumn" minWidth="0.0" prefWidth="179.0" text="Name_Family" />
                       <TableColumn fx:id="NameTypeColumn" prefWidth="189.0" text="Name_MeasureType" />
@@ -27,6 +27,14 @@
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                      </columnResizePolicy>
                   </TableView>
+                  <ButtonBar layoutX="-3.0" layoutY="353.0" prefHeight="30.0" prefWidth="115.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="-3.0">
+                    <buttons>
+                      <Button mnemonicParsing="false" onAction="#handleSearchSPFamily_has_SPMeasureType" prefHeight="30.0" prefWidth="97.0" text="Search">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font></Button>
+                    </buttons>
+                  </ButtonBar>
                </children>
             </AnchorPane>
             <AnchorPane prefHeight="417.0" prefWidth="497.0">
@@ -49,19 +57,19 @@
                      <children>
                         <Label text="IdSPFamily">
                            <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
+                              <Font name="Calibri Bold" size="18.0" />
                            </font></Label>
                         <Label text="Name_Family" GridPane.rowIndex="1">
                            <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
+                              <Font name="Calibri Bold" size="18.0" />
                            </font></Label>
                         <Label text="IdSPMeasureType" GridPane.rowIndex="2">
                            <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
+                              <Font name="Calibri Bold" size="18.0" />
                            </font></Label>
                         <Label text="Name_Measure_Type" GridPane.rowIndex="3">
                            <font>
-                              <Font name="Calibri Bold Italic" size="18.0" />
+                              <Font name="Calibri Bold" size="18.0" />
                            </font></Label>
                         <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1">
                            <font>
@@ -81,14 +89,6 @@
                            </font></Label>
                      </children>
                   </GridPane>
-                  <ButtonBar layoutX="125.0" prefHeight="71.0" prefWidth="172.0" AnchorPane.bottomAnchor="0.0">
-                    <buttons>
-                      <Button mnemonicParsing="false" onAction="#handleSearchSPFamily_has_SPMeasureType" text="Search">
-                           <font>
-                              <Font name="System Bold Italic" size="24.0" />
-                           </font></Button>
-                    </buttons>
-                  </ButtonBar>
                </children>
             </AnchorPane>
          </items>
