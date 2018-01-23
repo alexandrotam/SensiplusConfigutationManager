@@ -24,6 +24,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleSPFamily" text="Family" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPChip" text="Chip" />
                 <MenuItem mnemonicParsing="false" onAction="#handleSPCluster" text="Cluster" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSPConfiguration" text="Configuration" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                 <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnFamily" text="SPSensingElementOnFamily" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnChip" text="SPSensingElementOnChip" />

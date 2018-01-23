@@ -1,7 +1,6 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
-import it.unicas.SensiplusConfigurationManager.model.SPCalibration;
 import it.unicas.SensiplusConfigurationManager.model.SPConfiguration;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPConfigurationDAOMySQLImpl;
