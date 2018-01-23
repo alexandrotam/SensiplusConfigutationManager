@@ -34,7 +34,7 @@ public class MainApp extends Application {
     private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
     private ObservableList<SPSensingElementOnChip> SPSensingElementOnChipData = FXCollections.observableArrayList();
     public  ObservableList<SPFamily_has_SPMeasureType> SPFamily_has_SPMeasureTypeData=FXCollections.observableArrayList();
-
+    private ObservableList<SPCluster> SPClusterData = FXCollections.observableArrayList();
 
     /**
      * Constructor
@@ -45,7 +45,7 @@ public class MainApp extends Application {
 
 
 
-   public ObservableList<SPSensingElement> getSPSensingElementData() {return SPSensigElementData;}
+    public ObservableList<SPSensingElement> getSPSensingElementData() {return SPSensigElementData;}
     public ObservableList<SPFamily> getSPFamilyData() {return SPFamilyData;}
     public ObservableList<SPSensingelementOnFamily> getSPSensingelementOnFamilyData(){return  SPSensingelementOnFamilyData;}
     public ObservableList<SPChip> getSPChipData() {
@@ -55,6 +55,9 @@ public class MainApp extends Application {
         return SPSensingElementOnChipData;
     }
     public ObservableList<SPFamily_has_SPMeasureType> getSPFamily_has_SPMeasureTypeData(){return SPFamily_has_SPMeasureTypeData;}
+    public ObservableList<SPCluster> getSPClusterData() {
+        return SPClusterData;
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -206,6 +209,25 @@ public class MainApp extends Application {
 
             // Give the controller access to the main app.
             SPSensingElementOnChipOverviewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showSPClusterOverview() {
+        try {
+            // Load SPCluster overview.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPClusterOverview.fxml"));
+            AnchorPane SPClusterOverview = (AnchorPane) loader.load();
+
+            // Set SPCluster overview into the center of root layout.
+            rootLayout.setCenter(SPClusterOverview);
+
+            // Give the controller access to the main app.
+            SPClusterOverviewController controller = loader.getController();
             controller.setMainApp(this);
 
         } catch (IOException e) {
@@ -422,6 +444,38 @@ public class MainApp extends Application {
         }
     }
 
+    public boolean showSPClusterEditDialog(SPCluster spCluster, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPClusterEditDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Edit SPCluster");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(407);
+            dialogStage.setMinWidth(609);
+
+            SPClusterEditDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPCluster(spCluster);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     public boolean showSPFamilySearchDialog(SPFamily spFamily, boolean verifyLen) {
         try {
             // Load the fxml file and create a new stage for the popup dialog.
@@ -603,6 +657,38 @@ public class MainApp extends Application {
             SPSensingElementOnChipSearchDialogController controller = loader.getController();
             controller.setDialogStage(dialogStage, verifyLen);
             controller.setSPSensingElementOnChip(spSensingElementOnChip);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+            return controller.isOkClicked();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean showSPClusterSearchDialog(SPCluster spCluster, boolean verifyLen) {
+        try {
+            // Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/SPClusterSearchDialog.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Search SPCluster");
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+            dialogStage.setMaximized(true);
+            dialogStage.setMinHeight(400);
+            dialogStage.setMinWidth(600);
+
+            SPClusterSearchDialogController controller = loader.getController();
+            controller.setDialogStage(dialogStage, verifyLen);
+            controller.setSPCluster(spCluster);
 
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();

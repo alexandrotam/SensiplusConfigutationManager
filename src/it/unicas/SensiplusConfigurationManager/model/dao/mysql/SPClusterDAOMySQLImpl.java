@@ -37,7 +37,7 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
 
 
         SPCluster toDelete = new SPCluster();
-        toDelete.setidCluster("");
+        toDelete.setIdCluster("");
         toDelete.setSPCalibration_idSPCalibration("");
         s.delete(toDelete);
 
@@ -60,22 +60,23 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
         ArrayList<SPCluster> lista = new ArrayList<SPCluster>();
         try{
 
-            if (a == null || a.getidCluster() == null
-                    || a.getSPCalibration_idSPCalibration() == null)
+            if (a == null || a.getIdCluster() == null
+                    || a.getSPCalibration_NameSPCalibration() == null)
             {
                 throw new DAOException("In select: any field can be null");
             }
 
             Statement st = DAOMySQLSettings.getStatement();
 
-            String sql = "select * from SPCluster where idSPCluster like '";
-            sql += a.getidCluster() + "%' and SPFamily_idSPFamily  like '"+a.getSPCalibration_idSPCalibration()+"%'";
+            String sql = "select cl.idCluster,ca.name from SPCluster cl inner join" +
+                    " spcalibration ca on cl.SPCalibration_idSPCalibration=ca.idSPCalibration where cl.idCluster like '";
+            sql += a.getIdCluster() + "%' and ca.name like '"+a.getSPCalibration_NameSPCalibration()+"%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPCluster(rs.getString("idSPCluster"),rs.getString("SPCalibration_idSPCalibration")));
+                lista.add(new SPCluster(rs.getString("cl.idCluster"),rs.getString("ca.name")));
             }
             DAOMySQLSettings.closeStatement(st);
 
@@ -88,12 +89,12 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
 
     @Override
     public void delete( SPCluster a) throws DAOException {
-        if (a == null || a.getidCluster() == null
+        if (a == null || a.getIdCluster() == null
                 || a.getSPCalibration_idSPCalibration() == null)
         {
             throw new DAOException("In delete: any field can be null");
         }
-        String query = "DELETE  FROM SPCluster WHERE idSPCluster='" + a.getidCluster() + "';";
+        String query = "DELETE  FROM SPCluster WHERE idCluster='" + a.getIdCluster() + "';";
         logger.info("SQL: " + query);
 
         Statement st = null;
@@ -113,21 +114,21 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
     public void insert(SPCluster a) throws DAOException {
 
 
-        if (a == null || a.getidCluster() == ""
-                || a.getSPCalibration_idSPCalibration() == "")
+        if (a == null || a.getIdCluster() == ""
+                || a.getSPCalibration_NameSPCalibration() == "")
         {
             throw new DAOException("In select: any field can be null");
         }
 
+        String query1="Select idSPCalibration from SPCalibration where name='"+a.getSPCalibration_NameSPCalibration()+"'";
+        String query2 ="INSERT INTO SPCluster (idCluster,SPCalibration_idSPCalibration) VALUES " +" ('" +a.getIdCluster()
+                + "',(" +query1+"))";
 
-        String query ="INSERT INTO SPChip (idSPCluster,SPFamily_idSPFamily) VALUES " +" ('" +a.getidCluster()
-                + "', '" +a.getSPCalibration_idSPCalibration()+ "')";
-
-        logger.info("SQL: " + query);
+        logger.info("SQL: " + query2);
 
         try {
             Statement st = DAOMySQLSettings.getStatement();
-            int n = st.executeUpdate(query);
+            int n = st.executeUpdate(query2);
 
             DAOMySQLSettings.closeStatement(st);
 
@@ -139,14 +140,14 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
 
     @Override
     public void update(SPCluster a) throws DAOException {
-        if (a == null || a.getidCluster() == ""
-                || a.getSPCalibration_idSPCalibration() == ""){
+        if (a == null || a.getIdCluster() == ""
+                || a.getSPCalibration_NameSPCalibration() == ""){
             throw new DAOException("In select: any field can be null");
         }
 
-        String query = "UPDATE SPCluster s SET s.idSPCluster = '" + a.getidCluster() + "', s.SPCalibration_idSPCalibration = '"
-                + a.getSPCalibration_idSPCalibration() + "'";
-        query = query + " WHERE s.idSPCluster = '" + a.getidCluster() + "';";
+        String query1= "Select idSPCalibration from SPCalibration where name='"+a.getSPCalibration_NameSPCalibration()+"'";
+        String query = "UPDATE SPCluster s SET s.idCluster = '" + a.getIdCluster() + "', s.SPCalibration_idSPCalibration = ("
+                + query1 + ") where s.idCluster ='"+a.getIdCluster()+"'";
         logger.info("SQL: " + query);
 
         try {

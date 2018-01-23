@@ -138,6 +138,24 @@ public class RootLayoutController {
         }
     }
 
+    public void handleSPCluster(){
+        mainApp.showSPClusterOverview();
+        SPCluster tempSPCluster = new SPCluster("","");
+        try {
+            List<SPCluster> list = SPClusterDAOMySQLImpl.getInstance().select(tempSPCluster);
+            mainApp.getSPClusterData().clear();
+            mainApp.getSPClusterData().addAll(list);
+        } catch (DAOException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("Error during DB interaction");
+            alert.setHeaderText("Error during search ...");
+            alert.setContentText(e.getMessage());
+
+            alert.showAndWait();
+        }
+    }
+
     /**
      * Opens an about dialog.
      */

@@ -127,7 +127,7 @@ public class SPChipOverviewController {
 
     /**
      * Called when the user clicks the new button. Opens a dialog to edit
-     * details for a new SPFamily.
+     * details for a new SPChip.
      */
     @FXML
     private void handleSearchSPChip() {

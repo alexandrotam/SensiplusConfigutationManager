@@ -23,7 +23,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElement" text="Sensing Element" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPFamily" text="Family" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPChip" text="Chip" />
-                <MenuItem mnemonicParsing="false" text="Cluster" />
+                <MenuItem mnemonicParsing="false" onAction="#handleSPCluster" text="Cluster" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                 <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnFamily" text="SPSensingElementOnFamily" />
                   <MenuItem mnemonicParsing="false" onAction="#handleSPSensingElementOnChip" text="SPSensingElementOnChip" />

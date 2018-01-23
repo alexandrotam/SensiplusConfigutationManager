@@ -14,16 +14,11 @@ public class SPCluster {
 
     private StringProperty idCluster;
     private StringProperty SPCalibration_idSPCalibration;
+    private StringProperty SPCalibration_NameSPCalibration;
 
-    public SPCluster(String idCluster,String SPCalibration_idSPCalibration){
+    public SPCluster(String idCluster,String SPCalibration_NameSPCalibration){
         this.idCluster = new SimpleStringProperty(idCluster);
-        this.SPCalibration_idSPCalibration=new SimpleStringProperty(SPCalibration_idSPCalibration);
-        if ( idCluster != null){
-            this.idCluster = new SimpleStringProperty(idCluster);
-        } else {
-            this.idCluster = null;
-        }
-
+        this.SPCalibration_NameSPCalibration=new SimpleStringProperty(SPCalibration_NameSPCalibration);
     }
 
 
@@ -31,26 +26,19 @@ public class SPCluster {
         this("","");
     }
 
-    public String getidCluster() {
-        if (idCluster == null){
-            idCluster = new SimpleStringProperty(null);
-        }
-        return idCluster.get();
-    }
-
-
-    public void setidCluster(String idCluster) {
-        if (this.idCluster == null){
-            this.idCluster = new SimpleStringProperty();
-        }
-        this.idCluster.set(idCluster);
-    }
+    public String getIdCluster() {return idCluster.get();}
 
     public StringProperty idClusterProperty() {
         return idCluster;
     }
 
+    public void setIdCluster(String idCluster) {
+        this.idCluster.set(idCluster);
+    }
+
     public String getSPCalibration_idSPCalibration() {
+        if( SPCalibration_idSPCalibration == null)
+            SPCalibration_idSPCalibration = new SimpleStringProperty("");
         return SPCalibration_idSPCalibration.get();
     }
 
@@ -59,11 +47,25 @@ public class SPCluster {
     }
 
     public void setSPCalibration_idSPCalibration(String SPCalibration_idSPCalibration) {
+        if(this.SPCalibration_idSPCalibration == null)
+            this.SPCalibration_idSPCalibration = new SimpleStringProperty();
         this.SPCalibration_idSPCalibration.set(SPCalibration_idSPCalibration);
     }
 
+    public String getSPCalibration_NameSPCalibration() {
+        return SPCalibration_NameSPCalibration.get();
+    }
+
+    public StringProperty SPCalibration_NameSPCalibrationProperty() {
+        return SPCalibration_NameSPCalibration;
+    }
+
+    public void setSPCalibration_NameSPCalibration(String SPCalibration_NameSPCalibration) {
+        this.SPCalibration_NameSPCalibration.set(SPCalibration_NameSPCalibration);
+    }
+
     public String toString(){
-        return idCluster.getValue()+", " +SPCalibration_idSPCalibration.getValue();
+        return idCluster.getValue()+", " +SPCalibration_NameSPCalibration.getValue();
     }
 
 
