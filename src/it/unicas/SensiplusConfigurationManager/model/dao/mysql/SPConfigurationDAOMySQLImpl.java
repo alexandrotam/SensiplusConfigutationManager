@@ -140,13 +140,13 @@ public class SPConfigurationDAOMySQLImpl implements DAOSPConfiguration<SPConfigu
 
 
         if (a == null || a.getidSPConfiguration() == ""
-                || a.getDriver() == null
-                || a.getHostController() == null
-                || a.getApiOwner() == null
-                || a.getMcu() == null
-                || a.getProtocol() == null
-                || a.getAddressingType()==null
-                || a.getIdCluster()==null)
+                || a.getDriver() == ""
+                || a.getHostController() == ""
+                || a.getApiOwner() == ""
+                || a.getMcu() == ""
+                || a.getProtocol() == ""
+                || a.getAddressingType()==""
+                || a.getIdCluster()=="")
         {
             throw new DAOException("In select: any field can be null");
         }
