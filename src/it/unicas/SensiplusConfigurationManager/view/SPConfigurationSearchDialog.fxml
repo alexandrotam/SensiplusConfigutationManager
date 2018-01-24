@@ -76,9 +76,9 @@
                   <Font name="Calibri Italic" size="18.0" />
                </font>
             </CheckBox>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <AnchorPane maxHeight="26.0" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                      <ComboBox fx:id="idClusterCombobox" disable="true" prefHeight="17.0" prefWidth="295.0" AnchorPane.bottomAnchor="11.773585329364757" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.9056604099511318" />
+                      <ComboBox fx:id="idClusterCombobox" disable="true" prefHeight="26.0" prefWidth="295.0" AnchorPane.bottomAnchor="11.773585329364757" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.9056604099511318" />
                </children>
             </AnchorPane>
             </children>
