@@ -16,8 +16,6 @@ public class SPConfigurationOverviewController {
     @FXML
     private TableView<SPConfiguration> spConfigurationTableView;
     @FXML
-    private TableColumn<SPConfiguration, String> idSPConfigurationColumn;
-    @FXML
     private TableColumn<SPConfiguration,String> idClusterColumn;
 
     @FXML
@@ -43,8 +41,6 @@ public class SPConfigurationOverviewController {
     @FXML
     private void initialize() {
 
-
-        idSPConfigurationColumn.setCellValueFactory(cellData -> cellData.getValue().idSPConfigurationProperty());
         idClusterColumn.setCellValueFactory(cellData->cellData.getValue().idClusterProperty());
 
         showSPConfigurationDetails(null);

@@ -139,7 +139,7 @@ public class SPConfigurationDAOMySQLImpl implements DAOSPConfiguration<SPConfigu
     public void insert(SPConfiguration a) throws DAOException {
 
 
-        if (a == null || a.getidSPConfiguration() == ""
+        if (a == null
                 || a.getDriver() == ""
                 || a.getHostController() == ""
                 || a.getApiOwner() == ""
