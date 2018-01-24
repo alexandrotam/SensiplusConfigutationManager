@@ -55,15 +55,15 @@ public class SPConfigurationEditDialogController {
         // Set the dialog icon.
     }
 
-    public void setSPConfiguration(SPConfiguration SPConfiguration) {
-        this.SPConfiguration = SPConfiguration;
-        driverField.setText(SPConfiguration.getDriver());
-        hostControllerField.setText(SPConfiguration.getHostController());
-        apiOwnerField.setText(SPConfiguration.getApiOwner());
-        mcuField.setText(SPConfiguration.getMcu());
-        protocolField.setText(SPConfiguration.getProtocol());
-        addressingTypeField.setText(SPConfiguration.getAddressingType());
-        idClusterCombobox.setValue(SPConfiguration.getIdCluster());
+    public void setSPConfiguration(SPConfiguration Configuration) {
+        this.SPConfiguration = Configuration;
+        driverField.setText(Configuration.getDriver());
+        hostControllerField.setText(Configuration.getHostController());
+        apiOwnerField.setText(Configuration.getApiOwner());
+        mcuField.setText(Configuration.getMcu());
+        protocolField.setText(Configuration.getProtocol());
+        addressingTypeField.setText(Configuration.getAddressingType());
+        idClusterCombobox.setValue(Configuration.getIdCluster());
     }
 
     public boolean isOkClicked() {

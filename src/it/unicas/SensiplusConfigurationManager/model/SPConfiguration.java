@@ -34,11 +34,7 @@ public class SPConfiguration {
         this.addressingType=new SimpleStringProperty(addressingType);
         this.idCluster=new SimpleStringProperty(idCluster);
 
-        if ( idSPConfiguration != null){
-            this.idSPConfiguration = new SimpleStringProperty(idSPConfiguration);
-        } else {
-            this.idSPConfiguration = null;
-        }
+
 
     }
 
@@ -152,7 +148,7 @@ public class SPConfiguration {
 
     public String toString(){
         return idSPConfiguration.getValue()+", " +driver.getValue()+", "+hostController.getValue()+", "+apiOwner.getValue()
-                +", "+mcu.getValue()+", "+protocol.getValue()+", "+addressingType.get()+", "+idCluster.getValue();
+                +", "+mcu.getValue()+", "+protocol.getValue()+", "+addressingType.getValue()+", "+idCluster.getValue();
     }
 
 
