@@ -12,10 +12,10 @@ import java.util.List;
 public class SPChip {
 
     private StringProperty idSPChip;
-    private StringProperty SPFamily_idSPFamily;
+    private StringProperty name_family;
 
-    public SPChip(String idSPChip,String SPFamily_idSPFamily){
-       this.SPFamily_idSPFamily = new SimpleStringProperty(SPFamily_idSPFamily);
+    public SPChip(String idSPChip,String name_family){
+       this.name_family = new SimpleStringProperty(name_family);
 
         if ( idSPChip != null){
             this.idSPChip = new SimpleStringProperty(idSPChip);
@@ -49,20 +49,20 @@ public class SPChip {
         return idSPChip;
     }
 
-    public String getSPFamily_idSPFamily() {
-        return SPFamily_idSPFamily.get();
+    public String getName_family() {
+        return name_family.get();
     }
 
-    public StringProperty SPFamily_idSPFamilyProperty() {
-        return SPFamily_idSPFamily;
+    public StringProperty name_familyProperty() {
+        return name_family;
     }
 
-    public void setSPFamily_idSPFamily(String SPFamily_idSPFamily) {
-        this.SPFamily_idSPFamily.set(SPFamily_idSPFamily);
+    public void setName_family(String name_family) {
+        this.name_family.set(name_family);
     }
 
     public String toString(){
-        return idSPChip.getValue()+", " +SPFamily_idSPFamily.getValue();
+        return idSPChip.getValue()+", " +name_family.getValue();
     }
 
 

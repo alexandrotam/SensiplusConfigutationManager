@@ -271,6 +271,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
         @Override
         public void update(SPSensingElement a) throws DAOException {
+
             if (a == null || a.getrSense() == null
                     || a.getInGain() == null
                     || a.getOutGain() == null

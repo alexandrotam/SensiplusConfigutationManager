@@ -37,7 +37,7 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
 
         SPChip toDelete = new SPChip();
         toDelete.setidSPChip("");
-        toDelete.setSPFamily_idSPFamily("");
+        toDelete.setName_family("");
         s.delete(toDelete);
 
         list = s.select((SPChip) null);
@@ -60,15 +60,17 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
         try{
 
             if (a == null || a.getidSPChip() == null
-                    || a.getSPFamily_idSPFamily() == null)
+                    || a.getName_family() == null)
             {
                 throw new DAOException("In select: any field can be null");
             }
 
             Statement st = DAOMySQLSettings.getStatement();
 
+            String query1="Select idSPFamily from spfamily where name='"+a.getName_family()+"'";
+
             String sql = "select * from SPChip where idSPChip like '";
-            sql += a.getidSPChip() + "%' and SPFamily_idSPFamily  like '"+a.getSPFamily_idSPFamily()+"%'";
+            sql += a.getidSPChip() + "%' and SPFamily_idSPFamily  like '"+query1+"%'";
 
 
             logger.info("SQL: " + sql);
@@ -88,7 +90,7 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
     @Override
     public void delete(SPChip a) throws DAOException {
         if (a == null || a.getidSPChip() == null
-                || a.getSPFamily_idSPFamily() == null)
+                || a.getName_family() == null)
         {
             throw new DAOException("In delete: any field can be null");
         }
@@ -113,14 +115,14 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
 
 
         if (a == null || a.getidSPChip() == ""
-                || a.getSPFamily_idSPFamily() == "")
+                || a.getName_family() == "")
         {
             throw new DAOException("In select: any field can be null");
         }
 
-
+        String query1="Select idSPFamily from spfamily where name='"+a.getName_family()+"'";
         String query ="INSERT INTO SPChip (idSPChip,SPFamily_idSPFamily) VALUES " +" ('" +a.getidSPChip()
-                + "', '" +a.getSPFamily_idSPFamily()+ "')";
+                + "', '" +query1+ "')";
 
         logger.info("SQL: " + query);
 
@@ -139,11 +141,12 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
     @Override
     public void update(SPChip a) throws DAOException {
         if (a == null || a.getidSPChip() == ""
-                || a.getSPFamily_idSPFamily() == ""){
+                || a.getName_family() == ""){
             throw new DAOException("In select: any field can be null");
         }
+        String query1="Select idSPFamily from spfamily where name='"+a.getName_family()+"'";
 
-        String query = "UPDATE SPChip s SET s.idSPChip = '" + a.getidSPChip() + "', s.SPFamily_idSPFamily = '" + a.getSPFamily_idSPFamily() + "' WHERE s.idSPChip = '" + a.getidSPChip() + "';";
+        String query = "UPDATE SPChip s SET s.idSPChip = '" + a.getidSPChip() + "', s.SPFamily_idSPFamily = '" + query1 + "' WHERE s.idSPChip = '" + a.getidSPChip() + "';";
 
         logger.info("SQL: " + query);
 
