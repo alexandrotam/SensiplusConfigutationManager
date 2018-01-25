@@ -15,7 +15,6 @@ public class SPSensingElementOnChip {
     private StringProperty SPChip_idSPChip;
     private StringProperty m;
     private StringProperty n;
-
     private StringProperty SPSensingElementOnFamily_Name;
     private StringProperty SPCalibration_Name;
 
