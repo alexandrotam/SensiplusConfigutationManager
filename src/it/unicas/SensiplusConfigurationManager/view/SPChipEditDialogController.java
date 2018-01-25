@@ -32,7 +32,7 @@ public class SPChipEditDialogController {
         String query="select name from spfamily";
         ResultSet rs = st.executeQuery(query);
         while(rs.next()){
-            lista.add(rs.getString("namefamily"));
+            lista.add(rs.getString("name"));
         }
         DAOMySQLSettings.closeStatement(st);
         namefamilyCombobox.getItems().addAll(lista);

@@ -36,7 +36,7 @@ public class SPChipSearchDialogController {
         String query="select name from spfamily";
         ResultSet rs = st.executeQuery(query);
         while(rs.next()){
-            lista.add(rs.getString("idSPFamily"));
+            lista.add(rs.getString("name"));
         }
         DAOMySQLSettings.closeStatement(st);
         namefamilycombobox.getItems().addAll(lista);
