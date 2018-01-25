@@ -189,8 +189,8 @@ public class SPConfigurationDAOMySQLImpl implements DAOSPConfiguration<SPConfigu
         String query = "UPDATE SPConfiguration s SET s.idSPConfiguration = '" + a.getidSPConfiguration() + "', s.driver = '" + a.getDriver()
                 + "',  s.hostController = '" + a.getHostController() + "'," +" s.apiOwner = '"+ a.getApiOwner() +
                 "', s.mcu = '" + a.getMcu()+"', s.protocol='"+a.getProtocol()+"',s.addressingType='"+a.getAddressingType()
-                +"', s.idCluster='"+a.getIdCluster()+"' ";
-        query = query + " WHERE s.idSPConfiguration = '" + a.getidSPConfiguration() + "';";
+                +"', s.idCluster='"+a.getIdCluster()+"'  WHERE s.idSPConfiguration = '" + a.getidSPConfiguration() + "';";
+
         logger.info("SQL: " + query);
 
         try {

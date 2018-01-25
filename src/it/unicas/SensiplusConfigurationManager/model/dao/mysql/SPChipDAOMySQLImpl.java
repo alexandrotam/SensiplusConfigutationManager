@@ -143,8 +143,8 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
             throw new DAOException("In select: any field can be null");
         }
 
-        String query = "UPDATE SPChip s SET s.idSPChip = '" + a.getidSPChip() + "', s.SPFamily_idSPFamily = '" + a.getSPFamily_idSPFamily() + "'";
-        query = query + " WHERE s.idSPChip = '" + a.getidSPChip() + "';";
+        String query = "UPDATE SPChip s SET s.idSPChip = '" + a.getidSPChip() + "', s.SPFamily_idSPFamily = '" + a.getSPFamily_idSPFamily() + "' WHERE s.idSPChip = '" + a.getidSPChip() + "';";
+
         logger.info("SQL: " + query);
 
         try {

@@ -301,8 +301,8 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                     +"', s.harmonic='"+a.getHarmonic()+"', s.DCBias='"+a.getDCBias()+"', s.modeVI='"+a.getModeVI()+"', s.measureTechnique='"+a.getMeasureTechnique()+ "',  s.measureType = '" + a.getMeasureType() + "', s.filter = '" + a.getFilter() +
                     "', s.phaseShiftMode ='"+a.getPhaseShiftMode()+"',s.phaseShift='"+a.getPhaseShift()+ "',  s.IQ = '" + a.getIQ() + "', s.conversionRate = '" + a.getConversionRate()+
                     "', s.inPortADC='"+a.getInPortADC()+ "',  s.nData = '" + a.getnData() + "', s.name = '" + a.getName()+"', s.rangeMin='"+a.getRangeMin()+ "', s.rangeMax = '" + a.getRangeMax() + "', s.defaultAlarmThreshold = '" + a.getDefaultAlarmThreshold()+
-                    "', s.multiplier='"+a.getMultiplier()+ "', s.measureUnit = '" + a.getMeasureUnit()+ "'";
-            query = query + " WHERE s.idSPSensingElement = '" + a.getIdSPSensingElement() + "';";
+                    "', s.multiplier='"+a.getMultiplier()+ "', s.measureUnit = '" + a.getMeasureUnit()+ "' WHERE s.idSPSensingElement = '" + a.getIdSPSensingElement() + "';";
+
             logger.info("SQL: " + query);
 
             try {
