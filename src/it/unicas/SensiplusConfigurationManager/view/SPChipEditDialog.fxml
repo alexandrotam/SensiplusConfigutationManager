@@ -23,7 +23,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="Id Family" textAlignment="CENTER" GridPane.rowIndex="1">
+            <Label text="Name Family" textAlignment="CENTER" GridPane.rowIndex="1">
                <font>
                   <Font name="Calibri Italic" size="27.0" />
                </font>
@@ -34,9 +34,9 @@
                </font>
             </Label>
             <TextField fx:id="idSPChipField" GridPane.columnIndex="1" />
-            <AnchorPane GridPane.columnIndex="1" GridPane.rowIndex="1" maxHeight="26.0">
+            <AnchorPane maxHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ComboBox fx:id="idSPFamilyCombobox" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+                  <ComboBox fx:id="namefamilyCombobox" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
                </children>
             </AnchorPane>
          </children>

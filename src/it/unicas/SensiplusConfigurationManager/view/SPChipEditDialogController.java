@@ -18,7 +18,7 @@ public class SPChipEditDialogController {
     @FXML
     private TextField idSPChipField;
     @FXML
-    private ComboBox idSPFamilyCombobox;
+    private ComboBox namefamilyCombobox;
 
     private Stage dialogStage;
     private SPChip SPChip;
@@ -29,13 +29,13 @@ public class SPChipEditDialogController {
     private void initialize() throws SQLException {
         Statement st = DAOMySQLSettings.getStatement();
         ArrayList<String> lista = new ArrayList<>();
-        String query="select idSPFamily from spfamily";
+        String query="select name from spfamily";
         ResultSet rs = st.executeQuery(query);
         while(rs.next()){
-            lista.add(rs.getString("idSPFamily"));
+            lista.add(rs.getString("namefamily"));
         }
         DAOMySQLSettings.closeStatement(st);
-        idSPFamilyCombobox.getItems().addAll(lista);
+        namefamilyCombobox.getItems().addAll(lista);
     }
 
     public void setDialogStage(Stage dialogStage, boolean verifyLen) {
@@ -47,7 +47,7 @@ public class SPChipEditDialogController {
     public void setSPChip(SPChip SPChip) {
         this.SPChip = SPChip;
         idSPChipField.setText(SPChip.getidSPChip());
-        idSPFamilyCombobox.setValue(SPChip.getSPFamily_idSPFamily());
+        namefamilyCombobox.setValue(SPChip.getName_family());
     }
 
     public boolean isOkClicked() {
@@ -58,7 +58,7 @@ public class SPChipEditDialogController {
     private void handleOk() {
         if (isInputValid(verifyLen)) {
             SPChip.setidSPChip(idSPChipField.getText());
-            SPChip.setSPFamily_idSPFamily(idSPFamilyCombobox.getValue().toString());
+            SPChip.setName_family(namefamilyCombobox.getValue().toString());
 
             okClicked = true;
             dialogStage.close();

@@ -22,7 +22,7 @@ public class SPChipOverviewController {
     @FXML
     private Label idSPChipLabel;
     @FXML
-    private Label idSPFamilyLabel;
+    private Label namefamilyLabel;
 
     public MainApp mainApp;
 
@@ -55,10 +55,10 @@ public class SPChipOverviewController {
     private void showSPChipDetails(SPChip spChip) {
         if (spChip != null) {
             idSPChipLabel.setText(spChip.getidSPChip());
-            idSPFamilyLabel.setText(spChip.getSPFamily_idSPFamily());
+            namefamilyLabel.setText(spChip.getName_family());
         } else {
             idSPChipLabel.setText("");
-            idSPFamilyLabel.setText("");
+            namefamilyLabel.setText("");
         }
     }
 

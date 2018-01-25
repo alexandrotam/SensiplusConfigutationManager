@@ -84,12 +84,12 @@
                               <Font size="14.0" />
                            </font>
                         </Label>
-                        <Label text="Id Family" GridPane.rowIndex="1">
+                        <Label text="Name Family" GridPane.rowIndex="1">
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="idSPFamilyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label fx:id="namefamilyLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <font>
                               <Font size="14.0" />
                            </font>

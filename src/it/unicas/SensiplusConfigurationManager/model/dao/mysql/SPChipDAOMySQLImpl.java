@@ -67,16 +67,16 @@ public class SPChipDAOMySQLImpl implements DAOSPChip<SPChip>{
 
             Statement st = DAOMySQLSettings.getStatement();
 
-            String query1="Select idSPFamily from spfamily where name='"+a.getName_family()+"'";
 
-            String sql = "select * from SPChip where idSPChip like '";
-            sql += a.getidSPChip() + "%' and SPFamily_idSPFamily  like '"+query1+"%'";
+            String sql = "select c.idSPChip,f.name from SPChip c inner join spfamily f on c.SPFamily_idSPFamily=" +
+                    "f.idSPFamily where c.idSPChip like '";
+            sql += a.getidSPChip() + "%' and f.name  like '"+a.getName_family()+"%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPChip(rs.getString("idSPChip"),rs.getString("SPFamily_idSPFamily")));
+                lista.add(new SPChip(rs.getString("idSPChip"),rs.getString("name")));
             }
             DAOMySQLSettings.closeStatement(st);
 

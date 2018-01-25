@@ -40,7 +40,7 @@
             <TextField fx:id="idSPChipField" disable="true" GridPane.columnIndex="1" />
             <AnchorPane maxHeight="26.0" prefHeight="164.0" prefWidth="286.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ComboBox fx:id="idSPFamilyCombobox" disable="true" layoutX="-6.0" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
+                  <ComboBox fx:id="namefamilycombobox" disable="true" layoutX="-6.0" layoutY="70.0" prefHeight="26.0" prefWidth="294.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0" />
                </children>
             </AnchorPane>
             <CheckBox fx:id="idSPChipCheck" mnemonicParsing="false" onAction="#disableTextboxidSPChip" text="Id Chip">
@@ -48,7 +48,7 @@
                   <Font name="Calibri Italic" size="21.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="idSPFamilyCheck" mnemonicParsing="false" onAction="#disableTextboxidSPFamily" text="Id Family" GridPane.rowIndex="1">
+            <CheckBox fx:id="namefamilycheck" mnemonicParsing="false" onAction="#disableTextboxidSPFamily" text="Name Family" GridPane.rowIndex="1">
                <font>
                   <Font name="Calibri Italic" size="21.0" />
                </font>

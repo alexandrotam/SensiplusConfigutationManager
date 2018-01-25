@@ -18,11 +18,11 @@ public class SPChipSearchDialogController {
     @FXML
     private TextField idSPChipField;
     @FXML
-    private ComboBox idSPFamilyCombobox;
+    private ComboBox namefamilycombobox;
     @FXML
     private CheckBox idSPChipCheck;
     @FXML
-    private CheckBox idSPFamilyCheck;
+    private CheckBox namefamilycheck;
 
     private Stage dialogStage;
     private it.unicas.SensiplusConfigurationManager.model.SPChip SPChip;
@@ -33,13 +33,13 @@ public class SPChipSearchDialogController {
     private void initialize() throws SQLException {
         Statement st = DAOMySQLSettings.getStatement();
         ArrayList<String> lista = new ArrayList<>();
-        String query="select idSPFamily from spfamily";
+        String query="select name from spfamily";
         ResultSet rs = st.executeQuery(query);
         while(rs.next()){
             lista.add(rs.getString("idSPFamily"));
         }
         DAOMySQLSettings.closeStatement(st);
-        idSPFamilyCombobox.getItems().addAll(lista);
+        namefamilycombobox.getItems().addAll(lista);
     }
 
     public void setDialogStage(Stage dialogStage, boolean verifyLen) {
@@ -51,7 +51,7 @@ public class SPChipSearchDialogController {
     public void setSPChip(SPChip SPChip) {
         this.SPChip = SPChip;
         idSPChipField.setText(SPChip.getidSPChip());
-        idSPFamilyCombobox.setValue(SPChip.getSPFamily_idSPFamily());
+        namefamilycombobox.setValue(SPChip.getName_family());
     }
 
     public boolean isOkClicked() {
@@ -62,7 +62,7 @@ public class SPChipSearchDialogController {
     private void handleOk() {
         if (isInputValid(verifyLen)) {
             SPChip.setidSPChip(idSPChipField.getText());
-            SPChip.setSPFamily_idSPFamily(idSPFamilyCombobox.getValue().toString());
+            SPChip.setName_family(namefamilycombobox.getValue().toString());
 
             okClicked = true;
             dialogStage.close();
@@ -83,10 +83,10 @@ public class SPChipSearchDialogController {
     }
 
     public void disableTextboxidSPFamily(){
-        if (idSPFamilyCheck.isSelected())
-            idSPFamilyCombobox.setDisable(false);
+        if (namefamilycheck.isSelected())
+            namefamilycombobox.setDisable(false);
         else
-            idSPFamilyCombobox.setDisable(true);
+            namefamilycombobox.setDisable(true);
     }
 
     private boolean isInputValid(boolean verifyLen) {
