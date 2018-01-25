@@ -15,8 +15,7 @@ public class SPSensingElementOnChip {
     private StringProperty SPChip_idSPChip;
     private StringProperty m;
     private StringProperty n;
-    private StringProperty SPSensingElementOnFamily_idSPSensingElementOnFamily;
-    private StringProperty SPCalibration_idSPCalibration;
+
     private StringProperty SPSensingElementOnFamily_Name;
     private StringProperty SPCalibration_Name;
 
@@ -97,37 +96,6 @@ public class SPSensingElementOnChip {
         this.SPCalibration_Name.set(SPCalibration_Name);
     }
 
-    public String getSPSensingElementOnFamily_idSPSensingElementOnFamily() {
-        if (SPSensingElementOnFamily_idSPSensingElementOnFamily == null)
-            SPSensingElementOnFamily_idSPSensingElementOnFamily = new SimpleStringProperty("");
-        return SPSensingElementOnFamily_idSPSensingElementOnFamily.get();
-    }
-
-    public StringProperty SPSensingElementOnFamily_idSPSensingElementOnFamilyProperty() {
-        return SPSensingElementOnFamily_idSPSensingElementOnFamily;
-    }
-
-    public void setSPSensingElementOnFamily_idSPSensingElementOnFamily(String SPSensingElementOnFamily_idSPSensingElementOnFamily) {
-        if (this.SPSensingElementOnFamily_idSPSensingElementOnFamily == null)
-            this.SPSensingElementOnFamily_idSPSensingElementOnFamily = new SimpleStringProperty();
-        this.SPSensingElementOnFamily_idSPSensingElementOnFamily.set(SPSensingElementOnFamily_idSPSensingElementOnFamily);
-    }
-
-    public String getSPCalibration_idSPCalibration() {
-        if (SPCalibration_idSPCalibration == null)
-            SPCalibration_idSPCalibration = new SimpleStringProperty("");
-        return SPCalibration_idSPCalibration.get();
-    }
-
-    public StringProperty SPCalibration_idSPCalibrationProperty() {
-        return SPCalibration_idSPCalibration;
-    }
-
-    public void setSPCalibration_idSPCalibration(String SPCalibration_idSPCalibration) {
-        if (this.SPCalibration_idSPCalibration == null)
-            this.SPCalibration_idSPCalibration = new SimpleStringProperty();
-        this.SPCalibration_idSPCalibration.set(SPCalibration_idSPCalibration);
-    }
 
     public String toString(){
         return SPChip_idSPChip.getValue()+", " +m.getValue()+", "+n.getValue()+

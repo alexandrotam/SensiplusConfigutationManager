@@ -103,16 +103,16 @@ public class SPSensingElementOnChipDAOMySQLImpl implements DAOSPSensingElementOn
         if (a == null || a.getSPChip_idSPChip() == null
                 || a.getM() == null
                 || a.getN()==null
-                || a.getSPSensingElementOnFamily_idSPSensingElementOnFamily() == null
-                || a.getSPCalibration_idSPCalibration() ==null
                 )
         {  throw new DAOException("In select: any field can be null");
         }
+        String query1="(select idSPSensingElementOnFamily from SpSensingElementOnFamily where name='"+a.getSPSensingElementOnFamily_Name()+"')";
+        String query2="(select idSPCalibration from spcalibration where name ="+a.getSPCalibration_Name()+"')";
 
         String query ="INSERT INTO SPSensingElementOnChip (SPChip_idSPChip,m,n,SPSensingElementOnFamily_idSPSensingElementOnFamily" +
                 ",SPCalibration_idSPCalibration)" +
-                " VALUES('" + a.getSPChip_idSPChip()+ "', '" +a.getM()+"', '"+a.getN() +"', '"+
-                a.getSPSensingElementOnFamily_idSPSensingElementOnFamily()+"', '"+a.getSPCalibration_idSPCalibration()+"')";
+                " VALUES('" + a.getSPChip_idSPChip()+ "', '" +a.getM()+"', '"+a.getN() +"', "+
+               query1+", '"+query2+")";
 
         logger.info("SQL: " + query);
 
