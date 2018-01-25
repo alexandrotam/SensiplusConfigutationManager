@@ -297,7 +297,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                 throw new DAOException("In select: any field can be null");
             }
 
-            String query = "UPDATE spsensingelement s SET s.rSense = '" + a.getrSense() + "', s.inGain = '" + a.getInGain() + "',  s.outGain = '" + a.getOutGain() + "', s.contacts = '" + a.getContacts() + "', s.frequency = '" + a.getFrequency()
+            String query = "UPDATE spsensingelement s SET s.idSPSensingElement= '"+a.getIdSPSensingElement()+"', s.rSense = '" + a.getrSense() + "', s.inGain = '" + a.getInGain() + "',  s.outGain = '" + a.getOutGain() + "', s.contacts = '" + a.getContacts() + "', s.frequency = '" + a.getFrequency()
                     +"', s.harmonic='"+a.getHarmonic()+"', s.DCBias='"+a.getDCBias()+"', s.modeVI='"+a.getModeVI()+"', s.measureTechnique='"+a.getMeasureTechnique()+ "',  s.measureType = '" + a.getMeasureType() + "', s.filter = '" + a.getFilter() +
                     "', s.phaseShiftMode ='"+a.getPhaseShiftMode()+"',s.phaseShift='"+a.getPhaseShift()+ "',  s.IQ = '" + a.getIQ() + "', s.conversionRate = '" + a.getConversionRate()+
                     "', s.inPortADC='"+a.getInPortADC()+ "',  s.nData = '" + a.getnData() + "', s.name = '" + a.getName()+"', s.rangeMin='"+a.getRangeMin()+ "', s.rangeMax = '" + a.getRangeMax() + "', s.defaultAlarmThreshold = '" + a.getDefaultAlarmThreshold()+
