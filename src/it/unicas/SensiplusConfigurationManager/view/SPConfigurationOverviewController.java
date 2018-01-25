@@ -43,6 +43,7 @@ public class SPConfigurationOverviewController {
     @FXML
     private void initialize() {
 
+
         idClusterColumn.setCellValueFactory(cellData->cellData.getValue().idClusterProperty());
         idSPConfigurationColumn.setCellValueFactory(cellData->cellData.getValue().idSPConfigurationProperty());
 
