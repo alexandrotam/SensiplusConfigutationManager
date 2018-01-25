@@ -76,19 +76,19 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             Statement st = DAOMySQLSettings.getStatement();
 
             String sql = "select * from spfamily where idSPFamily like '";
-            sql += a.getidSPFamily() + "%' and hwVersion  like '"+a.getHwVersion();
+            sql += a.getidSPFamily() + "%' and name  like '"+a.getName();
             sql += "%' and  id like '" + a.getId() + "%'";
-            sql += " and  name like '" + a.getName() + "%'";
-            sql += " and  osctrim like '" + a.getOsctrim() + "%'";
+            sql += " and  hwversion like '" + a.getHwVersion() + "%'";
             sql += " and  sysclock like '" + a.getSysclock() + "%'";
+            sql += " and  oscrtim like '" + a.getOsctrim() + "%'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPFamily(rs.getString("idSPFamily"),rs.getString("Hwversion"),
-                        rs.getString("Id"),rs.getString("Name"),rs.getString("Osctrim"),
-                        rs.getString("Sysclock")));
+                lista.add(new SPFamily(rs.getString("idSPFamily"),rs.getString("name"),
+                        rs.getString("Id"),rs.getString("hwversion"),rs.getString("sysclock"),
+                        rs.getString("osctrim")));
             }
             DAOMySQLSettings.closeStatement(st);
 
@@ -170,8 +170,9 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
         }
 
         String query = "UPDATE spfamily s SET s.idSPFamily = '" + a.getidSPFamily() + "', s.name = '" + a.getName() + "',  s.id = '" + a.getId() + "'," +
-                " s.hwVersion = '"+ a.getHwVersion() + "', s.sysclock = '" + a.getSysclock()+"', s.osctrim='"+a.getOsctrim()+ "'";
-        query = query + " WHERE s.idSPFamily = '" + a.getidSPFamily() + "';";
+                " s.hwVersion = '"+ a.getHwVersion() + "', s.sysclock = '" + a.getSysclock()+"', s.osctrim='"+a.getOsctrim()+ "' WHERE s.idSPFamily = '"
+                + a.getidSPFamily() + "';";
+
         logger.info("SQL: " + query);
 
         try {
