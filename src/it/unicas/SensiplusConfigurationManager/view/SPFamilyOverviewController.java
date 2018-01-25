@@ -49,7 +49,7 @@ public class SPFamilyOverviewController {
 
 
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
-        idColumn.setCellValueFactory(cellData->cellData.getValue().nameProperty());
+        idColumn.setCellValueFactory(cellData->cellData.getValue().idProperty());
 
         showSPFamilyDetails(null);
 
