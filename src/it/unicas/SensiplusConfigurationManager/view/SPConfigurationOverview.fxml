@@ -21,6 +21,7 @@
                   <TableView fx:id="spConfigurationTableView" layoutX="13.0" layoutY="-3.0" prefHeight="338.0" prefWidth="350.0" AnchorPane.bottomAnchor="56.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="idClusterColumn" prefWidth="227.3207244873047" text="IdCluster" />
+                        <TableColumn fx:id="idSPConfigurationColumn" prefWidth="75.0" text="IdSPConfiguration" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
