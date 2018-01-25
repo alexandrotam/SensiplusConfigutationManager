@@ -80,7 +80,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             sql += "%' and  id like '" + a.getId() + "%'";
             sql += " and  hwversion like '" + a.getHwVersion() + "%'";
             sql += " and  sysclock like '" + a.getSysclock() + "%'";
-            sql += " and  oscrtim like '" + a.getOsctrim() + "%'";
+            sql += " and  osctrim like '" + a.getOsctrim() + "%'";
 
 
             logger.info("SQL: " + sql);
