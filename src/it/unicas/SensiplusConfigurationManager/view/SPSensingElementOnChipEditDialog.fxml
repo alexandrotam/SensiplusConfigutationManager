@@ -39,12 +39,12 @@
                   <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <Label text="Id Sensing Element On Family" GridPane.rowIndex="3">
+            <Label text="Sensing Element On Family" GridPane.rowIndex="3">
                <font>
                   <Font name="Calibri Italic" size="27.0" />
                </font>
             </Label>
-            <Label text="Id Calibration" GridPane.rowIndex="4">
+            <Label text="Calibration" GridPane.rowIndex="4">
                <font>
                   <Font name="Calibri Italic" size="27.0" />
                </font>
@@ -56,12 +56,12 @@
             </AnchorPane>
             <AnchorPane maxHeight="26.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <ComboBox fx:id="idSPSensingElementOnFamilyCombobox" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                  <ComboBox fx:id="nameSPSensingElementOnFamilyCombobox" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
                </children>
             </AnchorPane>
             <AnchorPane maxHeight="26.0" prefHeight="65.0" prefWidth="246.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <ComboBox fx:id="idSPCalibrationCombobox" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                  <ComboBox fx:id="nameCalibrationCombobox" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="25.0" prefWidth="255.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0" />
                </children>
             </AnchorPane>
             <TextField fx:id="mField" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="1" />

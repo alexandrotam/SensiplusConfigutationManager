@@ -24,9 +24,9 @@ public class SPSensingElementOnChipEditDialogController {
     @FXML
     private TextField nField;
     @FXML
-    private ComboBox idSPSensingElementOnFamilyCombobox;
+    private ComboBox nameSPSensingElementOnFamilyCombobox;
     @FXML
-    private ComboBox idSPCalibrationCombobox;
+    private ComboBox nameCalibrationCombobox;
 
     private Stage dialogStage;
     private SPSensingElementOnChip SensingElementOnChip;
@@ -47,25 +47,25 @@ public class SPSensingElementOnChipEditDialogController {
 
         Statement st2 = DAOMySQLSettings.getStatement();
         ArrayList<String> lista2 = new ArrayList<>();
-        String query2="select idSPSensingElementOnFamily from spsensingelementonfamily";
+        String query2="select name from spsensingelementonfamily";
         ResultSet rs2 = st2.executeQuery(query2);
         while(rs2.next()){
-            lista2.add(rs2.getString("idSPSensingElementOnFamily"));
+            lista2.add(rs2.getString("name"));
         }
         DAOMySQLSettings.closeStatement(st2);
-        idSPSensingElementOnFamilyCombobox.getItems().addAll(lista2);
+        nameSPSensingElementOnFamilyCombobox.getItems().addAll(lista2);
 
         Statement st3 = DAOMySQLSettings.getStatement();
         ArrayList<String> lista3 = new ArrayList<>();
-        String query3="select idSPCalibration from spcalibration";
+        String query3="select name from spcalibration";
         ResultSet rs3 = st3.executeQuery(query3);
 
         while(rs3.next()){
-            lista3.add(rs3.getString("idSPCalibration"));
+            lista3.add(rs3.getString("name"));
         }
 
         DAOMySQLSettings.closeStatement(st3);
-        idSPCalibrationCombobox.getItems().addAll(lista3);
+        nameCalibrationCombobox.getItems().addAll(lista3);
         }
 
     public void setDialogStage(Stage dialogStage, boolean verifyLen) {
@@ -81,8 +81,8 @@ public class SPSensingElementOnChipEditDialogController {
         idSpChipCombobox.setValue(SensingElementOnChip.getSPChip_idSPChip());
         mField.setText(SensingElementOnChip.getM());
         nField.setText(SensingElementOnChip.getN());
-        idSPSensingElementOnFamilyCombobox.setValue(SensingElementOnChip.getSPSensingElementOnFamily_idSPSensingElementOnFamily());
-        idSPCalibrationCombobox.setValue(SensingElementOnChip.getSPCalibration_idSPCalibration());
+        nameSPSensingElementOnFamilyCombobox.setValue(SensingElementOnChip.getSPSensingElementOnFamily_Name());
+        nameCalibrationCombobox.setValue(SensingElementOnChip.getSPCalibration_Name());
     }
 
     public boolean isOkClicked() {
@@ -95,8 +95,8 @@ public class SPSensingElementOnChipEditDialogController {
             SensingElementOnChip.setSPChip_idSPChip(idSpChipCombobox.getValue().toString());
             SensingElementOnChip.setM(mField.getText());
             SensingElementOnChip.setN(nField.getText());
-            SensingElementOnChip.setSPSensingElementOnFamily_idSPSensingElementOnFamily(idSPSensingElementOnFamilyCombobox.getValue().toString());
-            SensingElementOnChip.setSPCalibration_idSPCalibration(idSPCalibrationCombobox.getValue().toString());
+            SensingElementOnChip.setSPSensingElementOnFamily_Name(nameSPSensingElementOnFamilyCombobox.getValue().toString());
+            SensingElementOnChip.setSPCalibration_Name(nameCalibrationCombobox.getValue().toString());
 
             okClicked = true;
             dialogStage.close();
