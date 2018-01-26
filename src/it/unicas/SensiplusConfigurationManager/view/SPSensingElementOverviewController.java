@@ -274,12 +274,12 @@ public class SPSensingElementOverviewController {
     private void handleEditSPSensingElement() {
 
         SPSensingElement selectedSPSensingElement = spSensingElementTableView.getSelectionModel().getSelectedItem();
-
+        String temp=selectedSPSensingElement.getIdSPSensingElement();
         if (selectedSPSensingElement != null) {
             boolean okClicked = mainApp.showSPSensingElementEditDialog(selectedSPSensingElement,true);
             if (okClicked) {
                 try {
-                    SPSensingElementDAOMySQLImpl.getInstance().update(selectedSPSensingElement);
+                    SPSensingElementDAOMySQLImpl.getInstance().update(selectedSPSensingElement, temp);
                     showSPSensingElementDetails(selectedSPSensingElement);
                 } catch (DAOException e) {
                     e.printStackTrace();
