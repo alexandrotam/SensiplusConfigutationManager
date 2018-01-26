@@ -153,11 +153,12 @@ public class SPChipOverviewController {
     @FXML
     private void handleEditSPChip() {
         SPChip selectedSpChip=spChipTableView.getSelectionModel().getSelectedItem();
+        String temp  = selectedSpChip.getidSPChip();
         if (selectedSpChip != null) {
             boolean okClicked = mainApp.showSPChipEditDialog(selectedSpChip,true);
             if (okClicked) {
                 try {
-                    SPChipDAOMySQLImpl.getInstance().update(selectedSpChip);
+                    SPChipDAOMySQLImpl.getInstance().update(selectedSpChip, temp);
                     showSPChipDetails(selectedSpChip);
                 } catch (DAOException e) {
                     e.printStackTrace();

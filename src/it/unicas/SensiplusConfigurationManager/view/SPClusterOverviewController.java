@@ -134,11 +134,12 @@ public class SPClusterOverviewController {
     @FXML
     private void handleEditSPCluster() {
         SPCluster selectedSpCluster=spClusterTableView.getSelectionModel().getSelectedItem();
+        String temp = selectedSpCluster.getIdCluster();
         if (selectedSpCluster != null) {
             boolean okClicked = mainApp.showSPClusterEditDialog(selectedSpCluster,true);
             if (okClicked) {
                 try {
-                    SPClusterDAOMySQLImpl.getInstance().update(selectedSpCluster);
+                    SPClusterDAOMySQLImpl.getInstance().update(selectedSpCluster, temp);
                 } catch (DAOException e) {
                     e.printStackTrace();
                 }

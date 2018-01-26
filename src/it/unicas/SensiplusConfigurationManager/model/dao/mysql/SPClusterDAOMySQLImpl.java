@@ -139,7 +139,7 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
 
 
     @Override
-    public void update(SPCluster a) throws DAOException {
+    public void update(SPCluster a, String id) throws DAOException {
         if (a == null || a.getIdCluster() == ""
                 || a.getSPCalibration_NameSPCalibration() == ""){
             throw new DAOException("In select: any field can be null");
@@ -147,7 +147,7 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
 
         String query1= "Select idSPCalibration from SPCalibration where name='"+a.getSPCalibration_NameSPCalibration()+"'";
         String query = "UPDATE SPCluster s SET s.idCluster = '" + a.getIdCluster() + "', s.SPCalibration_idSPCalibration = ("
-                + query1 + ") where s.idCluster ='"+a.getIdCluster()+"'";
+                + query1 + ") where s.idCluster ='"+id+"'";
         logger.info("SQL: " + query);
 
         try {
