@@ -330,7 +330,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                     "inner join spsensingelementonfamily sof on se.idspsensingelement=sof.SPSensingElement_idSPSensingElement " +
                     "inner join spsensingelementonchip soc on " +
                     "soc.SPSensingElementOnFamily_idSPSensingElementOnFamily=sof.idSPSensingElementOnFamily inner join spcalibration cal on cal.idspcalibration=soc.SPCalibration_idSPCalibration" +
-                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.SPCalibration_idSPCalibration inner join " +
+                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.idSPCalibration inner join " +
                     "spconfiguration con on con.idcluster=clu.idcluster where con.idspconfiguration like '"+a+"'";
 
 

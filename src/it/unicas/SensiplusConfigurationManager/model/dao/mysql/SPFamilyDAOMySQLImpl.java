@@ -198,7 +198,7 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             String sql = "select f.name,f.id,f.hwversion,f.sysclock,f.osctrim from spfamily f inner join spchip ch " +
                     "on f.idspfamily=ch.spfamily_idspfamily inner join spsensingelementonchip soc on " +
                     "soc.SPChip_idSPChip=ch.idspchip inner join spcalibration cal on cal.idspcalibration=soc.SPCalibration_idSPCalibration" +
-                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.SPCalibration_idSPCalibration inner join " +
+                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.idSPCalibration inner join " +
                     "spconfiguration con on con.idcluster=clu.idcluster where con.idspconfiguration like '"+a+"'";
 
 
