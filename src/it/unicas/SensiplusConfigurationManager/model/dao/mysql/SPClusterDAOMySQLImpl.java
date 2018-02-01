@@ -160,4 +160,31 @@ public class SPClusterDAOMySQLImpl implements DAOSPCluster<SPCluster>{
             throw new DAOException("In update(): " + e.getMessage());
         }
     }
+
+    @Override
+    public List<SPCluster> select(String a) throws DAOException {
+
+        ArrayList<SPCluster> lista = new ArrayList<SPCluster>();
+
+        try{
+            Statement st = DAOMySQLSettings.getStatement();
+
+            String sql = "select cl.idcluster, ca.name from spcluster cl inner join spconfiguration con on con.idcluster=cl.idcluster" +
+                    " inner join spcalibration ca on ca.idspcalibration=cl.SPCalibration_idSPCalibration where con.idspconfiguration LIKE '" +
+                    a + "';";
+
+
+            logger.info("SQL: " + sql);
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                lista.add(new SPCluster(rs.getString("cl.idCluster"),rs.getString("ca.name")));
+            }
+            DAOMySQLSettings.closeStatement(st);
+
+        } catch (SQLException sq){
+            throw new DAOException("In select(): " + sq.getMessage());
+        }
+        return lista;
+    }
+
 }

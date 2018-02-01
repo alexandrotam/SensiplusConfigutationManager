@@ -204,5 +204,29 @@ public class SPConfigurationDAOMySQLImpl implements DAOSPConfiguration<SPConfigu
         }
     }
 
+    @Override
+    public List<SPConfiguration> select(String a) throws DAOException {
+
+        ArrayList<SPConfiguration> lista = new ArrayList<SPConfiguration>();
+        try{
+
+            Statement st = DAOMySQLSettings.getStatement();
+
+            String sql = "select * from SPConfiguration where idSPConfiguration like '" + a +"';" ;
+
+            logger.info("SQL: " + sql);
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                lista.add(new SPConfiguration(rs.getString("idSPConfiguration"),rs.getString("driver"),
+                        rs.getString("hostController"),rs.getString("apiOwner"),rs.getString("mcu"),
+                        rs.getString("protocol"),rs.getString("addressingType"),rs.getString("idCluster")));
+            }
+            DAOMySQLSettings.closeStatement(st);
+
+        } catch (SQLException sq){
+            throw new DAOException("In select(): " + sq.getMessage());
+        }
+        return lista;
+    }
 
 }

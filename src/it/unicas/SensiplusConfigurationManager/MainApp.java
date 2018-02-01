@@ -15,6 +15,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.Marshaller;
+import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -33,9 +36,11 @@ public class MainApp extends Application {
     private ObservableList<SPSensingelementOnFamily> SPSensingelementOnFamilyData = FXCollections.observableArrayList();
     private ObservableList<SPChip> SPChipData = FXCollections.observableArrayList();
     private ObservableList<SPSensingElementOnChip> SPSensingElementOnChipData = FXCollections.observableArrayList();
-    public  ObservableList<SPFamily_has_SPMeasureType> SPFamily_has_SPMeasureTypeData=FXCollections.observableArrayList();
+    private  ObservableList<SPFamily_has_SPMeasureType> SPFamily_has_SPMeasureTypeData=FXCollections.observableArrayList();
     private ObservableList<SPCluster> SPClusterData = FXCollections.observableArrayList();
     private ObservableList<SPConfiguration> SPConfigurationData =FXCollections.observableArrayList();
+    private ObservableList<SPPort> SPPortData = FXCollections.observableArrayList();
+
 
     /**
      * Constructor
@@ -60,6 +65,7 @@ public class MainApp extends Application {
         return SPClusterData;
     }
     public ObservableList<SPConfiguration> getSPConfigurationData() { return SPConfigurationData; }
+    public ObservableList<SPPort> getSPPortData() {return SPPortData; }
 
     @Override
     public void start(Stage primaryStage) {
@@ -854,8 +860,6 @@ public class MainApp extends Application {
 
     }
 
-
-
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -866,6 +870,40 @@ public class MainApp extends Application {
     }
 
 
+    /**
+     * Saves the current person data to the specified file.
+     *
+     * @param file
+     */
+    public void saveSensichipsToFile(File file) {
+        try {
+            JAXBContext context = JAXBContext
+                    .newInstance(SensichipsListWrapper.class);
+            Marshaller m = context.createMarshaller();
+            m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+            // Wrapping our data.
+            SensichipsListWrapper wrapper = new SensichipsListWrapper();
+            wrapper.setPort(SPPortData);
+            wrapper.setSensingElement(SPSensigElementData);
+            wrapper.setFamily(SPFamilyData);
+            wrapper.setConfiguration(SPConfigurationData);
+            wrapper.setCluster(SPClusterData);
+
+
+
+            m.marshal(wrapper, file);
+
+        } catch (Exception e) { // catches ANY exception
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Could not save data");
+            alert.setContentText("Could not save data to file:\n" + file.getPath());
+
+            alert.showAndWait();
+        }
+    }
 
 }
+
 

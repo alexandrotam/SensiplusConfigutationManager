@@ -8,4 +8,5 @@ public interface DAOSPConfiguration <F> {
     void update(F a) throws DAOException;
     void insert(F a) throws DAOException;
     void delete(F a) throws DAOException;
+    List<F> select(String a) throws DAOException;
 }

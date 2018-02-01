@@ -4,6 +4,7 @@ package it.unicas.SensiplusConfigurationManager.model.dao.mysql;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOSPFamily;
 import it.unicas.SensiplusConfigurationManager.model.SPFamily;
+import javafx.beans.property.StringProperty;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -186,6 +187,32 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
         }
     }
 
+    @Override
+    public List<SPFamily> select(String a) throws DAOException {
+
+        ArrayList<SPFamily> lista = new ArrayList<SPFamily>();
+
+        try{
+            Statement st = DAOMySQLSettings.getStatement();
+
+            String sql = "select f.name,f.id,f.hwversion,f.sysclock,f.osctrim from spfamily f inner join spchip ch " +
+                    "on f.idspfamily=ch.spfamily_idspfamily inner join spsensingelementonchip ";
+
+
+            logger.info("SQL: " + sql);
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                lista.add(new SPFamily(rs.getString("idSPFamily"),rs.getString("name"),
+                        rs.getString("Id"),rs.getString("hwversion"),rs.getString("sysclock"),
+                        rs.getString("osctrim")));
+            }
+            DAOMySQLSettings.closeStatement(st);
+
+        } catch (SQLException sq){
+            throw new DAOException("In select(): " + sq.getMessage());
+        }
+        return lista;
+    }
 
 
 }

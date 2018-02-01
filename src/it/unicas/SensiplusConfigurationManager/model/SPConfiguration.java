@@ -38,6 +38,15 @@ public class SPConfiguration {
 
     }
 
+    public SPConfiguration(StringProperty driver, StringProperty hostController, StringProperty apiOwner, StringProperty mcu, StringProperty protocol, StringProperty addressingType, StringProperty idCluster) {
+        this.driver = driver;
+        this.hostController = hostController;
+        this.apiOwner = apiOwner;
+        this.mcu = mcu;
+        this.protocol = protocol;
+        this.addressingType = addressingType;
+        this.idCluster = idCluster;
+    }
 
     public SPConfiguration(){
         this("","","","","","","","");

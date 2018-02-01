@@ -11,6 +11,7 @@ public interface DAOSPSensingElement<S> {
     List<S> select(S a) throws DAOException;
     void insert(S a) throws DAOException;
     void delete(S a) throws DAOException;
+    List<S> select(String a) throws DAOException;
 
     void update(SPSensingElement a, String id) throws DAOException;
 }

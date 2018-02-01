@@ -1,13 +1,18 @@
 package it.unicas.SensiplusConfigurationManager.view;
 
 import it.unicas.SensiplusConfigurationManager.MainApp;
-import it.unicas.SensiplusConfigurationManager.model.SPConfiguration;
+import it.unicas.SensiplusConfigurationManager.model.*;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPClusterDAOMySQLImpl;
 import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPConfigurationDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementDAOMySQLImpl;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
 
@@ -204,6 +209,65 @@ public class SPConfigurationOverviewController {
     }
 
 
+    /**
+     * Opens a FileChooser to let the user select a file to save to.
+     */
+    @FXML
+    private void handleSaveAs() {
+        FileChooser fileChooser = new FileChooser();
+
+        // Set extension filter
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter(
+                "XML files (*.xml)", "*.xml");
+        fileChooser.getExtensionFilters().add(extFilter);
+
+        // Show save file dialog
+        File file = fileChooser.showSaveDialog(mainApp.getPrimaryStage());
+
+        if (file != null) {
+            // Make sure it has the correct extension
+            if (!file.getPath().endsWith(".xml")) {
+                file = new File(file.getPath() + ".xml");
+            }
+            mainApp.saveSensichipsToFile(file);
+        }
+    }
+
+    @FXML
+    private void xmlGenerator(){
+        String selConf=spConfigurationTableView.getSelectionModel().getSelectedItem().getidSPConfiguration();
+
+        try {
+            List<SPConfiguration> listConf = SPConfigurationDAOMySQLImpl.getInstance().selectConf(selConf);
+            mainApp.getSPConfigurationData().clear();
+            mainApp.getSPConfigurationData().addAll(listConf);
+
+            List<SPCluster> listCluster= SPClusterDAOMySQLImpl.getInstance().selectCluster(selConf);
+            mainApp.getSPClusterData().clear();
+            mainApp.getSPClusterData().addAll(listCluster);
+
+            List<SPFamily> listFamily = SPFamilyDAOMySQLImpl.getInstance().selectFamily(selConf);
+            mainApp.getSPFamilyData().clear();
+            mainApp.getSPFamilyData().addAll(listFamily);
+
+            List<SPSensingElement> listSensingElement = SPSensingElementDAOMySQLImpl.getInstance().selectSensingElement(selConf);
+            mainApp.getSPSensingElementOnChipData().clear();
+            mainApp.getSPSensingElementData().addAll(listSensingElement);
+
+            List<SPPort> listPort = SPPortDAOMySQLImpl.getInstance().selectPort(selConf);
+            mainApp.getSPPortData().clear();
+            mainApp.getSPPortData().addAll(listPort);
+
+
+
+        } catch (DAOException e) {
+            e.printStackTrace();
+        }
+        handleSaveAs();
+    }
+
+
+}
 
 
 }
