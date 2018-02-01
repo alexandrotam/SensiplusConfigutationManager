@@ -29,7 +29,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
         public static void main(String args[]) throws DAOException {
             SPSensingElementDAOMySQLImpl s = new SPSensingElementDAOMySQLImpl();
 
-            List<SPSensingElement> list=s.select(null);
+            List<SPSensingElement> list=s.select((SPSensingElement) null);
             for(int i = 0; i < list.size(); i++){
                 System.out.println(list.get(i));
             }
@@ -62,7 +62,7 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
 
             s.delete(toDelete);
 
-            list = s.select(null);
+            list = s.select((SPSensingElement) null);
 
             for(int i = 0; i < list.size(); i++){
                 System.out.println(list.get(i));
@@ -315,5 +315,44 @@ public class SPSensingElementDAOMySQLImpl implements DAOSPSensingElement<SPSensi
                 throw new DAOException("In update(): " + e.getMessage());
             }
         }
+
+    @Override
+    public List<SPSensingElement> select(String a) throws DAOException {
+
+        ArrayList<SPSensingElement> lista = new ArrayList<SPSensingElement>();
+
+        try{
+            Statement st = DAOMySQLSettings.getStatement();
+
+            String sql = "select se.idSPSensingElement,se.rSense,se.inGain,se.outGain,se.contacts,se.frequency,se.harmonic,se.DCBias,se.modeVI," +
+                    "se.measureTechnique,se.measureType,se.filter,se.phaseShiftMode,se.phaseShift,se.IQ,se.conversionRate,se.inPortADC,se.nData," +
+                    "se.name,se.rangeMin,se.rangeMax,se.defaultALarmThreshold,se.multiplier,se.measureUnit from spsensingelement se " +
+                    "inner join spsensingelementonfamily sof on se.idspsensingelement=sof.SPSensingElement_idSPSensingElement " +
+                    "inner join spsensingelementonchip soc on " +
+                    "soc.SPSensingElementOnFamily_idSPSensingElementOnFamily=sof.idSPSensingElementOnFamily inner join spcalibration cal on cal.idspcalibration=soc.SPCalibration_idSPCalibration" +
+                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.SPCalibration_idSPCalibration inner join " +
+                    "spconfiguration con on con.idcluster=clu.idcluster where con.idspconfiguration like '"+a+"'";
+
+
+            logger.info("SQL: " + sql);
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                lista.add(new SPSensingElement(rs.getString("rSense"),rs.getString("inGain"),
+                        rs.getString("outGain"),rs.getString("contacts"),rs.getString("frequency"),
+                        rs.getString("harmonic"),rs.getString("DCBias"),rs.getString("modeVI"),
+                        rs.getString("measureTechnique"),rs.getString("measureType"),
+                        rs.getString("filter"),rs.getString("phaseShiftMode"),rs.getString("phaseShift"),
+                        rs.getString("IQ"),rs.getString("conversionRate"),rs.getString("inPortADC"),
+                        rs.getString("nData"),rs.getString("name"),rs.getString("rangeMin"),
+                        rs.getString("rangeMax"),rs.getString("defaultAlarmThreshold"),
+                        rs.getString("multiplier"),rs.getString("measureUnit"),rs.getString("idSPSensingElement")));
+            }
+            DAOMySQLSettings.closeStatement(st);
+
+        } catch (SQLException sq){
+            throw new DAOException("In select(): " + sq.getMessage());
+        }
+        return lista;
+    }
 
 }

@@ -196,13 +196,16 @@ public class SPFamilyDAOMySQLImpl implements DAOSPFamily<SPFamily> {
             Statement st = DAOMySQLSettings.getStatement();
 
             String sql = "select f.name,f.id,f.hwversion,f.sysclock,f.osctrim from spfamily f inner join spchip ch " +
-                    "on f.idspfamily=ch.spfamily_idspfamily inner join spsensingelementonchip ";
+                    "on f.idspfamily=ch.spfamily_idspfamily inner join spsensingelementonchip soc on " +
+                    "soc.SPChip_idSPChip=ch.idspchip inner join spcalibration cal on cal.idspcalibration=soc.SPCalibration_idSPCalibration" +
+                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.SPCalibration_idSPCalibration inner join " +
+                    "spconfiguration con on con.idcluster=clu.idcluster where con.idspconfiguration like '"+a+"'";
 
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPFamily(rs.getString("idSPFamily"),rs.getString("name"),
+                lista.add(new SPFamily(rs.getString("name"),
                         rs.getString("Id"),rs.getString("hwversion"),rs.getString("sysclock"),
                         rs.getString("osctrim")));
             }

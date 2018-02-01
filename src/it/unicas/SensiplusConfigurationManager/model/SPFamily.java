@@ -32,6 +32,13 @@ public class SPFamily {
 
     }
 
+    public SPFamily(String name,String id,String hwVersion,String sysclock,String osctrim) {
+        this.name = new SimpleStringProperty(name);
+        this.id = new SimpleStringProperty(id);
+        this.hwVersion = new SimpleStringProperty(hwVersion);
+        this.sysclock = new SimpleStringProperty(sysclock);
+        this.osctrim = new SimpleStringProperty(osctrim);
+    }
 
     public SPFamily() {
         this("","","","","","");

@@ -30,30 +30,29 @@ public class SPPortDAOMySQLImpl implements DAOSPPort<SPPort> {
     public List<SPPort> select(String a) throws DAOException {
 
         ArrayList<SPPort> lista = new ArrayList<SPPort>();
-        try{
 
+        try{
             Statement st = DAOMySQLSettings.getStatement();
 
-            String sql = "SELECT driver, hostController, apiOwner, mcu, protocol, addressingType,idCluster FROM SPConfiguration WHERE idSPConfiguration=" + a + "";
+            String sql = "select p.internal,p.name from spport p inner join spfamilytemplate ft on p.idspport=ft.spport_idspport" +
+                    " inner join spfamily f on f.idspfamily=ft.spfamily_idspfamily inner join spchip ch " +
+                    "on f.idspfamily=ch.spfamily_idspfamily inner join spsensingelementonchip soc on " +
+                    "soc.SPChip_idSPChip=ch.idspchip inner join spcalibration cal on cal.idspcalibration=soc.SPCalibration_idSPCalibration" +
+                    " inner join spcluster clu on clu.SPCalibration_idSPCalibration=cal.SPCalibration_idSPCalibration inner join " +
+                    "spconfiguration con on con.idcluster=clu.idcluster where con.idspconfiguration like '"+a+"'";
+
 
             logger.info("SQL: " + sql);
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                lista.add(new SPPort(rs.getString("driver"),
-                        rs.getString("hostController"),
-                        rs.getString("apiOwner"),
-                        rs.getString("mcu"),
-                        rs.getString("protocol"),
-                        rs.getString("addressingType"),
-                        rs.getString("idCluster")));
+                lista.add(new SPPort(rs.getString("internal"),rs.getString("name")));
             }
             DAOMySQLSettings.closeStatement(st);
 
-        }catch (SQLException sq){
-            throw new DAOException("In select():" + sq.getMessage());
+        } catch (SQLException sq){
+            throw new DAOException("In select(): " + sq.getMessage());
         }
-
         return lista;
     }
-}
+
 }

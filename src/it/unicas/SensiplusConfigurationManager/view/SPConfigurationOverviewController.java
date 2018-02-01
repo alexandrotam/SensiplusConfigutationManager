@@ -3,10 +3,7 @@ package it.unicas.SensiplusConfigurationManager.view;
 import it.unicas.SensiplusConfigurationManager.MainApp;
 import it.unicas.SensiplusConfigurationManager.model.*;
 import it.unicas.SensiplusConfigurationManager.model.dao.DAOException;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPClusterDAOMySQLImpl;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPConfigurationDAOMySQLImpl;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPFamilyDAOMySQLImpl;
-import it.unicas.SensiplusConfigurationManager.model.dao.mysql.SPSensingElementDAOMySQLImpl;
+import it.unicas.SensiplusConfigurationManager.model.dao.mysql.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
@@ -238,23 +235,23 @@ public class SPConfigurationOverviewController {
         String selConf=spConfigurationTableView.getSelectionModel().getSelectedItem().getidSPConfiguration();
 
         try {
-            List<SPConfiguration> listConf = SPConfigurationDAOMySQLImpl.getInstance().selectConf(selConf);
+            List<SPConfiguration> listConf = SPConfigurationDAOMySQLImpl.getInstance().select(selConf);
             mainApp.getSPConfigurationData().clear();
             mainApp.getSPConfigurationData().addAll(listConf);
 
-            List<SPCluster> listCluster= SPClusterDAOMySQLImpl.getInstance().selectCluster(selConf);
+            List<SPCluster> listCluster= SPClusterDAOMySQLImpl.getInstance().select(selConf);
             mainApp.getSPClusterData().clear();
             mainApp.getSPClusterData().addAll(listCluster);
 
-            List<SPFamily> listFamily = SPFamilyDAOMySQLImpl.getInstance().selectFamily(selConf);
+            List<SPFamily> listFamily = SPFamilyDAOMySQLImpl.getInstance().select(selConf);
             mainApp.getSPFamilyData().clear();
             mainApp.getSPFamilyData().addAll(listFamily);
 
-            List<SPSensingElement> listSensingElement = SPSensingElementDAOMySQLImpl.getInstance().selectSensingElement(selConf);
+            List<SPSensingElement> listSensingElement = SPSensingElementDAOMySQLImpl.getInstance().select(selConf);
             mainApp.getSPSensingElementOnChipData().clear();
             mainApp.getSPSensingElementData().addAll(listSensingElement);
 
-            List<SPPort> listPort = SPPortDAOMySQLImpl.getInstance().selectPort(selConf);
+            List<SPPort> listPort = SPPortDAOMySQLImpl.getInstance().select(selConf);
             mainApp.getSPPortData().clear();
             mainApp.getSPPortData().addAll(listPort);
 
@@ -270,4 +267,3 @@ public class SPConfigurationOverviewController {
 }
 
 
-}
